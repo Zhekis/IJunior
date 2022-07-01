@@ -1,0 +1,16 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+
+    {
+        Console.WriteLine("What gold coins do you have?");
+        int goldCoins = Convert.ToInt32(Console.ReadLine());
+        int priceN = 3;
+        int countCrystal = goldCoins / priceN;
+        int goldcoinsRest = goldCoins % priceN;
+        string resault = $"You have {countCrystal} crystals and {goldcoinsRest} gold_coins";
+        Console.WriteLine(resault);
+    }
+}
