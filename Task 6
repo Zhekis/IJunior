@@ -4,11 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        int All_pic = 52;
-        int num_in_row = 3;
-        int count_row = All_pic / num_in_row;
-        int count_over = All_pic % num_in_row;
-        Console.WriteLine(count_row);
-        Console.WriteLine(count_over);
+        int allPic = 52;
+        int numInRow = 3;
+        int allCountRow = allPic / numInRow;
+        int countOver = allPic % numInRow;
+        Console.WriteLine(allCountRow);
+        Console.WriteLine(countOver);
     }
 }
