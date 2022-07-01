@@ -6,9 +6,9 @@ class Program
     {
         int allPic = 52;
         int numInRow = 3;
-        int allCountRow = allPic / numInRow;
+        int fullCountRow = allPic / numInRow;
         int countOver = allPic % numInRow;
-        Console.WriteLine(allCountRow);
+        Console.WriteLine(fullCountRow);
         Console.WriteLine(countOver);
     }
 }
