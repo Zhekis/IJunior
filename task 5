@@ -1,0 +1,19 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        /// Task 5
+        string Given_name = "Zh";
+        string First_name = "Akh";
+        string Full_name = Given_name + First_name;
+        string Given_name1 = Given_name;
+        Given_name = First_name;
+        First_name = Given_name1;
+        string Full_name1 = Given_name + First_name;
+        Console.WriteLine(Full_name);
+        Console.WriteLine(Full_name1);
+
+    }
+}
