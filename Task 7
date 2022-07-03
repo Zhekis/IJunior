@@ -10,8 +10,7 @@ class Program
         int crystalPrice = 3;
         Console.WriteLine("How much do you want to buy crystals (price {0})", crystalPrice);
         int countCrystal = Convert.ToInt32(Console.ReadLine());
-        int goldcoinsRest = goldCoins - countCrystal * crystalPrice;
-        string resault = $"You have {countCrystal} crystals and {goldcoinsRest} gold_coins";
+        string resault = $"You have {countCrystal} crystals and {goldCoins - countCrystal * crystalPrice} gold_coins";
         Console.WriteLine(resault);
     }
 }
