@@ -3,14 +3,14 @@ using System;
 class Program
 {
     static void Main(string[] args)
-
     {
+        Console.WriteLine("How many persons in a range?");
         int peopleRange = Convert.ToInt32(Console.ReadLine());
-        int timeWaitOnePerson = 10;
-        int allTimeWait = peopleRange * timeWaitOnePerson;
-        int hoursResult = allTimeWait / 60;
-        int minutesResult = allTimeWait - hoursResult * 60;
-        string resault = $"You need to wait {hoursResult} hours and {minutesResult} minutes";
-        Console.WriteLine(resault);
+        int minutesWaitPerson = 10;
+        int allMinutesWait = peopleRange * minutesWaitPerson;
+        int hoursWait = allMinutesWait / 60;
+        int minutesWait = allMinutesWait % 60;
+        string result = $"You need to wait {hoursWait} hours and {minutesWait} minutes";
+        Console.WriteLine(result);
     }
 }
