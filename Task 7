@@ -3,15 +3,14 @@ using System;
 class Program
 {
     static void Main(string[] args)
-
     {
         Console.WriteLine("What gold coins do you have?");
         int goldCoins = Convert.ToInt32(Console.ReadLine());
         int crystalPrice = 3;
         Console.WriteLine("How much do you want to buy crystals (price {0})", crystalPrice);
-        int countCrystal = Convert.ToInt32(Console.ReadLine());
-        oldCoins -= countCrystal * crystalPrice;
-        string resault = $"You have {countCrystal} crystals and {goldCoins} gold_coins";
-        Console.WriteLine(resault);
+        int countCrystals = Convert.ToInt32(Console.ReadLine());
+        goldCoins -= countCrystals * crystalPrice;
+        string result = $"You have {countCrystals} crystals and {goldCoins} gold_coins";
+        Console.WriteLine(result);
     }
 }
