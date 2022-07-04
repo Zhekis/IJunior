@@ -1,0 +1,16 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+
+    {
+        int peopleRange = Convert.ToInt32(Console.ReadLine());
+        int timeWaitOnePerson = 10;
+        int allTimeWait = peopleRange * timeWaitOnePerson;
+        int hoursResult = allTimeWait / 60;
+        int minutesResult = allTimeWait - hoursResult * 60;
+        string resault = $"You need to wait {hoursResult} hours and {minutesResult} minutes";
+        Console.WriteLine(resault);
+    }
+}
