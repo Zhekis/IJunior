@@ -7,9 +7,10 @@ class Program
         Console.WriteLine("How many persons in a range?");
         int peopleRange = Convert.ToInt32(Console.ReadLine());
         int minutesWaitPerson = 10;
+        int minutesInHour = 60;
         int allMinutesWait = peopleRange * minutesWaitPerson;
-        int hoursWait = allMinutesWait / 60;
-        int minutesWait = allMinutesWait % 60;
+        int hoursWait = allMinutesWait / minutesInHour;
+        int minutesWait = allMinutesWait % minutesInHour;
         string result = $"You need to wait {hoursWait} hours and {minutesWait} minutes";
         Console.WriteLine(result);
     }
