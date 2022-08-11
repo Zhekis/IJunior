@@ -5,10 +5,10 @@ class Program
     static void Main(string[] args)
     {
         int allPic = 52;
-        int numInRow = 3;
-        int fullCountRow = allPic / numInRow;
-        int countOver = allPic % numInRow;
+        int numPicsInRow = 3;
+        int fullCountRow = allPic / numPicsInRow;
+        int countPicsOver = allPic % numPicsInRow;
         Console.WriteLine(fullCountRow);
-        Console.WriteLine(countOver);
+        Console.WriteLine(countPicsOver);
     }
 }
