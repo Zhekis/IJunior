@@ -1,0 +1,16 @@
+class Program
+{
+    static void Main(string[] args)
+    {
+        byte numberRoom;
+        int age;
+        string name;
+        bool enabled;
+        char mySign;
+        float speed;
+        double number1;
+        long bigFigure;
+        uint weight;
+        short height;
+    }
+}
