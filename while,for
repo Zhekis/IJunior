@@ -4,13 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {    
-        Console.WriteLine("How many times do you want to say 'Happy Birthday'");
-        string phrase = "Happy Birthday!";
-        int countCelebrates = Convert.ToInt32(Console.ReadLine());
-        for (int i = 0; i < countCelebrates; i++)
+     Console.WriteLine("What do you want to say?");
+        string phrase = Console.ReadLine();
+        Console.WriteLine("What many times?");
+        int countTimes = Convert.ToInt32(Console.ReadLine());
+        for (int i = 0; i < countTimes; i++)
         {
             Console.WriteLine(phrase);
         }
-
     }
 }
