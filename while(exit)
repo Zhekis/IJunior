@@ -1,0 +1,22 @@
+using System;
+
+class Program
+{
+
+    static void Main(string[] args)
+    {    
+    
+        while (true)
+        {
+            Console.WriteLine("Введите команду!(для выхода используйте exit)");
+            string phrase = Console.ReadLine();
+            Console.WriteLine("Ваша команда: " + phrase);
+
+            if (phrase == "exit")
+            {
+                Console.WriteLine("Программа завершена");
+                break;
+            }     
+        }
+    }
+}
