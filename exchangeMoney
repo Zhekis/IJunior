@@ -5,14 +5,18 @@ class Program
 
     static void Main(string[] args)
     {    
-        double rub = 100000, usd = 1000, btc = 10;
-        double rubToUsd = 61, usdToRub = 60;
-        double usdToBtc = 0.01, btcToUsd = 101;
-        double rubToBtc = 0.0002, btcToRub = 6000;
+        double rub = 100000;
+        double usd = 1000;
+        double btc = 10;
+        double rubToUsd = 61;
+        double usdToRub = 60;
+        double usdToBtc = 0.01;
+        double btcToUsd = 101;
+        double rubToBtc = 0.0002;
+        double btcToRub = 6000;
         string userChoice = "start";
         double countCoinsForChange;
         string exit = "7";
-
         Console.WriteLine("Добро пожаловать в обменник валют. Можете обменять рубли, доллары, биткоин!");
 
         while(userChoice != exit)
@@ -34,6 +38,7 @@ class Program
                 case "1":
                     Console.WriteLine("Сколько хотите обменять?");
                     countCoinsForChange = Convert.ToSingle(Console.ReadLine());
+
                     if (countCoinsForChange <= rub)
                     {
                         rub -= countCoinsForChange;
@@ -43,10 +48,12 @@ class Program
                     {
                         Console.WriteLine("Недостаточно средств!");
                     }
+
                     break;
                 case "2":
                     Console.WriteLine("Сколько хотите обменять?");
                     countCoinsForChange = Convert.ToSingle(Console.ReadLine());
+
                     if (countCoinsForChange <= rub)
                     {
                         rub -= countCoinsForChange;
@@ -56,10 +63,12 @@ class Program
                     {
                         Console.WriteLine("Недостаточно средств!");
                     }
+
                     break;
                 case "3":
                     Console.WriteLine("Сколько хотите обменять?");
                     countCoinsForChange = Convert.ToSingle(Console.ReadLine());
+
                     if (countCoinsForChange <= usd)
                     {
                         usd -= countCoinsForChange;
@@ -69,10 +78,12 @@ class Program
                     {
                         Console.WriteLine("Недостаточно средств!");
                     }
+
                     break;
                 case "4":
                     Console.WriteLine("Сколько хотите обменять?");
                     countCoinsForChange = Convert.ToSingle(Console.ReadLine());
+
                     if (countCoinsForChange <= usd)
                     {
                         usd -= countCoinsForChange;
@@ -82,10 +93,12 @@ class Program
                     {
                         Console.WriteLine("Недостаточно средств!");
                     }
+
                     break;
                 case "5":
                     Console.WriteLine("Сколько хотите обменять?");
                     countCoinsForChange = Convert.ToSingle(Console.ReadLine());
+
                     if (countCoinsForChange <= btc)
                     {
                         btc -= countCoinsForChange;
@@ -95,10 +108,12 @@ class Program
                     {
                         Console.WriteLine("Недостаточно средств!");
                     }
+
                     break;
                 case "6":
                     Console.WriteLine("Сколько хотите обменять?");
                     countCoinsForChange = Convert.ToSingle(Console.ReadLine());
+
                     if (countCoinsForChange <= btc)
                     {
                         btc -= countCoinsForChange;
@@ -108,10 +123,12 @@ class Program
                     {
                         Console.WriteLine("Недостаточно средств!");
                     }
+
                     break;
             }
         
         }
-        Console.WriteLine("Спасибо!");
+
+        Console.WriteLine("Спасибо! До свидания!");
     }
 }
