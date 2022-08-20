@@ -8,9 +8,13 @@ class Program
         float rub = 100000;
         float usd = 1000;
         float btc = 10;
-        float rubToUsd = 61;
-        float rubToBtc = 6000;
+        float usdToRub = 61;
+        float rubToUsd = 1 / usdToRub;
+        float btcToRub = 6000;
+        float rubToBtc = 1 / btcToRub;
         float btcToUsd = 101;
+        float usdToBtc = 1 / btcToUsd;
+
         string userChoice = "start";
         float countCoinsForChange;
         string exit = "7";
@@ -40,7 +44,7 @@ class Program
                     if (countCoinsForChange <= rub)
                     {
                         rub -= countCoinsForChange;
-                        usd += countCoinsForChange / rubToUsd;
+                        usd += countCoinsForChange * rubToUsd;
                     }
                     else
                     {
@@ -55,7 +59,7 @@ class Program
                     if (countCoinsForChange <= rub)
                     {
                         rub -= countCoinsForChange;
-                        btc += countCoinsForChange / rubToBtc;
+                        btc += countCoinsForChange * rubToBtc;
                     }
                     else
                     {
@@ -70,7 +74,7 @@ class Program
                     if (countCoinsForChange <= usd)
                     {
                         usd -= countCoinsForChange;
-                        rub += countCoinsForChange * rubToUsd;
+                        rub += countCoinsForChange * usdToRub;
                     }
                     else
                     {
@@ -85,7 +89,7 @@ class Program
                     if (countCoinsForChange <= usd)
                     {
                         usd -= countCoinsForChange;
-                        btc += countCoinsForChange / btcToUsd;
+                        btc += countCoinsForChange * usdToBtc;
                     }
                     else
                     {
@@ -100,7 +104,7 @@ class Program
                     if (countCoinsForChange <= btc)
                     {
                         btc -= countCoinsForChange;
-                        rub += countCoinsForChange * rubToBtc;
+                        rub += countCoinsForChange * btcToRub;
                     }
                     else
                     {
