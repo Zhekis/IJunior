@@ -5,18 +5,16 @@ class Program
 
     static void Main(string[] args)
     {    
-        double rub = 100000;
-        double usd = 1000;
-        double btc = 10;
-        double rubToUsd = 61;
-        double usdToRub = 60;
-        double usdToBtc = 0.01;
-        double btcToUsd = 101;
-        double rubToBtc = 0.0002;
-        double btcToRub = 6000;
+        float rub = 100000;
+        float usd = 1000;
+        float btc = 10;
+        float rubToUsd = 61;
+        float rubToBtc = 6000;
+        float btcToUsd = 101;
         string userChoice = "start";
-        double countCoinsForChange;
+        float countCoinsForChange;
         string exit = "7";
+
         Console.WriteLine("Добро пожаловать в обменник валют. Можете обменять рубли, доллары, биткоин!");
 
         while(userChoice != exit)
@@ -72,7 +70,7 @@ class Program
                     if (countCoinsForChange <= usd)
                     {
                         usd -= countCoinsForChange;
-                        rub += countCoinsForChange / usdToRub;
+                        rub += countCoinsForChange * rubToUsd;
                     }
                     else
                     {
@@ -87,7 +85,7 @@ class Program
                     if (countCoinsForChange <= usd)
                     {
                         usd -= countCoinsForChange;
-                        btc += countCoinsForChange / usdToBtc;
+                        btc += countCoinsForChange / btcToUsd;
                     }
                     else
                     {
@@ -102,7 +100,7 @@ class Program
                     if (countCoinsForChange <= btc)
                     {
                         btc -= countCoinsForChange;
-                        rub += countCoinsForChange / btcToRub;
+                        rub += countCoinsForChange * rubToBtc;
                     }
                     else
                     {
@@ -117,7 +115,7 @@ class Program
                     if (countCoinsForChange <= btc)
                     {
                         btc -= countCoinsForChange;
-                        usd += countCoinsForChange / btcToUsd;
+                        usd += countCoinsForChange * btcToUsd;
                     }
                     else
                     {
