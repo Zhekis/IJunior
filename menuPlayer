@@ -5,9 +5,16 @@ class Program
 
     static void Main(string[] args)
     {            
+        const string SetName = "SetName";
+        const string SetPassword = "SetPassword";
+        const string SetDamage = "SetDamage";
+        const string ChangeColor = "ChangeColor";
+        const string ChangeWaipon = "ChangeWaipon";
         string namePlayer = "unnamed";
         string password = "***";
-        float damage = 100;
+        int damageMin = 1;
+        int damageMax = 100;
+        float damage = 50;
         string colorPlayer = "white";
         string waipon = "knife";
         string userChoice = "start";
@@ -28,23 +35,23 @@ class Program
 
             switch (userChoice)
             {
-                case "SetName":
+                case SetName:
                     Console.WriteLine("Введите имя:");
                     namePlayer = Console.ReadLine();
                     break;
-                case "SetPassword":
+                case SetPassword:
                     Console.WriteLine("Введите пароль:");
                     password = Console.ReadLine();
                     break;
-                case "SetDamage":
-                    Console.WriteLine("Введите урон от 1 до 100:");
+                case SetDamage:
+                    Console.WriteLine("Введите урон от " + damageMin + " до " + damageMax + " :");
                     damage = Convert.ToSingle(Console.ReadLine());
                     break;
-                case "ChangeColor":
+                case ChangeColor:
                     Console.WriteLine("Введите цвет игрока:");
                     colorPlayer = Console.ReadLine();
                     break;
-                case "ChangeWaipon":
+                case ChangeWaipon:
                     Console.WriteLine("Укажите оружие игрока:");
                     waipon = Console.ReadLine();
                     break;
