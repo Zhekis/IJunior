@@ -25,12 +25,12 @@ class Program
         {
             Console.WriteLine("Name player : " + namePlayer + ", Password: " + password + ", Damage: " + damage + ", Color player: " + colorPlayer + ", Waipon: " + waipon + ".");
             Console.WriteLine();
-            Console.WriteLine("SetName - задать имя игрока.");
-            Console.WriteLine("SetPassword - установить пароль.");
-            Console.WriteLine("SetDamage - установить урон.");
-            Console.WriteLine("ChangeColor - выбрать цвет игрока.");
-            Console.WriteLine("ChangeWaipon - изменить оружие.");
-            Console.WriteLine("Esc - выход.");
+            Console.WriteLine(SetName + " - задать имя игрока.");
+            Console.WriteLine(SetPassword + " - установить пароль.");
+            Console.WriteLine(SetDamage + " - установить урон.");
+            Console.WriteLine(ChangeColor + " - выбрать цвет игрока.");
+            Console.WriteLine(ChangeWaipon + " - изменить оружие.");
+            Console.WriteLine(exit + " - выход.");
             userChoice = Console.ReadLine();
 
             switch (userChoice)
