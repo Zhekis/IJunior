@@ -1,0 +1,56 @@
+using System;
+
+class Program
+{
+
+    static void Main(string[] args)
+    {            
+        string namePlayer = "unnamed";
+        string password = "***";
+        float damage = 100;
+        string colorPlayer = "white";
+        string waipon = "knife";
+        string userChoice = "start";
+        string exit = "Esc";
+        Console.WriteLine("Settings player:");
+
+        while (userChoice != exit)
+        {
+            Console.WriteLine("Name player : " + namePlayer + ", Password: " + password + ", Damage: " + damage + ", Color player: " + colorPlayer + ", Waipon: " + waipon + ".");
+            Console.WriteLine();
+            Console.WriteLine("SetName - задать имя игрока.");
+            Console.WriteLine("SetPassword - установить пароль.");
+            Console.WriteLine("SetDamage - установить урон.");
+            Console.WriteLine("ChangeColor - выбрать цвет игрока.");
+            Console.WriteLine("ChangeWaipon - изменить оружие.");
+            Console.WriteLine("Esc - выход.");
+            userChoice = Console.ReadLine();
+
+            switch (userChoice)
+            {
+                case "SetName":
+                    Console.WriteLine("Введите имя:");
+                    namePlayer = Console.ReadLine();
+                    break;
+                case "SetPassword":
+                    Console.WriteLine("Введите пароль:");
+                    password = Console.ReadLine();
+                    break;
+                case "SetDamage":
+                    Console.WriteLine("Введите урон от 1 до 100:");
+                    damage = Convert.ToSingle(Console.ReadLine());
+                    break;
+                case "ChangeColor":
+                    Console.WriteLine("Введите цвет игрока:");
+                    colorPlayer = Console.ReadLine();
+                    break;
+                case "ChangeWaipon":
+                    Console.WriteLine("Укажите оружие игрока:");
+                    waipon = Console.ReadLine();
+                    break;
+            }
+
+        }
+
+    }
+}
