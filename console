@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+
+    static void Main(string[] args)
+    {    
+        Console.WriteLine("What's your name?");
+        string yourName = Console.ReadLine();
+        Console.WriteLine("Write your symbol!");
+        string yourChar = Console.ReadLine();
+        int lenghtName = yourName.Length;
+        int lenghtFrame = lenghtName + 2;
+
+        for (int i = 0; i < lenghtFrame; i++)
+        {
+            Console.Write(yourChar);
+        }
+
+        Console.WriteLine();
+        Console.WriteLine(yourChar + yourName + yourChar);
+
+        for (int i = 0; i < lenghtFrame; i++)
+        {
+            Console.Write(yourChar);
+        }
+
+        Console.WriteLine();
+    }
+}
