@@ -5,26 +5,22 @@ class Program
 
     static void Main(string[] args)
     {    
+        int indexWidthFrame = 1;
         Console.WriteLine("What's your name?");
-        string yourName = Console.ReadLine();
+        string name = Console.ReadLine();
         Console.WriteLine("Write your symbol!");
-        string yourChar = Console.ReadLine();
-        int lenghtName = yourName.Length;
-        int lenghtFrame = lenghtName + 2;
+        string symbol = Console.ReadLine();
+        string frame = symbol;
+        int lenghtName = name.Length;
+        int lenghtFrame = lenghtName + indexWidthFrame;
 
         for (int i = 0; i < lenghtFrame; i++)
         {
-            Console.Write(yourChar);
+            frame += symbol;
         }
 
-        Console.WriteLine();
-        Console.WriteLine(yourChar + yourName + yourChar);
-
-        for (int i = 0; i < lenghtFrame; i++)
-        {
-            Console.Write(yourChar);
-        }
-
-        Console.WriteLine();
+        Console.WriteLine(frame);
+        Console.WriteLine(symbol + name + symbol);
+        Console.WriteLine(frame);
     }
 }
