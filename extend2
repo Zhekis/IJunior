@@ -1,0 +1,29 @@
+
+using System;
+
+class Program
+{
+
+    static void Main(string[] args)
+    {    
+        int number = 2;
+        int extentNumber = 1;
+        int extent = 1;
+        int endNumber = 10001;
+        Random random = new Random();
+        int randomNumber = random.Next(endNumber);
+
+        while (randomNumber > extentNumber)
+        {
+
+            for (int i = 0; i < extent; i++)
+            {
+                extentNumber *= number;
+            }
+
+            extent++;
+        }
+
+        Console.WriteLine("Минимальная степень двойки, превосходящая число " + randomNumber + " равна числу " + extent);
+    }
+}
