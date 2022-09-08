@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+
+    static void Main(string[] args)
+    {    
+        int startRange = 100;
+        int endRange = 1000;
+        int startNumber = 1;
+        int endNumber = 28;
+        Random random = new Random();
+        int randomNumber = random.Next(startNumber,endNumber);
+        int counter = 0;
+        int i = 0;
+        Console.WriteLine("N = " + randomNumber);
+
+        while (i < endRange)
+        {
+            i += randomNumber;
+
+            if (i > startRange)
+                counter++;
+
+        }
+
+        Console.WriteLine("Число кратных трехзначных чисел = " + counter);
+    }
+}
