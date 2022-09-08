@@ -2,7 +2,6 @@ using System;
 
 class Program
 {
-
     static void Main(string[] args)
     {    
         int number = 2;
@@ -14,13 +13,12 @@ class Program
 
         while (randomNumber > extentNumber)
         {
-
             for (int i = 0; i < extent; i++)
                 extentNumber *= number;
 
             extent++;
         }
-
+        
         Console.WriteLine("Минимальная степень двойки, превосходящая число " + randomNumber + " равна числу " + extent);
     }
 }
