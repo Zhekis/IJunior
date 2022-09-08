@@ -17,9 +17,7 @@ class Program
         {
 
             for (int i = 0; i < extent; i++)
-            {
                 extentNumber *= number;
-            }
 
             extent++;
         }
