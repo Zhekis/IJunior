@@ -2,7 +2,6 @@ using System;
 
 class Program
 {
-
     static void Main(string[] args)
     {    
         int startRange = 100;
@@ -12,14 +11,11 @@ class Program
         Random random = new Random();
         int randomNumber = random.Next(startNumber,endNumber);
         int counter = 0;
-        int i = 0;
         Console.WriteLine("N = " + randomNumber);
 
-        while (i < endRange)
+        for (int i = 0; i < endRange; i += randomNumber)
         {
-            i += randomNumber;
-
-            if (i > startRange)
+            if (i >= startRange)
                 counter++;
 
         }
