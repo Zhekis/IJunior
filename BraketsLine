@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {    
+        var lineBrakets = Console.ReadLine();
+        var length = lineBrakets.Length;
+        var balanceBrakets = 0;
+        var maxDeepBrakets = 0;
+        var check = 0;
+
+        for (var i = 0; i < length; i++)
+        {
+            if (lineBrakets[i] == '(')
+            {
+                balanceBrakets++;
+
+                if (balanceBrakets > maxDeepBrakets)
+                    maxDeepBrakets = balanceBrakets;
+
+            }
+            
+            else if (lineBrakets[i] == ')')
+                balanceBrakets--;
+
+            if (balanceBrakets < 0)
+                check++;
+
+        }
+
+        if (balanceBrakets == 0 && check == 0)
+            Console.WriteLine("Строка корректная, максимальная глубина вложенности " + maxDeepBrakets);
+            
+        else Console.WriteLine("Некорректная строка!");
+        
+    }
+}
