@@ -4,16 +4,24 @@ class Program
 {
     static void Main(string[] args)
     {    
-        Random rand = new Random();
+        Random random = new Random();
         float healthBoss = 500;
-        int damageBoss = rand.Next(10, 50);
+        int minDamageBoss = 10;
+        int maxDamageBoss = 50;
+        int damageBoss = random.Next(minDamageBoss, maxDamageBoss);
         float healthHero = 300;
         float healthHero2 = 150;
-        int damageHero = rand.Next(30, 40);
+        int minDamageHero = 20;
+        int maxDamageHero = 40;
+        int damageHero = random.Next(minDamageHero, maxDamageHero);
         const string Hit = " - разящий удар.";
         const string Reflection = " - отражение и возврат атаки боссу.";
         const string Regeneration = "- восстановление здоровья.";
         const string Freeze = " - заморозка Босса на 1 ход";
+        const string Command1 = "1";
+        const string Command2 = "2";
+        const string Command3 = "3";
+        const string Command4 = "4";
         string userChoice = " ";
         int countDamageHero = 0;
         int countRegeneration = 1;
@@ -27,8 +35,8 @@ class Program
 
         while (healthBoss > 0 && healthHero > 0)
         {
-            float damageBossCurrent = Convert.ToSingle(rand.Next(5, damageBoss));
-            float damageHeroCurrent = Convert.ToSingle(rand.Next(20, damageHero));
+            float damageBossCurrent = Convert.ToSingle(random.Next(minDamageBoss, damageBoss));
+            float damageHeroCurrent = Convert.ToSingle(random.Next(minDamageHero, damageHero));
 
             if (enabledFreezeBoss == false)
             {
@@ -41,67 +49,68 @@ class Program
                 enabledFreezeBoss = false;
             }
 
-            if (healthHero < 0)
-            {
-                Console.WriteLine("Hero losed");
-                break;
-            }
-
             if (countDamageHero > countMinHits)
                 evailabledFreeze = true;
 
             if (healthHero < healthHero2)
                 evailabledRegeneration = true;
 
-            Console.WriteLine("Выбирете заклинание:");
-            Console.WriteLine(1 + Hit);
-
-            if (evailabledReflection == true)
-                Console.WriteLine(2 + Reflection);
-
-            if (evailabledRegeneration == true && countRegeneration > 0)
-                Console.WriteLine(3 + Regeneration);
-
-            if (evailabledFreeze == true)
-                Console.WriteLine(4 + Freeze);
-            
-            userChoice = Console.ReadLine();
-
-            switch (userChoice)
+            if (healthHero > 0)
             {
-                case "1":
-                    healthBoss -= damageHeroCurrent;
-                    Console.WriteLine("Boss получил удар = " + damageHeroCurrent + ", осталость HP = " + healthBoss);
-                    countDamageHero++;
-                    break;
-                case "2":
-                    if (evailabledReflection == true)
-                    {
-                        healthBoss -= damageBossCurrent * indexPower;
-                        evailabledReflection = false;
+                Console.WriteLine("Выбирете заклинание:");
+                Console.WriteLine(1 + Hit);
+
+                if (evailabledReflection == true)
+                    Console.WriteLine(2 + Reflection);
+
+                if (evailabledRegeneration == true && countRegeneration > 0)
+                    Console.WriteLine(3 + Regeneration);
+
+                if (evailabledFreeze == true)
+                    Console.WriteLine(4 + Freeze);
+
+                userChoice = Console.ReadLine();
+
+                switch (userChoice)
+                {
+                    case Command1:
+                        healthBoss -= damageHeroCurrent;
                         Console.WriteLine("Boss получил удар = " + damageHeroCurrent + ", осталость HP = " + healthBoss);
-                    }
+                        countDamageHero++;
+                        break;
+                    case Command2:
+                        if (evailabledReflection == true)
+                        {
+                            healthBoss -= damageBossCurrent * indexPower;
+                            evailabledReflection = false;
+                            Console.WriteLine("Boss получил удар = " + damageHeroCurrent + ", осталость HP = " + healthBoss);
+                        }
 
-                    break;
-                case "3":
-                    if (evailabledRegeneration == true && countRegeneration > 0)
-                    {
-                        healthHero += damageBossCurrent * indexPower;
-                        countRegeneration--;
-                    }
+                        break;
+                    case Command3:
+                        if (evailabledRegeneration == true && countRegeneration > 0)
+                        {
+                            healthHero += damageBossCurrent * indexPower;
+                            countRegeneration--;
+                        }
 
-                    break;
-                case "4":
-                    if (evailabledFreeze == true)
-                    {
-                        evailabledFreeze = false;
-                        enabledFreezeBoss = true;
-                        countDamageHero = 0;
-                        evailabledReflection = true;
-                    }
+                        break;
+                    case Command4:
+                        if (evailabledFreeze == true)
+                        {
+                            evailabledFreeze = false;
+                            enabledFreezeBoss = true;
+                            countDamageHero = 0;
+                            evailabledReflection = true;
+                        }
 
-                    break;
+                        break;
+                }
+
             }
+
+            if (healthHero < 0)
+                Console.WriteLine("Hero losed");
 
             if (healthBoss < 0)
                 Console.WriteLine("Boss losed");
