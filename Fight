@@ -18,7 +18,7 @@ class Program
         int maxDamageBoss = 50;
         int damageBoss = random.Next(minDamageBoss, maxDamageBoss);
         float healthHero = 300;
-        float healthHero2 = 150;
+        float halfHealthHero = 150;
         int minDamageHero = 20;
         int maxDamageHero = 40;
         int damageHero = random.Next(minDamageHero, maxDamageHero);
@@ -52,7 +52,7 @@ class Program
             if (countDamageHero > countMinHits)
                 isEvailabledFreeze = true;
 
-            if (healthHero < healthHero2)
+            if (healthHero < halfHealthHero)
                 isEvailabledRegeneration = true;
 
             if (healthHero > 0)
@@ -79,6 +79,7 @@ class Program
                         countDamageHero++;
                         break;
                     case UserChoice2:
+
                         if (isEvailabledReflection == true)
                         {
                             healthBoss -= damageBossCurrent * indexPower;
@@ -88,6 +89,7 @@ class Program
 
                         break;
                     case UserChoice3:
+
                         if (isEvailabledRegeneration == true && countRegeneration > 0)
                         {
                             healthHero += damageBossCurrent * indexPower;
@@ -96,6 +98,7 @@ class Program
 
                         break;
                     case UserChoice4:
+
                         if (isEvailabledFreeze == true)
                         {
                             isEvailabledFreeze = false;
@@ -106,19 +109,14 @@ class Program
 
                         break;
                 }
-
             }
 
-            if (healthHero < 0)
+            if (healthBoss <= 0 && healthHero <= 0)
+                Console.WriteLine("Ничья");
+            else if (healthHero < 0)
                 Console.WriteLine("Hero losed");
-
             else if (healthBoss < 0)
                 Console.WriteLine("Boss losed");
-
-            else if (healthBoss <= 0 && healthHero <= 0)
-                Console.WriteLine("Ничья");
-
         }
-
     }
 }
