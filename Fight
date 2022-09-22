@@ -5,14 +5,14 @@ class Program
     static void Main(string[] args)
     {    
         Random random = new Random();
-        const string Hit = "1 - разящий удар.";
-        const string Reflection = "2 - отражение и возврат атаки боссу.";
-        const string Regeneration = "3 - восстановление здоровья.";
-        const string Freeze = "4 - заморозка Босса на 1 ход";
-        const string UserChoice1 = "1";
-        const string UserChoice2 = "2";
-        const string UserChoice3 = "3";
-        const string UserChoice4 = "4";
+        const string UserChoiceHit = "1";
+        const string UserChoiceReflection = "2";
+        const string UserChoiceRegeneration = "3";
+        const string UserChoiceFreeze = "4";
+        const string Hit = UserChoiceHit + " - разящий удар.";
+        const string Reflection = UserChoiceReflection + " - отражение и возврат атаки боссу.";
+        const string Regeneration = UserChoiceRegeneration + " - восстановление здоровья.";
+        const string Freeze = UserChoiceFreeze + " - заморозка Босса на 1 ход";
         float healthBoss = 500;
         int minDamageBoss = 10;
         int maxDamageBoss = 50;
@@ -73,12 +73,12 @@ class Program
 
                 switch (userChoice)
                 {
-                    case UserChoice1:
+                    case UserChoiceHit:
                         healthBoss -= damageHeroCurrent;
                         Console.WriteLine("Boss получил удар = " + damageHeroCurrent + ", осталость HP = " + healthBoss);
                         countDamageHero++;
                         break;
-                    case UserChoice2:
+                    case UserChoiceReflection:
 
                         if (isEvailabledReflection == true)
                         {
@@ -88,7 +88,7 @@ class Program
                         }
 
                         break;
-                    case UserChoice3:
+                    case UserChoiceRegeneration:
 
                         if (isEvailabledRegeneration == true && countRegeneration > 0)
                         {
@@ -97,7 +97,7 @@ class Program
                         }
 
                         break;
-                    case UserChoice4:
+                    case UserChoiceFreeze:
 
                         if (isEvailabledFreeze == true)
                         {
