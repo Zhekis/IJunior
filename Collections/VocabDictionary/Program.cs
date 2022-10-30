@@ -6,8 +6,8 @@ namespace VocabDictionary
     {
         static void Main(string[] args)
         {
-            string searchWord = "";
-            string getWord = " ";
+            string searchWord;
+            string getWord = "";
             Dictionary <string, string> exlanatoryDict = new Dictionary<string, string> ()
             {
                 { "Игра", "Один из видов активности человека и животных в процессе их жизнедеятельности."},

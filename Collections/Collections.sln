@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabDictionary", "VocabDictionary\VocabDictionary.csproj", "{9213BA23-D10D-4F3C-AFA8-EA15D497FEB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabDictionary", "VocabDictionary\VocabDictionary.csproj", "{9213BA23-D10D-4F3C-AFA8-EA15D497FEB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lots of clients", "Lots of clients\Lots of clients.csproj", "{2A8AC644-C81F-4A40-BBEC-A6853F7FB321}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9213BA23-D10D-4F3C-AFA8-EA15D497FEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9213BA23-D10D-4F3C-AFA8-EA15D497FEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9213BA23-D10D-4F3C-AFA8-EA15D497FEB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8AC644-C81F-4A40-BBEC-A6853F7FB321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8AC644-C81F-4A40-BBEC-A6853F7FB321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8AC644-C81F-4A40-BBEC-A6853F7FB321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8AC644-C81F-4A40-BBEC-A6853F7FB321}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
