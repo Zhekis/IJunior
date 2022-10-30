@@ -7,8 +7,8 @@ namespace VocabDictionary
         static void Main(string[] args)
         {
             string searchWord;
-            string getWord = "";
-            Dictionary <string, string> exlanatoryDict = new Dictionary<string, string> ()
+            bool wordExists;
+            Dictionary <string, string> exlanatoryDictionary = new Dictionary<string, string> ()
             {
                 { "Игра", "Один из видов активности человека и животных в процессе их жизнедеятельности."},
                 { "Смартфон", "Устройство, объединяющее в себе функции персонального органайзера и мобильного телефона."},
@@ -17,14 +17,10 @@ namespace VocabDictionary
             Console.WriteLine("Введите слово :");
             searchWord = Console.ReadLine();
 
-            foreach (var words in exlanatoryDict)
-            {
-                if (searchWord == words.Key)
-                    getWord = words.Key;
-            }
+            wordExists = exlanatoryDictionary.ContainsKey(searchWord);
 
-            if (searchWord == getWord)
-                Console.WriteLine($"{searchWord} - {exlanatoryDict[getWord]}");
+            if (wordExists == true)
+                Console.WriteLine($"{searchWord} - {exlanatoryDictionary[searchWord]}");
             else
                 Console.WriteLine("Слово не найдено");
         }
