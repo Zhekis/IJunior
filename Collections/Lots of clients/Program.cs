@@ -9,6 +9,7 @@
             int minClients = 5;
             int maxClients = 10;
             int sumMoneyShop = 0;
+            int billClient = 0;
 
             Random random = new Random();
 
@@ -21,8 +22,9 @@
 
             while (setBills.Count > 0)
             {
-                sumMoneyShop += setBills.Dequeue();
-                Console.WriteLine("Клиент обслужен, наш счет составляет " + sumMoneyShop);
+                billClient = setBills.Dequeue();
+                sumMoneyShop += billClient;
+                Console.WriteLine("Клиент с суммой покупки " + billClient + " обслужен, наш счет составляет " + sumMoneyShop);
                 Console.ReadKey();
                 Console.Clear();
             }
