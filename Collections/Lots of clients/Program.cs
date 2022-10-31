@@ -13,23 +13,28 @@
 
             Random random = new Random();
 
-            Queue<int> setBills = new Queue<int>();
+            Queue<int> Bills = new Queue<int>();
 
             for (int i = 0; i < random.Next(minClients, maxClients); i++)
             {
-                setBills.Enqueue(random.Next(minSum, maxSum));
+                Bills.Enqueue(random.Next(minSum, maxSum));
             }
 
-            while (setBills.Count > 0)
+            while (Bills.Count > 0)
             {
-                billClient = setBills.Dequeue();
-                sumMoneyShop += billClient;
-                Console.WriteLine("Клиент с суммой покупки " + billClient + " обслужен, наш счет составляет " + sumMoneyShop);
-                Console.ReadKey();
-                Console.Clear();
+                ServiceClient(Bills, ref billClient, ref sumMoneyShop);
             }
 
             Console.WriteLine("Все клиенты обслужены, на счету магазина " + sumMoneyShop);
+        }
+
+        static void ServiceClient (Queue<int> Bills, ref int billClient, ref int sumMoneyShop)
+        {
+            billClient = Bills.Dequeue();
+            sumMoneyShop += billClient;
+            Console.WriteLine("Клиент с суммой покупки " + billClient + " обслужен, наш счет составляет " + sumMoneyShop);
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
