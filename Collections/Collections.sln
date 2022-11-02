@@ -5,9 +5,11 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabDictionary", "VocabDictionary\VocabDictionary.csproj", "{9213BA23-D10D-4F3C-AFA8-EA15D497FEB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lots of clients", "Lots of clients\Lots of clients.csproj", "{2A8AC644-C81F-4A40-BBEC-A6853F7FB321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lots of clients", "Lots of clients\Lots of clients.csproj", "{2A8AC644-C81F-4A40-BBEC-A6853F7FB321}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinamicArray", "DinamicArray\DinamicArray.csproj", "{CB5AE0DC-EAE8-465D-8DCA-457F435AE225}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DinamicArray", "DinamicArray\DinamicArray.csproj", "{CB5AE0DC-EAE8-465D-8DCA-457F435AE225}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accaunt_profiles", "Accaunt_profiles\Accaunt_profiles.csproj", "{0823FD65-5934-45C8-A4E2-26A692DD9BE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{CB5AE0DC-EAE8-465D-8DCA-457F435AE225}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB5AE0DC-EAE8-465D-8DCA-457F435AE225}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB5AE0DC-EAE8-465D-8DCA-457F435AE225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0823FD65-5934-45C8-A4E2-26A692DD9BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0823FD65-5934-45C8-A4E2-26A692DD9BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0823FD65-5934-45C8-A4E2-26A692DD9BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0823FD65-5934-45C8-A4E2-26A692DD9BE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
