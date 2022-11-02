@@ -8,7 +8,7 @@
             const string WriteForm = "2";
             const string DeleteForm = "3";
             const string Exit = "4";
-            Dictionary<string, string> profiles = new Dictionary<string, string>();
+            Dictionary<string, string> profiles = new ();
             bool isOpen = true;
             string userInput;
 
@@ -23,6 +23,7 @@
                 {
                     case AddForm:
                         AddProfile(profiles);
+                        Console.ReadKey();
                         break;
                     case WriteForm:
                         WriteProfile(profiles);
@@ -46,7 +47,7 @@
             Console.WriteLine("Введите должность.");
             string usersPosition = Console.ReadLine();
             profile.Add(fullUsersName, usersPosition);
-            Console.WriteLine("Done");
+            Console.WriteLine("Досье добавлено.");
         }
 
         static void WriteProfile(Dictionary<string, string> profiles)
@@ -60,28 +61,37 @@
             }
         }
 
-        static void DeleteProfile(Dictionary<string, string> profile)
+        static void DeleteProfile(Dictionary<string, string> profiles)
         {
-            //if (profile.Count > 0)
-            //{
-            //    Console.WriteLine("Какой номер досье удалить?");
-            //    int numberUser = Convert.ToInt32(Console.ReadLine()) - 1;
+            if (profiles.Count > 0)
+            {
+                Console.WriteLine("Какой номер досье удалить?");
+                int numberFile = Convert.ToInt32(Console.ReadLine());
 
-            //    if (numberUser < fullUsersNames.Length)
-            //    {
-            //        DeleteProfile(ref fullUsersNames, numberUser);
-            //        DeleteProfile(ref usersPositions, numberUser);
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Нет такого");
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Empty");
-            //}
-            //phoneBook.Remove("+123456");
+                if (numberFile <= profiles.Count)
+                {
+                    int i = 0;
+
+                    foreach (var file in profiles)
+                    {
+                        i++;
+
+                        if (numberFile == i)
+                        {
+                            profiles.Remove(file.Key);
+                            Console.WriteLine($" {file.Key} - {file.Value} удален.");
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Нет c таким номером");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Empty");
+            }
         }
     }
 }
