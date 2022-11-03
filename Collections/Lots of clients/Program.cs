@@ -32,9 +32,8 @@
 
         static int ServiceClient (Queue<int> bills)
         {
-            int billClient = bills.Dequeue();
-            Console.WriteLine("Клиент с суммой покупки " + billClient + " обслужен");
-            return billClient;
+            Console.WriteLine("Клиент с суммой покупки " + bills.Peek() + " обслужен");
+            return bills.Dequeue();
         }
     }
 }
