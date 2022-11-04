@@ -8,36 +8,26 @@ namespace Union
         {
             string[] array1 = { "1", "2", "1" };
             string[] array2 = { "4", "2", "3" };
-            string tempNumber;
             List<string> numbers = new List<string>();
 
-            numbers.AddRange(array1);
-            numbers.AddRange(array2);
-            numbers.Sort();
-
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                tempNumber = numbers[i];
-                if (tempNumber == )
-            }
-
-            foreach (string number in numbers)
-            {
-                tempNumber = number;
-
-                if (tempNumber == number)
-                {
-                    numbers.Remove(number);
-                }
-
-            }
-
+            TransferNumbers(numbers, array1);
+            TransferNumbers(numbers, array2);
 
             foreach (string number in numbers)
             {
                 Console.Write(number + " ");
             }
+        }
 
+        static void TransferNumbers (List<string> numbers, string[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (numbers.Contains(array[i]) == false)
+                {
+                    numbers.Add(array[i]);
+                }
+            }
         }
     }
 }
