@@ -42,8 +42,24 @@
 
         static void AddProfile(Dictionary<string,string> profile)
         {
-            Console.WriteLine("Введите ФИО.");
-            string fullUsersName = Console.ReadLine();
+            bool isAvailable = false;
+            string fullUsersName = "";
+
+            while (isAvailable == false)
+            {
+                Console.WriteLine("Введите ФИО.");
+                fullUsersName = Console.ReadLine();
+
+                if (profile.ContainsKey(fullUsersName) == true)
+                {
+                    Console.WriteLine("Такое досье уже есть");
+                }
+                else
+                {
+                    isAvailable = true;
+                }
+            }
+
             Console.WriteLine("Введите должность.");
             string usersPosition = Console.ReadLine();
             profile.Add(fullUsersName, usersPosition);
@@ -52,12 +68,19 @@
 
         static void WriteProfile(Dictionary<string, string> profiles)
         {
-            int i = 0;
-
-            foreach (var file in profiles)
+            if (profiles.Count > 0)
             {
-                i++;
-                Console.WriteLine($"{i}. {file.Key} - {file.Value}");
+                int tempNumberFile = 0;
+
+                foreach (var file in profiles)
+                {
+                    tempNumberFile++;
+                    Console.WriteLine($"{tempNumberFile}. {file.Key} - {file.Value}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Empty");
             }
         }
 
@@ -65,18 +88,17 @@
         {
             if (profiles.Count > 0)
             {
-                Console.WriteLine("Какой номер досье удалить?");
-                int numberFile = Convert.ToInt32(Console.ReadLine());
+                int numberFile = GetNumber();
 
                 if (numberFile <= profiles.Count)
                 {
-                    int i = 0;
+                    int tempNumberFile = 0;
 
                     foreach (var file in profiles)
                     {
-                        i++;
+                        tempNumberFile++;
 
-                        if (numberFile == i)
+                        if (numberFile == tempNumberFile)
                         {
                             profiles.Remove(file.Key);
                             Console.WriteLine($" {file.Key} - {file.Value} удален.");
@@ -92,6 +114,26 @@
             {
                 Console.WriteLine("Empty");
             }
+        }
+
+        static int GetNumber()
+        {
+            bool isNumber = false;
+            int result = 0;
+
+            while (isNumber == false)
+            {
+                Console.WriteLine("Какой номер досье удалить?");
+                string userInput = Console.ReadLine();
+                isNumber = int.TryParse(userInput, out int number);
+
+                if (isNumber == true)
+                    result = number;
+                else
+                    Console.WriteLine("Неудачно, попробуй еще!");
+            }
+
+            return result;
         }
     }
 }
