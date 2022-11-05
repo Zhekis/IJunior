@@ -88,52 +88,23 @@
         {
             if (profiles.Count > 0)
             {
-                int numberFile = GetNumber();
+                Console.WriteLine("Введите ФИО, чтобы удалить:");
+                string userInput = Console.ReadLine();
 
-                if (numberFile <= profiles.Count)
+                if (profiles.ContainsKey(userInput) == true)
                 {
-                    int tempNumberFile = 0;
-
-                    foreach (var file in profiles)
-                    {
-                        tempNumberFile++;
-
-                        if (numberFile == tempNumberFile)
-                        {
-                            profiles.Remove(file.Key);
-                            Console.WriteLine($" {file.Key} - {file.Value} удален.");
-                        }
-                    }
+                    Console.WriteLine($"Досье : {userInput} - {profiles[userInput]} удалено.");
+                    profiles.Remove(userInput);
                 }
                 else
                 {
-                    Console.WriteLine("Нет c таким номером");
+                    Console.WriteLine("Не найден с таким ФИО. Попробуйте еще раз.");
                 }
             }
             else
             {
                 Console.WriteLine("Empty");
             }
-        }
-
-        static int GetNumber()
-        {
-            bool isNumber = false;
-            int result = 0;
-
-            while (isNumber == false)
-            {
-                Console.WriteLine("Какой номер досье удалить?");
-                string userInput = Console.ReadLine();
-                isNumber = int.TryParse(userInput, out int number);
-
-                if (isNumber == true)
-                    result = number;
-                else
-                    Console.WriteLine("Неудачно, попробуй еще!");
-            }
-
-            return result;
         }
     }
 }
