@@ -4,28 +4,28 @@
     {
         static void Main(string[] args)
         {
-            Player hero = new Player("Zhek", 10, 100);
+            Player player = new Player("Zhek", 10, 100);
 
-            hero.ShowInfo();
+            player.ShowInfo();
         }
     }
 
     class Player
     {
-        public string Name;
-        public int Level;
-        public int Health;
+        private string _name;
+        private int _level;
+        private int _health;
 
         public Player(string name, int level, int health)
         {
-            Name = name;
-            Level = level;
-            Health = health;
+            _name = name;
+            _level = level;
+            _health = health;
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine("Name player : " + Name + "\nLevel : " + Level + "\nHealth : " + Health);
+            Console.WriteLine("Name player : " + _name + "\nLevel : " + _level + "\nHealth : " + _health);
         }
     }
 }
