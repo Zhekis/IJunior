@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\Dynamicarray\Dynamicarray\bin\Debug\Dynamicarray.exe.config
+D:\Filesprogramming\IJunior\Dynamicarray\Dynamicarray\bin\Debug\Dynamicarray.exe
+D:\Filesprogramming\IJunior\Dynamicarray\Dynamicarray\bin\Debug\Dynamicarray.pdb
+D:\Filesprogramming\IJunior\Dynamicarray\Dynamicarray\obj\Debug\Dynamicarray.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\Dynamicarray\Dynamicarray\obj\Debug\Dynamicarray.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\Dynamicarray\Dynamicarray\obj\Debug\Dynamicarray.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\Dynamicarray\Dynamicarray\obj\Debug\Dynamicarray.exe
+D:\Filesprogramming\IJunior\Dynamicarray\Dynamicarray\obj\Debug\Dynamicarray.pdb

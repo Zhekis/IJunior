@@ -1,0 +1,15 @@
+E:\IJunior\Collections\Union\bin\Debug\net6.0\Union.exe
+E:\IJunior\Collections\Union\bin\Debug\net6.0\Union.deps.json
+E:\IJunior\Collections\Union\bin\Debug\net6.0\Union.runtimeconfig.json
+E:\IJunior\Collections\Union\bin\Debug\net6.0\Union.dll
+E:\IJunior\Collections\Union\bin\Debug\net6.0\Union.pdb
+E:\IJunior\Collections\Union\obj\Debug\net6.0\Union.csproj.AssemblyReference.cache
+E:\IJunior\Collections\Union\obj\Debug\net6.0\Union.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\Collections\Union\obj\Debug\net6.0\Union.AssemblyInfoInputs.cache
+E:\IJunior\Collections\Union\obj\Debug\net6.0\Union.AssemblyInfo.cs
+E:\IJunior\Collections\Union\obj\Debug\net6.0\Union.csproj.CoreCompileInputs.cache
+E:\IJunior\Collections\Union\obj\Debug\net6.0\Union.dll
+E:\IJunior\Collections\Union\obj\Debug\net6.0\refint\Union.dll
+E:\IJunior\Collections\Union\obj\Debug\net6.0\Union.pdb
+E:\IJunior\Collections\Union\obj\Debug\net6.0\Union.genruntimeconfig.cache
+E:\IJunior\Collections\Union\obj\Debug\net6.0\ref\Union.dll

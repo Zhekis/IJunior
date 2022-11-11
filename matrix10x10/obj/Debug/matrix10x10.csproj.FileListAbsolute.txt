@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\matrix10x10\bin\Debug\matrix10x10.exe.config
+D:\Filesprogramming\IJunior\matrix10x10\bin\Debug\matrix10x10.exe
+D:\Filesprogramming\IJunior\matrix10x10\bin\Debug\matrix10x10.pdb
+D:\Filesprogramming\IJunior\matrix10x10\obj\Debug\matrix10x10.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\matrix10x10\obj\Debug\matrix10x10.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\matrix10x10\obj\Debug\matrix10x10.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\matrix10x10\obj\Debug\matrix10x10.exe
+D:\Filesprogramming\IJunior\matrix10x10\obj\Debug\matrix10x10.pdb

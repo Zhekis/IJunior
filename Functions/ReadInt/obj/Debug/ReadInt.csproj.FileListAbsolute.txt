@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\Functions\ReadInt\bin\Debug\ReadInt.exe.config
+D:\Filesprogramming\IJunior\Functions\ReadInt\bin\Debug\ReadInt.exe
+D:\Filesprogramming\IJunior\Functions\ReadInt\bin\Debug\ReadInt.pdb
+D:\Filesprogramming\IJunior\Functions\ReadInt\obj\Debug\ReadInt.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\Functions\ReadInt\obj\Debug\ReadInt.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\Functions\ReadInt\obj\Debug\ReadInt.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\Functions\ReadInt\obj\Debug\ReadInt.exe
+D:\Filesprogramming\IJunior\Functions\ReadInt\obj\Debug\ReadInt.pdb

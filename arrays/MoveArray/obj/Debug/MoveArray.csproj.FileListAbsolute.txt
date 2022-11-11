@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\arrays\MoveArray\bin\Debug\MoveArray.exe.config
+D:\Filesprogramming\IJunior\arrays\MoveArray\bin\Debug\MoveArray.exe
+D:\Filesprogramming\IJunior\arrays\MoveArray\bin\Debug\MoveArray.pdb
+D:\Filesprogramming\IJunior\arrays\MoveArray\obj\Debug\MoveArray.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\arrays\MoveArray\obj\Debug\MoveArray.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\arrays\MoveArray\obj\Debug\MoveArray.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\arrays\MoveArray\obj\Debug\MoveArray.exe
+D:\Filesprogramming\IJunior\arrays\MoveArray\obj\Debug\MoveArray.pdb

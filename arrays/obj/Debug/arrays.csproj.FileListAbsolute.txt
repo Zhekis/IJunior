@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\arrays\bin\Debug\arrays.exe.config
+D:\Filesprogramming\IJunior\arrays\bin\Debug\arrays.exe
+D:\Filesprogramming\IJunior\arrays\bin\Debug\arrays.pdb
+D:\Filesprogramming\IJunior\arrays\obj\Debug\arrays.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\arrays\obj\Debug\arrays.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\arrays\obj\Debug\arrays.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\arrays\obj\Debug\arrays.exe
+D:\Filesprogramming\IJunior\arrays\obj\Debug\arrays.pdb

@@ -1,0 +1,16 @@
+D:\Filesprogramming\IJunior\Brakets\bin\Debug\Brakets.exe.config
+D:\Filesprogramming\IJunior\Brakets\bin\Debug\Brakets.exe
+D:\Filesprogramming\IJunior\Brakets\bin\Debug\Brakets.pdb
+D:\Filesprogramming\IJunior\Brakets\obj\Debug\Brakets.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\Brakets\obj\Debug\Brakets.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\Brakets\obj\Debug\Brakets.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\Brakets\obj\Debug\Brakets.exe
+D:\Filesprogramming\IJunior\Brakets\obj\Debug\Brakets.pdb
+E:\IJunior\Brakets\bin\Debug\Brakets.exe.config
+E:\IJunior\Brakets\bin\Debug\Brakets.exe
+E:\IJunior\Brakets\bin\Debug\Brakets.pdb
+E:\IJunior\Brakets\obj\Debug\Brakets.csproj.AssemblyReference.cache
+E:\IJunior\Brakets\obj\Debug\Brakets.csproj.SuggestedBindingRedirects.cache
+E:\IJunior\Brakets\obj\Debug\Brakets.csproj.CoreCompileInputs.cache
+E:\IJunior\Brakets\obj\Debug\Brakets.exe
+E:\IJunior\Brakets\obj\Debug\Brakets.pdb

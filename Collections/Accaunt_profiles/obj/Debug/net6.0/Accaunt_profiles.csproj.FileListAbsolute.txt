@@ -1,0 +1,15 @@
+E:\IJunior\Collections\Accaunt_profiles\bin\Debug\net6.0\Accaunt_profiles.exe
+E:\IJunior\Collections\Accaunt_profiles\bin\Debug\net6.0\Accaunt_profiles.deps.json
+E:\IJunior\Collections\Accaunt_profiles\bin\Debug\net6.0\Accaunt_profiles.runtimeconfig.json
+E:\IJunior\Collections\Accaunt_profiles\bin\Debug\net6.0\Accaunt_profiles.dll
+E:\IJunior\Collections\Accaunt_profiles\bin\Debug\net6.0\Accaunt_profiles.pdb
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\Accaunt_profiles.csproj.AssemblyReference.cache
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\Accaunt_profiles.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\Accaunt_profiles.AssemblyInfoInputs.cache
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\Accaunt_profiles.AssemblyInfo.cs
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\Accaunt_profiles.csproj.CoreCompileInputs.cache
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\Accaunt_profiles.dll
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\refint\Accaunt_profiles.dll
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\Accaunt_profiles.pdb
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\Accaunt_profiles.genruntimeconfig.cache
+E:\IJunior\Collections\Accaunt_profiles\obj\Debug\net6.0\ref\Accaunt_profiles.dll

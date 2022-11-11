@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\matrix\bin\Debug\matrix.exe.config
+D:\Filesprogramming\IJunior\matrix\bin\Debug\matrix.exe
+D:\Filesprogramming\IJunior\matrix\bin\Debug\matrix.pdb
+D:\Filesprogramming\IJunior\matrix\obj\Debug\matrix.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\matrix\obj\Debug\matrix.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\matrix\obj\Debug\matrix.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\matrix\obj\Debug\matrix.exe
+D:\Filesprogramming\IJunior\matrix\obj\Debug\matrix.pdb

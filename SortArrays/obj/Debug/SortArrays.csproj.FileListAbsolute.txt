@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\SortArrays\bin\Debug\SortArrays.exe.config
+D:\Filesprogramming\IJunior\SortArrays\bin\Debug\SortArrays.exe
+D:\Filesprogramming\IJunior\SortArrays\bin\Debug\SortArrays.pdb
+D:\Filesprogramming\IJunior\SortArrays\obj\Debug\SortArrays.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\SortArrays\obj\Debug\SortArrays.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\SortArrays\obj\Debug\SortArrays.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\SortArrays\obj\Debug\SortArrays.exe
+D:\Filesprogramming\IJunior\SortArrays\obj\Debug\SortArrays.pdb

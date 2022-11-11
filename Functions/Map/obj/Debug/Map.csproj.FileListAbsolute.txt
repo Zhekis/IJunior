@@ -1,0 +1,16 @@
+D:\Filesprogramming\IJunior\Functions\Map\bin\Debug\Map.exe.config
+D:\Filesprogramming\IJunior\Functions\Map\bin\Debug\Map.exe
+D:\Filesprogramming\IJunior\Functions\Map\bin\Debug\Map.pdb
+D:\Filesprogramming\IJunior\Functions\Map\obj\Debug\Map.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\Functions\Map\obj\Debug\Map.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\Functions\Map\obj\Debug\Map.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\Functions\Map\obj\Debug\Map.exe
+D:\Filesprogramming\IJunior\Functions\Map\obj\Debug\Map.pdb
+E:\IJunior\Functions\Map\bin\Debug\Map.exe.config
+E:\IJunior\Functions\Map\bin\Debug\Map.exe
+E:\IJunior\Functions\Map\bin\Debug\Map.pdb
+E:\IJunior\Functions\Map\obj\Debug\Map.csproj.AssemblyReference.cache
+E:\IJunior\Functions\Map\obj\Debug\Map.csproj.SuggestedBindingRedirects.cache
+E:\IJunior\Functions\Map\obj\Debug\Map.csproj.CoreCompileInputs.cache
+E:\IJunior\Functions\Map\obj\Debug\Map.exe
+E:\IJunior\Functions\Map\obj\Debug\Map.pdb

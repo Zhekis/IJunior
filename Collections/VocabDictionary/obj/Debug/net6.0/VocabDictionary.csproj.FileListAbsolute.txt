@@ -1,0 +1,15 @@
+E:\IJunior\Collections\VocabDictionary\bin\Debug\net6.0\VocabDictionary.exe
+E:\IJunior\Collections\VocabDictionary\bin\Debug\net6.0\VocabDictionary.deps.json
+E:\IJunior\Collections\VocabDictionary\bin\Debug\net6.0\VocabDictionary.runtimeconfig.json
+E:\IJunior\Collections\VocabDictionary\bin\Debug\net6.0\VocabDictionary.dll
+E:\IJunior\Collections\VocabDictionary\bin\Debug\net6.0\VocabDictionary.pdb
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\VocabDictionary.csproj.AssemblyReference.cache
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\VocabDictionary.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\VocabDictionary.AssemblyInfoInputs.cache
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\VocabDictionary.AssemblyInfo.cs
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\VocabDictionary.csproj.CoreCompileInputs.cache
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\VocabDictionary.dll
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\refint\VocabDictionary.dll
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\VocabDictionary.pdb
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\VocabDictionary.genruntimeconfig.cache
+E:\IJunior\Collections\VocabDictionary\obj\Debug\net6.0\ref\VocabDictionary.dll

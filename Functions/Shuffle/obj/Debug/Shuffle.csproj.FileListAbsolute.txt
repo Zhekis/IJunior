@@ -1,0 +1,16 @@
+D:\Filesprogramming\IJunior\Functions\Shuffle\bin\Debug\Shuffle.exe.config
+D:\Filesprogramming\IJunior\Functions\Shuffle\bin\Debug\Shuffle.exe
+D:\Filesprogramming\IJunior\Functions\Shuffle\bin\Debug\Shuffle.pdb
+D:\Filesprogramming\IJunior\Functions\Shuffle\obj\Debug\Shuffle.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\Functions\Shuffle\obj\Debug\Shuffle.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\Functions\Shuffle\obj\Debug\Shuffle.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\Functions\Shuffle\obj\Debug\Shuffle.exe
+D:\Filesprogramming\IJunior\Functions\Shuffle\obj\Debug\Shuffle.pdb
+E:\IJunior\Functions\Shuffle\bin\Debug\Shuffle.exe.config
+E:\IJunior\Functions\Shuffle\bin\Debug\Shuffle.exe
+E:\IJunior\Functions\Shuffle\bin\Debug\Shuffle.pdb
+E:\IJunior\Functions\Shuffle\obj\Debug\Shuffle.csproj.AssemblyReference.cache
+E:\IJunior\Functions\Shuffle\obj\Debug\Shuffle.csproj.SuggestedBindingRedirects.cache
+E:\IJunior\Functions\Shuffle\obj\Debug\Shuffle.csproj.CoreCompileInputs.cache
+E:\IJunior\Functions\Shuffle\obj\Debug\Shuffle.exe
+E:\IJunior\Functions\Shuffle\obj\Debug\Shuffle.pdb

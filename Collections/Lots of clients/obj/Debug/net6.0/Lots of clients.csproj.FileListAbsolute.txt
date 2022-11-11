@@ -1,0 +1,15 @@
+E:\IJunior\Collections\Lots of clients\bin\Debug\net6.0\Lots of clients.exe
+E:\IJunior\Collections\Lots of clients\bin\Debug\net6.0\Lots of clients.deps.json
+E:\IJunior\Collections\Lots of clients\bin\Debug\net6.0\Lots of clients.runtimeconfig.json
+E:\IJunior\Collections\Lots of clients\bin\Debug\net6.0\Lots of clients.dll
+E:\IJunior\Collections\Lots of clients\bin\Debug\net6.0\Lots of clients.pdb
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\Lots of clients.csproj.AssemblyReference.cache
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\Lots of clients.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\Lots of clients.AssemblyInfoInputs.cache
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\Lots of clients.AssemblyInfo.cs
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\Lots of clients.csproj.CoreCompileInputs.cache
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\Lots of clients.dll
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\refint\Lots of clients.dll
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\Lots of clients.pdb
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\Lots of clients.genruntimeconfig.cache
+E:\IJunior\Collections\Lots of clients\obj\Debug\net6.0\ref\Lots of clients.dll

@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\Functions\UIELEMENT\bin\Debug\UIELEMENT.exe.config
+D:\Filesprogramming\IJunior\Functions\UIELEMENT\bin\Debug\UIELEMENT.exe
+D:\Filesprogramming\IJunior\Functions\UIELEMENT\bin\Debug\UIELEMENT.pdb
+D:\Filesprogramming\IJunior\Functions\UIELEMENT\obj\Debug\UIELEMENT.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\Functions\UIELEMENT\obj\Debug\UIELEMENT.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\Functions\UIELEMENT\obj\Debug\UIELEMENT.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\Functions\UIELEMENT\obj\Debug\UIELEMENT.exe
+D:\Filesprogramming\IJunior\Functions\UIELEMENT\obj\Debug\UIELEMENT.pdb

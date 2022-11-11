@@ -1,0 +1,15 @@
+E:\IJunior\Collections\DinamicArray\bin\Debug\net6.0\DinamicArray.exe
+E:\IJunior\Collections\DinamicArray\bin\Debug\net6.0\DinamicArray.deps.json
+E:\IJunior\Collections\DinamicArray\bin\Debug\net6.0\DinamicArray.runtimeconfig.json
+E:\IJunior\Collections\DinamicArray\bin\Debug\net6.0\DinamicArray.dll
+E:\IJunior\Collections\DinamicArray\bin\Debug\net6.0\DinamicArray.pdb
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\DinamicArray.csproj.AssemblyReference.cache
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\DinamicArray.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\DinamicArray.AssemblyInfoInputs.cache
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\DinamicArray.AssemblyInfo.cs
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\DinamicArray.csproj.CoreCompileInputs.cache
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\DinamicArray.dll
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\refint\DinamicArray.dll
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\DinamicArray.pdb
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\DinamicArray.genruntimeconfig.cache
+E:\IJunior\Collections\DinamicArray\obj\Debug\net6.0\ref\DinamicArray.dll

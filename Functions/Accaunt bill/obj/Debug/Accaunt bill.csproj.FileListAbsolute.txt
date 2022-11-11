@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\Functions\Accaunt bill\obj\Debug\Accaunt bill.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\Functions\Accaunt bill\obj\Debug\Accaunt bill.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\Functions\Accaunt bill\obj\Debug\Accaunt bill.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\Functions\Accaunt bill\bin\Debug\Accaunt bill.exe.config
+D:\Filesprogramming\IJunior\Functions\Accaunt bill\bin\Debug\Accaunt bill.exe
+D:\Filesprogramming\IJunior\Functions\Accaunt bill\bin\Debug\Accaunt bill.pdb
+D:\Filesprogramming\IJunior\Functions\Accaunt bill\obj\Debug\Accaunt bill.exe
+D:\Filesprogramming\IJunior\Functions\Accaunt bill\obj\Debug\Accaunt bill.pdb

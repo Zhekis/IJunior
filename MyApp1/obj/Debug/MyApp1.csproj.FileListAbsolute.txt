@@ -1,0 +1,8 @@
+D:\Filesprogramming\IJunior\MyApp1\bin\Debug\MyApp1.exe.config
+D:\Filesprogramming\IJunior\MyApp1\bin\Debug\MyApp1.exe
+D:\Filesprogramming\IJunior\MyApp1\bin\Debug\MyApp1.pdb
+D:\Filesprogramming\IJunior\MyApp1\obj\Debug\MyApp1.csproj.AssemblyReference.cache
+D:\Filesprogramming\IJunior\MyApp1\obj\Debug\MyApp1.csproj.SuggestedBindingRedirects.cache
+D:\Filesprogramming\IJunior\MyApp1\obj\Debug\MyApp1.csproj.CoreCompileInputs.cache
+D:\Filesprogramming\IJunior\MyApp1\obj\Debug\MyApp1.exe
+D:\Filesprogramming\IJunior\MyApp1\obj\Debug\MyApp1.pdb
