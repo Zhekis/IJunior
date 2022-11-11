@@ -1,0 +1,15 @@
+E:\IJunior\OOP\Class Player\bin\Debug\net6.0\Class Player.exe
+E:\IJunior\OOP\Class Player\bin\Debug\net6.0\Class Player.deps.json
+E:\IJunior\OOP\Class Player\bin\Debug\net6.0\Class Player.runtimeconfig.json
+E:\IJunior\OOP\Class Player\bin\Debug\net6.0\Class Player.dll
+E:\IJunior\OOP\Class Player\bin\Debug\net6.0\Class Player.pdb
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\Class Player.csproj.AssemblyReference.cache
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\Class Player.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\Class Player.AssemblyInfoInputs.cache
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\Class Player.AssemblyInfo.cs
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\Class Player.csproj.CoreCompileInputs.cache
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\Class Player.dll
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\refint\Class Player.dll
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\Class Player.pdb
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\Class Player.genruntimeconfig.cache
+E:\IJunior\OOP\Class Player\obj\Debug\net6.0\ref\Class Player.dll
