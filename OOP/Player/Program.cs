@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Player hero = new Player(5, 10, "Zhek", '$');
+            Player player = new Player(5, 10, "Zhek", '$');
             Renderer renderer = new Renderer();
 
-            renderer.DrawPlayer(hero.PositionX, hero.PositionY, hero.SymbolPlayer);
+            renderer.DrawPlayer(player.PositionX, player.PositionY, player.Symbol);
         }
     }
 
@@ -16,23 +16,23 @@
         public int PositionX { get; private set; }
         public int PositionY { get; private set; }
         public string Name { get; private set; }
-        public char SymbolPlayer { get; private set; }
+        public char Symbol { get; private set; }
 
-        public Player(int positionX, int positionY, string name, char symbolPlayer)
+        public Player(int positionX, int positionY, string name, char symbol)
         {
             PositionX = positionX;
             PositionY = positionY;
             Name = name;
-            SymbolPlayer = symbolPlayer;
+            Symbol = symbol;
         }
     }
 
     class Renderer
     {
-        public void DrawPlayer(int PositionX, int PositionY, char SymbolPlayer)
+        public void DrawPlayer(int positionX, int positionY, char symbol)
         {
-            Console.SetCursorPosition(PositionY, PositionX);
-            Console.WriteLine(SymbolPlayer);
+            Console.SetCursorPosition(positionY, positionX);
+            Console.WriteLine(symbol);
         }
     }
 }
