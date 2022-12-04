@@ -11,17 +11,18 @@
 
     class Data
     {
-        private const string ShowDataPlayers = "1";
-        private const string AddNewPlayer = "2";
-        private const string RemoveIdPlayer = "3";
-        private const string BanIdPlayer = "4";
-        private const string UnbanIdPlayer = "5";
-        private const string Exit = "6";
         private int nextIdNumber = 111;
         private List<Player> _players = new List<Player>();
 
         public void Work()
         {
+            const string ShowPlayers = "1";
+            const string AddNewPlayer = "2";
+            const string RemovePlayer = "3";
+            const string BanPlayer = "4";
+            const string UnbanPlayer = "5";
+            const string Exit = "6";
+
             bool isWork = true;
             string userInput;
 
@@ -29,31 +30,32 @@
             {
                 Console.Clear();
                 Console.WriteLine("Что хотите сделать?");
-                Console.WriteLine(ShowDataPlayers + " - Открыть базу данных.\n" + AddNewPlayer + " - Добавить игрока.\n" + RemoveIdPlayer + " - Удалить игрока.\n" + BanIdPlayer + " - Бан по ID.\n" + UnbanIdPlayer + " - Разбан по ID.\n" + Exit + " - Выход");
+                Console.WriteLine(ShowPlayers + " - Открыть базу данных.\n" + AddNewPlayer + " - Добавить игрока.");
+                Console.WriteLine(RemovePlayer + " - Удалить игрока.\n" + BanPlayer + " - Бан по ID.\n" + UnbanPlayer + " - Разбан по ID.\n" + Exit + " - Выход");
                 userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
-                    case ShowDataPlayers:
-                        ShowAllPlayers(_players.Count);
-                        Console.ReadKey();
+                    case ShowPlayers:
+                        ShowAllPlayers();
                         break;
+
                     case AddNewPlayer:
-                        AddPlayer();
-                        Console.ReadKey();
+                        Add();
                         break;
-                    case RemoveIdPlayer:
-                        DeletePlayer();
-                        Console.ReadKey();
+
+                    case RemovePlayer:
+                        Delete();
                         break;
-                    case BanIdPlayer:
-                        BanPlayer();
-                        Console.ReadKey();
+
+                    case BanPlayer:
+                        Ban();
                         break;
-                    case UnbanIdPlayer:
-                        UnBanPlayer();
-                        Console.ReadKey();
+
+                    case UnbanPlayer:
+                        Unban();
                         break;
+
                     case Exit:
                         isWork = false;
                         break;
@@ -61,15 +63,17 @@
             }
         }
 
-        private void ShowAllPlayers(int playersCount)
+        private void ShowAllPlayers()
         {
-            for(int i = 0; i < playersCount; i++)
+            for(int i = 0; i < _players.Count; i++)
             {
                 _players[i].ShowInfo();
             }
+
+            Console.ReadKey();
         }
 
-        private int AddPlayer()
+        private int Add()
         {
             Console.WriteLine("What's name new player?");
             string nameNewPlayer = Console.ReadLine();
@@ -77,33 +81,40 @@
             int levelNewPlayer = ReadInt();
             _players.Add(new Player(nextIdNumber, nameNewPlayer, levelNewPlayer, false));
             return nextIdNumber++;
+            Console.ReadKey();
         }
 
-        private void DeletePlayer()
+        private void Delete()
         {
             if (TryGetPlayer(out Player player) == true)
             {
                 _players.Remove(player);
                 Console.WriteLine("Игрок успешно удалён!");
             }
+
+            Console.ReadKey();
         }
 
-        private void BanPlayer()
+        private void Ban()
         {
             if (TryGetPlayer(out Player player) == true)
             {
-                player.BanId();
+                player.Ban();
                 Console.WriteLine("Игрок забанен!");
             }
+
+            Console.ReadKey();
         }
 
-        private void UnBanPlayer()
+        private void Unban()
         {
             if (TryGetPlayer(out Player player) == true)
             {
-                player.UnbanId();
+                player.Unban();
                 Console.WriteLine("Игрок разбанен!");
             }
+
+            Console.ReadKey();
         }
 
         private int ReadInt()
@@ -157,19 +168,19 @@
         private int _id;
         private string _name;
         private int _level;
-        private bool _isBan;
+        private bool _isBanned;
 
         public Player(int id, string name, int level, bool isBan)
         {
             _id = id;
             _name = name;
             _level = level;
-            _isBan = isBan;
+            _isBanned = isBan;
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine("Name player : " + _name + " Level : " + _level + " ID : " + _id + " Ban : " + _isBan);
+            Console.WriteLine("Name player : " + _name + " Level : " + _level + " ID : " + _id + " Ban : " + _isBanned);
         }
 
         public int Id
@@ -180,14 +191,14 @@
             } 
         }
 
-        public void BanId()
+        public void Ban()
         { 
-            _isBan = true;
+            _isBanned = true;
         }
 
-        public void UnbanId()
+        public void Unban()
         {
-            _isBan = false;
+            _isBanned = false;
         }
     }
 }
