@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data players", "Data players\Data players.csproj", "{71DB6752-C95E-4B78-B5E2-95BA20622967}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data players", "Data players\Data players.csproj", "{71DB6752-C95E-4B78-B5E2-95BA20622967}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCards", "DataCards\DataCards.csproj", "{CD141C74-60E7-49C4-9E13-62D64AD66275}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{71DB6752-C95E-4B78-B5E2-95BA20622967}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71DB6752-C95E-4B78-B5E2-95BA20622967}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71DB6752-C95E-4B78-B5E2-95BA20622967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD141C74-60E7-49C4-9E13-62D64AD66275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD141C74-60E7-49C4-9E13-62D64AD66275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD141C74-60E7-49C4-9E13-62D64AD66275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD141C74-60E7-49C4-9E13-62D64AD66275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
