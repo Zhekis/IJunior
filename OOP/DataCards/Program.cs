@@ -16,6 +16,14 @@ namespace DataCards
     {
         private Stack<Card> _cards = new Stack<Card>();
 
+        public int Length
+        {
+            get
+            {
+                return _cards.Count;
+            }
+        }
+
         public Deck()
         {
             List<string> suits = new() { "♥", "♠", "♦", "♣" };
@@ -39,6 +47,11 @@ namespace DataCards
 
         }
 
+        public Card Give()
+        {
+            return _cards.Pop();
+        }
+
         private void Shuffle(List<Card> cards)
         {
             Random random = new Random();
@@ -51,79 +64,50 @@ namespace DataCards
                 cards[i] = temp;
             }
         }
-
-        public int LengthDeck
-        {
-            get 
-            { 
-                return _cards.Count; 
-            }
-        }
-
-        public Card GiveCard()
-        {
-            return _cards.Pop();
-        }
     }
     class Card
     {
-            private string _suit;
-            private string _rank;
+        private string _suit;
+        private string _rank;
 
-            public Card(string rank, string suit)
+        public string Suit
+        {
+            get
             {
-                _suit = suit;
-                _rank = rank;
+                return _suit;
             }
+        }
 
-            public string Suit
-            { 
-                get 
-                { 
-                    return _suit;
-                } 
-            }
-            public string Rank
+        public string Rank
+        {
+            get
             {
-                get
-                {
-                    return _rank;
-                }
+                return _rank;
             }
+        }
+
+        public Card(string rank, string suit)
+        {
+            _suit = suit;
+            _rank = rank;
+        }
     }
 
     class Player
     {
-        public Player(int cardTakesNumber, Deck deck)
-        {
-            int initialDeckLength = deck.LengthDeck;
-
-            for (int i = 1; i <= cardTakesNumber && i <= initialDeckLength; i++)
-            {
-                Console.WriteLine($"{i} " + TakeCardFrom(deck));
-            }
-        }
-
-        public Player()
-        {
-
-        }
-
-        private string TakeCardFrom(Deck deck)
-        {
-            Card takenCard = deck.GiveCard();
-
-            return $"{takenCard.Rank}{takenCard.Suit}";
-        }
-
-        public void Game(Deck deck)
+        public void Play(Deck deck)
         {
             Console.WriteLine("Введите количество:");
             string userInput = Console.ReadLine();
 
-            if (Int32.TryParse(userInput, out int number))
+            if (Int32.TryParse(userInput, out int cardTakesNumber))
             {
-                Player player = new Player(number, deck);
+                int initialDeckLength = deck.Length;
+
+                for (int i = 1; i <= cardTakesNumber && i <= initialDeckLength; i++)
+                {
+                    Console.WriteLine($"{i} " + Take(deck));
+                }
             }
             else
             {
@@ -142,13 +126,14 @@ namespace DataCards
 
             while (isPlaying)
             {
+                Console.WriteLine();
                 Console.WriteLine(TakeCards + " - Взять карты.\n" + Exit + " - Завершить.");
                 userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
                     case TakeCards:
-                        Game(deck);
+                        Play(deck);
                         break;
 
                     case Exit:
@@ -156,6 +141,13 @@ namespace DataCards
                         break;
                 }
             }
+        }
+
+        private string Take(Deck deck)
+        {
+            Card takenCard = deck.Give();
+
+            return $"{takenCard.Rank}{takenCard.Suit}";
         }
     }
 }
