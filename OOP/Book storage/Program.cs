@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 
 namespace Book_storage
 {
@@ -76,6 +77,7 @@ namespace Book_storage
                 int pagesNewBook = ReadInt();
 
                 _books.Add(new Book(autorNewBook, titleNewBook, yearNewBook, pagesNewBook));
+                Console.WriteLine("Книга добавлена.");
                 Console.ReadKey();
             }
 
@@ -110,7 +112,109 @@ namespace Book_storage
 
             private void Search()
             {
+                const string Autor = "1";
+                const string Title = "2";
+                const string Year = "3";
+                const string Exit = "4";
 
+                bool isFind = true;
+                string userInput;
+
+                while (isFind)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Выбирете параметр.");
+                    Console.WriteLine(Autor + " - Автор.\n" + Title + " - Название.\n" + Year + " - год выпуска.\n" + Exit + " - Предыдущее меню.");
+                    userInput = Console.ReadLine();
+
+                    switch (userInput)
+                    {
+                        case Autor:
+                            ShowBooksAutor();
+                            break;
+
+                        case Title:
+                            ShowBooksTitle();
+                            break;
+
+                        case Year:
+                            ShowBooksYear();
+                            break;
+
+                        case Exit:
+                            isFind = false;
+                            break;
+                    }
+                }
+            }
+
+            private void ShowBooksAutor()
+            {
+                bool isFinded = false;
+                Console.WriteLine("Введите автора:");
+                string autorFinding = Console.ReadLine();
+
+                for (int i = 0; i < _books.Count; i++)
+                {
+                    if (autorFinding == _books[i].Autor)
+                    {
+                        _books[i].ShowInfo();
+                        isFinded = true;
+                    }
+                }
+
+                if (isFinded == false)
+                {
+                    Console.WriteLine("Не найдено, попробуй еще!");
+                }
+
+                Console.ReadKey();
+            }
+
+            private void ShowBooksTitle()
+            {
+                bool isFinded = false;
+                Console.WriteLine("Введите название:");
+                string titleFinding = Console.ReadLine();
+
+                for (int i = 0; i < _books.Count; i++)
+                {
+                    if (titleFinding == _books[i].Title)
+                    {
+                        _books[i].ShowInfo();
+                        isFinded = true;
+                    }
+                }
+
+                if (isFinded == false)
+                {
+                    Console.WriteLine("Не найдено, попробуй еще!");
+                }
+
+                Console.ReadKey();
+            }
+
+            private void ShowBooksYear()
+            {
+                bool isFinded = false;
+                Console.WriteLine("Введите год:");
+                int yearFinding = ReadInt();
+
+                for (int i = 0; i < _books.Count; i++)
+                {
+                    if (yearFinding == _books[i].Year)
+                    {
+                        _books[i].ShowInfo();
+                        isFinded = true;
+                    }
+                }
+
+                if (isFinded == false)
+                {
+                    Console.WriteLine("Не найдено, попробуй еще!");
+                }
+
+                Console.ReadKey();
             }
 
             private int ReadInt()
@@ -135,21 +239,21 @@ namespace Book_storage
 
         class Book
         {
-            private string _autor;
-            private string _title;
-            private int _year;
             private int _countPages;
+            public string Autor { get; private set; }
+            public string Title { get; private set; }
+            public int Year { get; private set; }
 
             public Book(string autor, string title, int year, int countPages)
             {
-                _autor = autor;
-                _title = title;
-                _year = year;
+                Autor = autor;
+                Title = title;
+                Year = year;
                 _countPages = countPages;
             }
             public void ShowInfo()
             {
-                Console.WriteLine($"Автор: {_autor}, название: {_title}, год выпуска: {_year}, количество страниц: {_countPages}.");
+                Console.WriteLine($"Автор: {Autor}, название: {Title}, год выпуска: {Year}, количество страниц: {_countPages}.");
             }
         }
     }
