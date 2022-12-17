@@ -1,0 +1,15 @@
+E:\IJunior\OOP\Book storage\bin\Debug\net6.0\Book storage.exe
+E:\IJunior\OOP\Book storage\bin\Debug\net6.0\Book storage.deps.json
+E:\IJunior\OOP\Book storage\bin\Debug\net6.0\Book storage.runtimeconfig.json
+E:\IJunior\OOP\Book storage\bin\Debug\net6.0\Book storage.dll
+E:\IJunior\OOP\Book storage\bin\Debug\net6.0\Book storage.pdb
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\Book storage.csproj.AssemblyReference.cache
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\Book storage.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\Book storage.AssemblyInfoInputs.cache
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\Book storage.AssemblyInfo.cs
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\Book storage.csproj.CoreCompileInputs.cache
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\Book storage.dll
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\refint\Book storage.dll
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\Book storage.pdb
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\Book storage.genruntimeconfig.cache
+E:\IJunior\OOP\Book storage\obj\Debug\net6.0\ref\Book storage.dll

@@ -58,38 +58,28 @@ namespace DataCards
 
             for (int i = cards.Count - 1; i >= 1; i--)
             {
-                int j = random.Next(i + 1);
-                Card temp = cards[j];
-                cards[j] = cards[i];
+                int swappingElementIndex = random.Next(i + 1);
+                Card temp = cards[swappingElementIndex];
+                cards[swappingElementIndex] = cards[i];
                 cards[i] = temp;
             }
         }
     }
     class Card
     {
-        private string _suit;
-        private string _rank;
+        public string Suit { get; private set; }
 
-        public string Suit
-        {
-            get
-            {
-                return _suit;
-            }
-        }
-
-        public string Rank
-        {
-            get
-            {
-                return _rank;
-            }
-        }
+        public string Rank { get; private set; }
 
         public Card(string rank, string suit)
         {
-            _suit = suit;
-            _rank = rank;
+            Suit = suit;
+            Rank = rank;
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine($"{Rank}{Suit}");
         }
     }
 
@@ -106,7 +96,8 @@ namespace DataCards
 
                 for (int i = 1; i <= cardTakesNumber && i <= initialDeckLength; i++)
                 {
-                    Console.WriteLine($"{i} " + Take(deck));
+                    Card takenCard = deck.Give();
+                    takenCard.ShowInfo();
                 }
             }
             else
@@ -141,13 +132,6 @@ namespace DataCards
                         break;
                 }
             }
-        }
-
-        private string Take(Deck deck)
-        {
-            Card takenCard = deck.Give();
-
-            return $"{takenCard.Rank}{takenCard.Suit}";
         }
     }
 }
