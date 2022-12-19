@@ -8,7 +8,7 @@ namespace DataCards
         {
             Deck deck = new Deck();
             Player player = new Player();
-            player.Work(deck);
+            deck.Work(deck, player);
         }
     }
 
@@ -45,6 +45,33 @@ namespace DataCards
                 _cards.Push(deck[i]);
             }
 
+        }
+
+        public void Work(Deck deck, Player player)
+        {
+            const string TakeCards = "1";
+            const string Exit = "6";
+
+            bool isPlaying = true;
+            string userInput;
+
+            while (isPlaying)
+            {
+                Console.WriteLine();
+                Console.WriteLine(TakeCards + " - Взять карты.\n" + Exit + " - Завершить.");
+                userInput = Console.ReadLine();
+
+                switch (userInput)
+                {
+                    case TakeCards:
+                        player.Play(deck);
+                        break;
+
+                    case Exit:
+                        isPlaying = false;
+                        break;
+                }
+            }
         }
 
         public Card Give()
@@ -104,34 +131,8 @@ namespace DataCards
             {
                 Console.WriteLine("Введите число.");
             }
+
             Console.ReadKey();
-        }
-
-        public void Work(Deck deck)
-        {
-            const string TakeCards = "1";
-            const string Exit = "6";
-
-            bool isPlaying = true;
-            string userInput;
-
-            while (isPlaying)
-            {
-                Console.WriteLine();
-                Console.WriteLine(TakeCards + " - Взять карты.\n" + Exit + " - Завершить.");
-                userInput = Console.ReadLine();
-
-                switch (userInput)
-                {
-                    case TakeCards:
-                        Play(deck);
-                        break;
-
-                    case Exit:
-                        isPlaying = false;
-                        break;
-                }
-            }
         }
     }
 }
