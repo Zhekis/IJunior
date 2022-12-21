@@ -6,9 +6,84 @@ namespace DataCards
     {
         static void Main(string[] args)
         {
-            Deck deck = new Deck();
             Player player = new Player();
-            deck.Work(deck, player);
+            Croupier croupier = new Croupier();
+            player.PlayGame(croupier);
+        }
+    }
+
+    class Croupier
+    {
+        private Deck _deck;
+        public Croupier()
+        {
+            _deck = new Deck();
+        }
+
+        public Card GetCards()
+        {
+            return _deck.Give();
+        }
+
+        public int GetLength()
+        {
+            return _deck.Length;
+        }
+    }
+
+    class Player
+    {
+        private List<Card> _hand = new List<Card>();
+
+        public void PlayGame(Croupier croupier)
+        {
+            const string TakeCards = "1";
+            const string Exit = "2";
+
+            bool isPlaying = true;
+            string userInput;
+
+            while (isPlaying)
+            {
+                Console.WriteLine(TakeCards + " - Взять карты.\n" + Exit + " - Завершить.");
+                userInput = Console.ReadLine();
+
+                switch (userInput)
+                {
+                    case TakeCards:
+                        AskCards(croupier);
+                        break;
+
+                    case Exit:
+                        isPlaying = false;
+                        break;
+                }
+            }
+        }
+
+        private void AskCards(Croupier croupier)
+        {
+            Console.WriteLine("Введите количество:");
+            string userInput = Console.ReadLine();
+            Console.WriteLine("Ваши карты:");
+
+            if (Int32.TryParse(userInput, out int cardTakesNumber))
+            {
+                int initialDeckLength = croupier.GetLength();
+
+                for (int i = 1; i <= cardTakesNumber && i <= initialDeckLength; i++)
+                {
+                    Card takenCard = croupier.GetCards();
+                    takenCard.ShowInfo();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Введите число.");
+            }
+
+            Console.WriteLine();
+            Console.ReadKey();
         }
     }
 
@@ -47,33 +122,6 @@ namespace DataCards
 
         }
 
-        public void Work(Deck deck, Player player)
-        {
-            const string TakeCards = "1";
-            const string Exit = "6";
-
-            bool isPlaying = true;
-            string userInput;
-
-            while (isPlaying)
-            {
-                Console.WriteLine();
-                Console.WriteLine(TakeCards + " - Взять карты.\n" + Exit + " - Завершить.");
-                userInput = Console.ReadLine();
-
-                switch (userInput)
-                {
-                    case TakeCards:
-                        player.Play(deck);
-                        break;
-
-                    case Exit:
-                        isPlaying = false;
-                        break;
-                }
-            }
-        }
-
         public Card Give()
         {
             return _cards.Pop();
@@ -92,6 +140,7 @@ namespace DataCards
             }
         }
     }
+
     class Card
     {
         public string Suit { get; private set; }
@@ -107,32 +156,6 @@ namespace DataCards
         public void ShowInfo()
         {
             Console.WriteLine($"{Rank}{Suit}");
-        }
-    }
-
-    class Player
-    {
-        public void Play(Deck deck)
-        {
-            Console.WriteLine("Введите количество:");
-            string userInput = Console.ReadLine();
-
-            if (Int32.TryParse(userInput, out int cardTakesNumber))
-            {
-                int initialDeckLength = deck.Length;
-
-                for (int i = 1; i <= cardTakesNumber && i <= initialDeckLength; i++)
-                {
-                    Card takenCard = deck.Give();
-                    takenCard.ShowInfo();
-                }
-            }
-            else
-            {
-                Console.WriteLine("Введите число.");
-            }
-
-            Console.ReadKey();
         }
     }
 }
