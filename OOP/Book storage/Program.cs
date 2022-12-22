@@ -25,7 +25,7 @@ namespace Book_storage
         public void Work()
         {
             const string ShowAllBooks = "1";
-            const string AddBook = "2";
+            const string AppendBook = "2";
             const string RemoveBook = "3";
             const string SearchBooks = "4";
             const string Exit = "5";
@@ -37,22 +37,22 @@ namespace Book_storage
             {
                 Console.Clear();
                 Console.WriteLine("Хранилище книг. Что хотите сделать?");
-                Console.WriteLine(ShowAllBooks + " - Показать книги.\n" + AddBook + " - Добавить книгу.");
+                Console.WriteLine(ShowAllBooks + " - Показать книги.\n" + AppendBook + " - Добавить книгу.");
                 Console.WriteLine(RemoveBook + " - Убрать книгу.\n" + SearchBooks + " - Найти книги по параметру.\n" + Exit + " - Выход");
                 userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
                     case ShowAllBooks:
-                        Show();
+                        ShowBooks();
                         break;
 
-                    case AddBook:
-                        Add();
+                    case AppendBook:
+                        AddBook();
                         break;
 
                     case RemoveBook:
-                        Delete();
+                        DeleteBook();
                         break;
 
                     case SearchBooks:
@@ -66,7 +66,7 @@ namespace Book_storage
             }
         }
 
-        private void Add()
+        private void AddBook()
         {
             Console.WriteLine("Autor :");
             string autorNewBook = Console.ReadLine();
@@ -82,7 +82,7 @@ namespace Book_storage
             Console.ReadKey();
         }
 
-        private void Delete()
+        private void DeleteBook()
         {
             Console.WriteLine("Под каким номером убрать книгу?");
             int removeBook = ReadInt();
@@ -100,7 +100,7 @@ namespace Book_storage
             Console.ReadKey();
         }
 
-        private void Show()
+        private void ShowBooks()
         {
             for (int i = 0; i < _books.Count; i++)
             {
@@ -131,15 +131,15 @@ namespace Book_storage
                 switch (userInput)
                 {
                     case Autor:
-                        ShowBooksAutor();
+                        ShowBooksByAutor();
                         break;
 
                     case Title:
-                        ShowBooksTitle();
+                        ShowBooksByTitle();
                         break;
 
                     case Year:
-                        ShowBooksYear();
+                        ShowBooksByYear();
                         break;
 
                     case Exit:
@@ -149,7 +149,7 @@ namespace Book_storage
             }
         }
 
-        private void ShowBooksAutor()
+        private void ShowBooksByAutor()
         {
             bool isFinded = false;
             Console.WriteLine("Введите автора:");
@@ -172,7 +172,7 @@ namespace Book_storage
             Console.ReadKey();
         }
 
-        private void ShowBooksTitle()
+        private void ShowBooksByTitle()
         {
             bool isFinded = false;
             Console.WriteLine("Введите название:");
@@ -195,7 +195,7 @@ namespace Book_storage
             Console.ReadKey();
         }
 
-        private void ShowBooksYear()
+        private void ShowBooksByYear()
         {
             bool isFinded = false;
             Console.WriteLine("Введите год:");
