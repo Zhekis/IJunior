@@ -28,6 +28,7 @@
                         break;
 
                     case ShowItems:
+                        player.BuyProduct();
                         player.ShowItems();
                         break;
 
@@ -65,13 +66,19 @@
 
     class Player
     {
-        private int _balance;
+        private int _balanceMoney = 50;
         private List<Product> _items = new List<Product>();
 
         public Player()
         {
             _items.Add(new Product("Keys", 2));
             _items.Add(new Product("Glasses", 3));
+        }
+
+        public void BuyProduct()
+        {
+            _balanceMoney -= _items[0].Price;
+            Console.WriteLine(_balanceMoney);
         }
 
         public void ShowItems()
