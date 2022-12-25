@@ -4,24 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-        }
-    }
+            Salesman salesman = new Salesman();
+            Player player = new Player();
 
-    class Salesman
-    {
-        private List<Product> _goods = new List<Product>();
-
-        public Salesman()
-        {
-            _goods.Add(new Product("Apple", "Natural product"));
-            _goods.Add(new Product("Knife", "Hand waipon"));
-            _goods.Add(new Product("Phone", "Device for call"));
-            _goods.Add(new Product("Map", "Instructions"));
-        }
-
-        public void Work(Player player)
-        {
             const string ShowProducts = "1";
             const string ShowItems = "2";
             const string Exit = "3";
@@ -39,11 +24,11 @@
                 switch (userInput)
                 {
                     case ShowProducts:
-                        Show();
+                        salesman.ShowGoods();
                         break;
 
                     case ShowItems:
-                        
+                        player.ShowItems();
                         break;
 
                     case Exit:
@@ -54,31 +39,66 @@
         }
     }
 
+    class Salesman
+    {
+        private List<Product> _goods = new List<Product>();
+
+        public Salesman()
+        {
+            _goods.Add(new Product("Apple", 1));
+            _goods.Add(new Product("Knife", 3));
+            _goods.Add(new Product("Phone", 5));
+            _goods.Add(new Product("Map", 2));
+        }
+
+        public void ShowGoods()
+        {
+            for (int i = 0; i < _goods.Count; i++)
+            {
+                Console.WriteLine($"Number {i + 1}");
+                _goods[i].ShowInfo();
+            }
+
+            Console.ReadKey();
+        }
+    }
+
     class Player
     {
+        private int _balance;
         private List<Product> _items = new List<Product>();
 
         public Player()
         {
-            _items.Add(new Product("Keys", "Things for access"));
-            _items.Add(new Product("Glasses", "Protect vision"));
+            _items.Add(new Product("Keys", 2));
+            _items.Add(new Product("Glasses", 3));
+        }
+
+        public void ShowItems()
+        {
+            for (int i = 0; i < _items.Count; i++)
+            {
+                Console.WriteLine(_items[i].Name);
+            }
+
+            Console.ReadKey();
         }
     }
 
     class Product
     {
-        private string _name;
-        private string _description;
+        public string Name { get; private set; }
+        public int Price { get; private set; }
 
-        public Product(string name, string description)
+        public Product(string name, int price)
         {
-            _name = name;
-            _description = description;
+            Name = name;
+            Price = price;
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"Name: {_name}, description: {_description}.");
+            Console.WriteLine($"{Name}, price: {Price}.");
         }
     }
 }

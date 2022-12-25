@@ -8,13 +8,36 @@ namespace DataCards
         {
             Player player = new Player();
             Croupier croupier = new Croupier();
-            player.PlayGame(croupier);
+
+            const string TakeCards = "1";
+            const string Exit = "2";
+
+            bool isPlaying = true;
+            string userInput;
+
+            while (isPlaying)
+            {
+                Console.WriteLine(TakeCards + " - Взять карты.\n" + Exit + " - Завершить.");
+                userInput = Console.ReadLine();
+
+                switch (userInput)
+                {
+                    case TakeCards:
+                        player.AskCards(croupier);
+                        break;
+
+                    case Exit:
+                        isPlaying = false;
+                        break;
+                }
+            }
         }
     }
 
     class Croupier
     {
         private Deck _deck;
+
         public Croupier()
         {
             _deck = new Deck();
@@ -35,33 +58,7 @@ namespace DataCards
     {
         private List<Card> _hand = new List<Card>();
 
-        public void PlayGame(Croupier croupier)
-        {
-            const string TakeCards = "1";
-            const string Exit = "2";
-
-            bool isPlaying = true;
-            string userInput;
-
-            while (isPlaying)
-            {
-                Console.WriteLine(TakeCards + " - Взять карты.\n" + Exit + " - Завершить.");
-                userInput = Console.ReadLine();
-
-                switch (userInput)
-                {
-                    case TakeCards:
-                        AskCards(croupier);
-                        break;
-
-                    case Exit:
-                        isPlaying = false;
-                        break;
-                }
-            }
-        }
-
-        private void AskCards(Croupier croupier)
+        public void AskCards(Croupier croupier)
         {
             Console.WriteLine("Введите количество:");
             string userInput = Console.ReadLine();
@@ -74,6 +71,7 @@ namespace DataCards
                 for (int i = 1; i <= cardTakesNumber && i <= initialDeckLength; i++)
                 {
                     Card takenCard = croupier.GetCards();
+                    _hand.Add(takenCard);
                     takenCard.ShowInfo();
                 }
             }
@@ -133,7 +131,7 @@ namespace DataCards
 
             for (int i = cards.Count - 1; i >= 1; i--)
             {
-                int swappingElementIndex = random.Next(i + 1);
+                int swappingElementIndex = random.Next(cards.Count);
                 Card temp = cards[swappingElementIndex];
                 cards[swappingElementIndex] = cards[i];
                 cards[i] = temp;

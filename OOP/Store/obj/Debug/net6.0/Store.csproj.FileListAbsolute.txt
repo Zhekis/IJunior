@@ -1,0 +1,15 @@
+E:\IJunior\OOP\Store\bin\Debug\net6.0\Store.exe
+E:\IJunior\OOP\Store\bin\Debug\net6.0\Store.deps.json
+E:\IJunior\OOP\Store\bin\Debug\net6.0\Store.runtimeconfig.json
+E:\IJunior\OOP\Store\bin\Debug\net6.0\Store.dll
+E:\IJunior\OOP\Store\bin\Debug\net6.0\Store.pdb
+E:\IJunior\OOP\Store\obj\Debug\net6.0\Store.csproj.AssemblyReference.cache
+E:\IJunior\OOP\Store\obj\Debug\net6.0\Store.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\OOP\Store\obj\Debug\net6.0\Store.AssemblyInfoInputs.cache
+E:\IJunior\OOP\Store\obj\Debug\net6.0\Store.AssemblyInfo.cs
+E:\IJunior\OOP\Store\obj\Debug\net6.0\Store.csproj.CoreCompileInputs.cache
+E:\IJunior\OOP\Store\obj\Debug\net6.0\Store.dll
+E:\IJunior\OOP\Store\obj\Debug\net6.0\refint\Store.dll
+E:\IJunior\OOP\Store\obj\Debug\net6.0\Store.pdb
+E:\IJunior\OOP\Store\obj\Debug\net6.0\Store.genruntimeconfig.cache
+E:\IJunior\OOP\Store\obj\Debug\net6.0\ref\Store.dll
