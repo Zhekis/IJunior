@@ -22,7 +22,7 @@ namespace DataCards
             _deck = new Deck();
         }
 
-        public Card GetCards()
+        public Card GetCard()
         {
             return _deck.Give();
         }
@@ -48,7 +48,7 @@ namespace DataCards
                 switch (userInput)
                 {
                     case TakeCards:
-                        player.AskCards();
+                        AskCards(player);
                         break;
 
                     case Exit:
@@ -57,14 +57,8 @@ namespace DataCards
                 }
             }
         }
-    }
 
-    class Player
-    {
-        private List<Card> _hand = new List<Card>();
-        private Croupier _croupier = new Croupier();
-
-        public void AskCards()
+        public void AskCards(Player player)
         {
             Console.WriteLine("Введите количество:");
             string userInput = Console.ReadLine();
@@ -72,12 +66,12 @@ namespace DataCards
 
             if (Int32.TryParse(userInput, out int cardTakesNumber))
             {
-                int initialDeckLength = _croupier.GetLength();
+                int initialDeckLength = GetLength();
 
                 for (int i = 1; i <= cardTakesNumber && i <= initialDeckLength; i++)
                 {
-                    Card takenCard = _croupier.GetCards();
-                    _hand.Add(takenCard);
+                    Card takenCard = GetCard();
+                    player.TakeCard(takenCard);
                     takenCard.ShowInfo();
                 }
             }
@@ -88,6 +82,16 @@ namespace DataCards
 
             Console.WriteLine();
             Console.ReadKey();
+        }
+    }
+
+    class Player
+    {
+        private List<Card> _hand = new List<Card>();
+
+        public void TakeCard(Card takenCard)
+        {
+            _hand.Add(takenCard);
         }
     }
 
