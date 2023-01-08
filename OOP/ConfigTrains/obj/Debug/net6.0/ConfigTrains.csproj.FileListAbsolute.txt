@@ -1,0 +1,15 @@
+E:\IJunior\OOP\ConfigTrains\bin\Debug\net6.0\ConfigTrains.exe
+E:\IJunior\OOP\ConfigTrains\bin\Debug\net6.0\ConfigTrains.deps.json
+E:\IJunior\OOP\ConfigTrains\bin\Debug\net6.0\ConfigTrains.runtimeconfig.json
+E:\IJunior\OOP\ConfigTrains\bin\Debug\net6.0\ConfigTrains.dll
+E:\IJunior\OOP\ConfigTrains\bin\Debug\net6.0\ConfigTrains.pdb
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ConfigTrains.csproj.AssemblyReference.cache
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ConfigTrains.GeneratedMSBuildEditorConfig.editorconfig
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ConfigTrains.AssemblyInfoInputs.cache
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ConfigTrains.AssemblyInfo.cs
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ConfigTrains.csproj.CoreCompileInputs.cache
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ConfigTrains.dll
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\refint\ConfigTrains.dll
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ConfigTrains.pdb
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ConfigTrains.genruntimeconfig.cache
+E:\IJunior\OOP\ConfigTrains\obj\Debug\net6.0\ref\ConfigTrains.dll

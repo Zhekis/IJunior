@@ -1,4 +1,6 @@
-﻿namespace Store
+﻿using System.Security.Cryptography;
+
+namespace Store
 {
     internal class Program
     {
@@ -6,6 +8,7 @@
         {
             Salesman salesman = new Salesman();
             Player player = new Player(7);
+            Market market = new Market();
 
             const string ShowProducts = "1";
             const string ShowItems = "2";
@@ -19,7 +22,7 @@
             {
                 Console.Clear();
                 Console.WriteLine("Магазин. Что хотите сделать?");
-                Console.WriteLine(ShowProducts + " - Посмотреть товары.\n" + ShowItems + " - Посмотреть свои вещи.\n" + Buy + " - Купить товар.\n" + Exit + " - Выход");
+                Console.WriteLine(ShowProducts + " - Посмотреть товары продавца.\n" + ShowItems + " - Посмотреть свои вещи.\n" + Buy + " - Купить товар.\n" + Exit + " - Выход");
                 userInput = Console.ReadLine();
 
                 switch (userInput)
@@ -34,7 +37,7 @@
                         break;
 
                     case Buy:
-                        salesman.SellProduct(player);
+                        market.Traid(salesman, player);
                         break;
 
                     case Exit:
@@ -45,9 +48,39 @@
         }
     }
 
+    class Market
+    {
+        public void Traid(Salesman salesman, Player player)
+        {
+            salesman.ShowGoods();
+
+            int receivedMoney;
+            bool isProduct = salesman.TryGetProduct(out Product product);
+            Product boughtGood = product;
+
+            if (isProduct == true)
+            {
+                if (player.BalanceMoney >= boughtGood.Price)
+                {
+                    salesman.SellProduct(boughtGood);
+                    receivedMoney = player.BuyProduct(boughtGood);
+                    salesman.TakeMoney(receivedMoney);
+                    Console.WriteLine($"Товар {boughtGood.Name} куплен");
+                }
+                else
+                {
+                    Console.WriteLine("Не хватает средств.");
+                }
+            }
+
+            Console.ReadKey();
+        }
+    }
+
     class Salesman
     {
         private List<Product> _goods = new List<Product>();
+        private int _money;
 
         public Salesman()
         {
@@ -60,6 +93,7 @@
         public void ShowGoods()
         {
             Console.Clear();
+
             for (int i = 0; i < _goods.Count; i++)
             {
                 Console.WriteLine($"Number {i + 1}");
@@ -67,45 +101,30 @@
             }
         }
 
-        public void SellProduct(Player player)
+        public void SellProduct(Product soldProduct)
         {
-            ShowGoods();
-            if (TryGetProduct(out Product product) == true)
-            {
-                if(player.BalanceMoney >= product.Price)
-                {
-                    _goods.Remove(product);
-                    player.BuyProduct(product);
-                    Console.WriteLine($"Товар {product.Name} куплен");
-                }
-                else
-                {
-                    Console.WriteLine("не хватает средств");
-                }
-            }
-
-            Console.ReadKey();
+            _goods.Remove(soldProduct);
         }
 
-        private bool TryGetProduct(out Product product)
+        public void TakeMoney(int gettingMoney)
+        {
+            _money += gettingMoney;
+            Console.WriteLine($"Баланс продавца: {_money}");
+        }
+
+        public bool TryGetProduct(out Product product)
         {
             {
                 int numberToFind;
-                bool isProduct;
+                bool isNumber;
                 Console.WriteLine("Введите номер товара для покупки.");
-                isProduct = int.TryParse(Console.ReadLine(), out numberToFind);
-                numberToFind--; // Get correct number good.
+                isNumber = int.TryParse(Console.ReadLine(), out numberToFind);
 
-                if (isProduct)
+                if (numberToFind > 0 && numberToFind <= _goods.Count)
                 {
-                    for (int i = 0; i < _goods.Count; i++)
-                    {
-                        if (i == numberToFind)
-                        {
-                            product = _goods[i];
-                            return true;
-                        }
-                    }
+                    numberToFind--; // Get correct number good.
+                    product = _goods[numberToFind];
+                    return true;
                 }
 
                 Console.WriteLine("Такого товара нет.");
@@ -128,10 +147,11 @@
             BalanceMoney = balanceMoney;
         }
 
-        public void BuyProduct(Product boughtGood)
+        public int BuyProduct(Product boughtGood)
         {
             _items.Add(boughtGood);
             BalanceMoney -= boughtGood.Price;
+            return boughtGood.Price;
             Console.WriteLine($"У вас осталось {BalanceMoney}");
         }
 
@@ -139,6 +159,7 @@
         {
             Console.Clear();
             Console.WriteLine($"Money: { BalanceMoney}");
+
             for (int i = 0; i < _items.Count; i++)
             {
                 Console.WriteLine(_items[i].Name);

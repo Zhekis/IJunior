@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataCards", "DataCards\Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Book storage", "Book storage\Book storage.csproj", "{E7EF7351-2F57-4F15-92D8-55C21686C708}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store", "Store\Store.csproj", "{88C18C94-407C-455B-9E00-E46FDEBD3D21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store", "Store\Store.csproj", "{88C18C94-407C-455B-9E00-E46FDEBD3D21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigTrains", "ConfigTrains\ConfigTrains.csproj", "{5329A9B7-04A2-4E7E-8D57-5B9581147439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{88C18C94-407C-455B-9E00-E46FDEBD3D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88C18C94-407C-455B-9E00-E46FDEBD3D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88C18C94-407C-455B-9E00-E46FDEBD3D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5329A9B7-04A2-4E7E-8D57-5B9581147439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5329A9B7-04A2-4E7E-8D57-5B9581147439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5329A9B7-04A2-4E7E-8D57-5B9581147439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5329A9B7-04A2-4E7E-8D57-5B9581147439}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
