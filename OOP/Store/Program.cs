@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace Store
 {
@@ -6,8 +7,10 @@ namespace Store
     {
         static void Main(string[] args)
         {
-            Salesman salesman = new Salesman();
-            Player player = new Player(7);
+            List<Product> goods = new List<Product>();
+            List<Product> items = new List<Product>();
+            Salesman salesman = new Salesman(5, goods);
+            Player player = new Player(7, items);
             Market market = new Market();
 
             const string ShowProducts = "1";
@@ -29,15 +32,14 @@ namespace Store
                 {
                     case ShowProducts:
                         salesman.ShowGoods();
-                        Console.ReadKey();
                         break;
 
                     case ShowItems:
-                        player.ShowItems();
+                        player.ShowGoods();
                         break;
 
                     case Buy:
-                        market.Traid(salesman, player);
+                        market.MakeDeal(salesman, player);
                         break;
 
                     case Exit:
@@ -50,22 +52,20 @@ namespace Store
 
     class Market
     {
-        public void Traid(Salesman salesman, Player player)
+        public void MakeDeal(Salesman salesman, Player player)
         {
             salesman.ShowGoods();
 
             int receivedMoney;
-            bool isProduct = salesman.TryGetProduct(out Product product);
-            Product boughtGood = product;
 
-            if (isProduct == true)
+            if (salesman.TryGetProduct(out Product product) == true)
             {
-                if (player.BalanceMoney >= boughtGood.Price)
+                if (player.BalanceMoney >= product.Price)
                 {
-                    salesman.SellProduct(boughtGood);
-                    receivedMoney = player.BuyProduct(boughtGood);
+                    salesman.SellProduct(product);
+                    receivedMoney = player.BuyProduct(product);
                     salesman.TakeMoney(receivedMoney);
-                    Console.WriteLine($"Товар {boughtGood.Name} куплен");
+                    Console.WriteLine($"Товар {product.Name} куплен");
                 }
                 else
                 {
@@ -77,28 +77,52 @@ namespace Store
         }
     }
 
-    class Salesman
+    class Participant
     {
-        private List<Product> _goods = new List<Product>();
-        private int _money;
-
-        public Salesman()
+        protected List<Product> _goods;
+        protected int _balanceMoney;
+        public Participant(int balanceMoney, List<Product> goods)
         {
-            _goods.Add(new Product("Apple", 1));
-            _goods.Add(new Product("Knife", 3));
-            _goods.Add(new Product("Phone", 5));
-            _goods.Add(new Product("Map", 2));
+            _goods = goods;
+            _balanceMoney = balanceMoney;
+        }
+
+        public void ShowItems()
+        {
+            Console.Clear();
+            Console.WriteLine($"Money: {_balanceMoney}");
+
+            for (int i = 0; i < _goods.Count; i++)
+            {
+                Console.WriteLine(_goods[i].Name);
+            }
+
+            Console.ReadKey();
         }
 
         public void ShowGoods()
         {
             Console.Clear();
+            Console.WriteLine($"Money: {_balanceMoney}");
 
             for (int i = 0; i < _goods.Count; i++)
             {
                 Console.WriteLine($"Number {i + 1}");
                 _goods[i].ShowInfo();
             }
+
+            Console.ReadKey();
+        }
+    }
+
+    class Salesman : Participant
+    {
+        public Salesman(int balanceMoney, List<Product> goods) : base(balanceMoney, goods)
+        {
+            _goods.Add(new Product("Apple", 1));
+            _goods.Add(new Product("Knife", 3));
+            _goods.Add(new Product("Phone", 5));
+            _goods.Add(new Product("Map", 2));
         }
 
         public void SellProduct(Product soldProduct)
@@ -108,21 +132,20 @@ namespace Store
 
         public void TakeMoney(int gettingMoney)
         {
-            _money += gettingMoney;
-            Console.WriteLine($"Баланс продавца: {_money}");
+            _balanceMoney += gettingMoney;
+            Console.WriteLine($"Баланс продавца: {_balanceMoney}");
         }
 
         public bool TryGetProduct(out Product product)
         {
             {
                 int numberToFind;
-                bool isNumber;
                 Console.WriteLine("Введите номер товара для покупки.");
-                isNumber = int.TryParse(Console.ReadLine(), out numberToFind);
+                bool isNumber = int.TryParse(Console.ReadLine(), out numberToFind);
 
                 if (numberToFind > 0 && numberToFind <= _goods.Count)
                 {
-                    numberToFind--; // Get correct number good.
+                    numberToFind--;
                     product = _goods[numberToFind];
                     return true;
                 }
@@ -134,51 +157,40 @@ namespace Store
         }
     }
 
-    class Player
+    class Player : Participant
     {
-        private List<Product> _items = new List<Product>();
-
-        public int BalanceMoney { get; private set; }
-
-        public Player(int balanceMoney)
+        public Player(int balanceMoney, List<Product> items) : base(balanceMoney, items)
         {
-            _items.Add(new Product("Keys", 2));
-            _items.Add(new Product("Glasses", 3));
-            BalanceMoney = balanceMoney;
+            _goods.Add(new Product("Keys", 2));
+            _goods.Add(new Product("Glasses", 3));
+        }
+
+        public int BalanceMoney
+        {
+            get
+            {
+                return _balanceMoney;
+            }
         }
 
         public int BuyProduct(Product boughtGood)
         {
-            _items.Add(boughtGood);
-            BalanceMoney -= boughtGood.Price;
+            _goods.Add(boughtGood);
+            _balanceMoney -= boughtGood.Price;
+            Console.WriteLine($"У вас осталось {_balanceMoney}");
             return boughtGood.Price;
-            Console.WriteLine($"У вас осталось {BalanceMoney}");
-        }
-
-        public void ShowItems()
-        {
-            Console.Clear();
-            Console.WriteLine($"Money: { BalanceMoney}");
-
-            for (int i = 0; i < _items.Count; i++)
-            {
-                Console.WriteLine(_items[i].Name);
-            }
-
-            Console.ReadKey();
         }
     }
 
     class Product
     {
-        public string Name { get; private set; }
-        public int Price { get; private set; }
-
         public Product(string name, int price)
         {
             Name = name;
             Price = price;
         }
+        public string Name { get; private set; }
+        public int Price { get; private set; }
 
         public void ShowInfo()
         {
