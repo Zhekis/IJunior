@@ -60,7 +60,7 @@ namespace Store
 
             if (salesman.TryGetProduct(out Product product) == true)
             {
-                if (player.BalanceMoneyPlayer >= product.Price)
+                if (player.Money >= product.Price)
                 {
                     receivedMoney = player.BuyProduct(product);
                     salesman.SellProduct(product, receivedMoney);
@@ -144,7 +144,7 @@ namespace Store
             Goods.Add(new Product("Glasses", 3));
         }
 
-        public int BalanceMoneyPlayer => BalanceMoney;
+        public int Money => BalanceMoney;
 
         public int BuyProduct(Product boughtGood)
         {
