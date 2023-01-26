@@ -12,6 +12,7 @@ namespace Store
             Player player = new Player(7);
             Market market = new Market();
             market.Work(salesman, player);
+
         }
     }
 

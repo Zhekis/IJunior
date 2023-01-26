@@ -15,7 +15,8 @@
         Deport,
         Sell,
         Prepare,
-        Wait
+        Wait,
+        fail
     }
 
     class Station
