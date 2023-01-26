@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Numerics;
 using System.Security.Cryptography;
 
 namespace Store
@@ -11,14 +10,7 @@ namespace Store
             Salesman salesman = new Salesman(5);
             Player player = new Player(7);
             Market market = new Market();
-            market.Work(salesman, player);
-        }
-    }
 
-    class Market
-    {
-        public void Work(Salesman salesman, Player player)
-        {
             const string ShowProducts = "1";
             const string ShowItems = "2";
             const string Buy = "3";
@@ -46,7 +38,7 @@ namespace Store
                         break;
 
                     case Buy:
-                        MakeDeal(salesman, player);
+                        market.MakeDeal(salesman, player);
                         break;
 
                     case Exit:
@@ -55,7 +47,10 @@ namespace Store
                 }
             }
         }
+    }
 
+    class Market
+    {
         public void MakeDeal(Salesman salesman, Player player)
         {
             salesman.ShowGoods();
@@ -96,7 +91,6 @@ namespace Store
                 Goods[i].ShowInfo();
             }
 
-            Console.WriteLine("Нажмите, чтобы продолжить!");
             Console.ReadKey();
             Console.WriteLine();
         }
