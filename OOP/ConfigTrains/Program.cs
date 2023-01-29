@@ -81,7 +81,7 @@
             }
         }
 
-        public void CreateRoute()
+        private void CreateRoute()
         {
             if (status == Status.Empty || status == Status.Deported)
             {
@@ -106,7 +106,7 @@
             Console.ReadKey();
         }
 
-        public void SellTickets()
+        private void SellTickets()
         {
             if (status == Status.SellingTickets)
             {
@@ -123,7 +123,7 @@
             Console.ReadKey();
         }
 
-        public void CreateTrain()
+        private void CreateTrain()
         {
             if (status == Status.PrepareTrain)
             {
@@ -148,7 +148,7 @@
             Console.ReadKey();
         }
 
-        public void SendTrain()
+        private void SendTrain()
         {
             if (status == Status.WaitDeport)
             {
