@@ -12,21 +12,20 @@
     enum Status
     {
         Empty,
-        Deport,
-        Sell,
-        Prepare,
-        Wait,
+        Deported,
+        SellingTickets,
+        PrepareTrain,
+        WaitDeport,
         fail
     }
 
     class Station
     {
+        Train train;
         private Status status = Status.Empty;
         private List<Train> _trains = new List<Train>();
-        private string _route;
-        private string _startPoint;
-        private string _endPoint;
-        private int _countPassengers;
+        private string tempRoute = "";
+        private int tempCountPassengers;
 
         public void Work()
         {
@@ -42,7 +41,17 @@
             while (isWork)
             {
                 Console.Clear();
-                Console.WriteLine($"{_route}Статус: {status}");
+                Console.WriteLine("Список поездов:");
+
+                for (int i = 0; i < _trains.Count; i++)
+                {
+                    Console.Write($"{i + 1}. ");
+                    _trains[i].ShowInfo();
+                }
+
+                Console.WriteLine();
+                Console.WriteLine($"Текущий рейс:\n{tempRoute}Статус: {status}");
+                Console.WriteLine();
                 Console.WriteLine(CreateWay + " - Создать направление.\n" + Sell + " - продать билеты.");
                 Console.WriteLine(AddTrain + " - создать поезд.\n" + Departure + " - Отправить поезд.\n" + Exit + " - Выход");
                 userInput = Console.ReadLine();
@@ -71,17 +80,23 @@
                 }
             }
         }
+
         public void CreateRoute()
         {
-            if (status == Status.Empty || status == Status.Deport)
+            if (status == Status.Empty || status == Status.Deported)
             {
+                train = new Train();
                 Console.WriteLine("Введите пункт отправления:");
-                _startPoint = Console.ReadLine();
+                string startPoint = Console.ReadLine();
                 Console.WriteLine("Введите пункт прибытия:");
-                _endPoint = Console.ReadLine();
-                _route = $"Направление {_startPoint} - {_endPoint} ";
-                Console.WriteLine($"{_route} создано.");
-                status = Status.Sell;
+                string endPoint = Console.ReadLine();
+                string route = $"Направление {startPoint} - {endPoint}";
+                Console.WriteLine($"{route} создано.");
+                tempRoute = route;
+
+                train.GetRoute(route);
+
+                status = Status.SellingTickets;
             }
             else
             {
@@ -93,12 +108,12 @@
 
         public void SellTickets()
         {
-            if (status == Status.Sell)
+            if (status == Status.SellingTickets)
             {
                 Random random = new Random();
-                _countPassengers = random.Next(500, 1000);
-                Console.WriteLine($"Продано {_countPassengers} билетов.");
-                status = Status.Prepare;
+                tempCountPassengers = random.Next(500, 1000);
+                Console.WriteLine($"Продано {tempCountPassengers} билетов.");
+                status = Status.PrepareTrain;
             }
             else
             {
@@ -110,20 +125,20 @@
 
         public void CreateTrain()
         {
-            if (status == Status.Prepare)
+            if (status == Status.PrepareTrain)
             {
                 Console.WriteLine("Введите вместимость вагона:");
                 int countPlacesForCarriage = ReadInt();
-                int countCarriages = _countPassengers / countPlacesForCarriage;
+                int countCarriages = tempCountPassengers / countPlacesForCarriage;
 
-                if (_countPassengers % countPlacesForCarriage > 0)
+                if (tempCountPassengers % countPlacesForCarriage > 0)
                 {
                     countCarriages++;
                 }
 
-                Train train = new Train(countCarriages, countPlacesForCarriage, _route);
-                Console.WriteLine($"Поезд {_route} создан, количество пассажиров {_countPassengers}, вагоны {countCarriages} шт.");
-                status = Status.Wait;
+                train.GetInfoCarriage(countCarriages, countPlacesForCarriage);
+                Console.WriteLine($"Поезд {train.Route} создан, количество пассажиров {tempCountPassengers}, вагоны {countCarriages} шт.");
+                status = Status.WaitDeport;
             }
             else
             {
@@ -135,10 +150,11 @@
 
         public void SendTrain()
         {
-            if (status == Status.Wait)
+            if (status == Status.WaitDeport)
             {
+                _trains.Add(train);
                 Console.WriteLine("Поезд отправлен.");
-                status = Status.Deport;
+                status = Status.Deported;
             }
             else
             {
@@ -169,19 +185,19 @@
 
         private string GetRequiredAction()
         {
-            if (status == Status.Empty || status == Status.Deport)
+            if (status == Status.Empty || status == Status.Deported)
             {
                 return "Создайте направление";
             }
-            else if (status == Status.Sell)
+            else if (status == Status.SellingTickets)
             {
                 return "Продайте билеты";
             }
-            else if (status == Status.Prepare)
+            else if (status == Status.PrepareTrain)
             {
                 return "Создайте поезд";
             }
-            else if (status == Status.Wait)
+            else if (status == Status.WaitDeport)
             {
                 return "Отправьте поезд";
             }
@@ -194,35 +210,24 @@
 
     class Train
     {
-        private List<Carriage> _carriages;
         public int CountCarriages { get; private set; }
         public int CountPlacesForCarriage { get; private set; }
         public string Route { get; private set; }
 
-        public Train(int countCorriages, int countPlacesForCarriage, string route)
+        public void GetRoute(string route)
         {
-            CountCarriages = countCorriages;
-            CountPlacesForCarriage = countPlacesForCarriage;
-            _carriages = new List<Carriage>();
             Route = route;
-            CreateCarriage(countCorriages, countPlacesForCarriage);
         }
 
-        private void CreateCarriage(int countCorriages, int countPlacesForCarriage)
+        public void GetInfoCarriage(int countCarriages, int countPlacesForCarriage)
         {
-            for (int i = 0; i < countCorriages; i++)
-            {
-                _carriages.Add(new Carriage(countPlacesForCarriage));
-            }
+            CountCarriages = countCarriages;
+            CountPlacesForCarriage = countPlacesForCarriage;
         }
-    }
 
-    class Carriage
-    {
-        public int CountPlaces { get; private set; }
-        public Carriage(int countPlaces)
+        public void ShowInfo()
         {
-            CountPlaces = countPlaces;
+            Console.WriteLine($"{Route}, вагоны {CountCarriages} шт.");
         }
     }
 }
