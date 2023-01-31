@@ -1,0 +1,15 @@
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\bin\Debug\net6.0\Fight.exe
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\bin\Debug\net6.0\Fight.deps.json
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\bin\Debug\net6.0\Fight.runtimeconfig.json
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\bin\Debug\net6.0\Fight.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\bin\Debug\net6.0\Fight.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\Fight.csproj.AssemblyReference.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\Fight.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\Fight.AssemblyInfoInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\Fight.AssemblyInfo.cs
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\Fight.csproj.CoreCompileInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\Fight.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\refint\Fight.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\Fight.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\Fight.genruntimeconfig.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Fight\obj\Debug\net6.0\ref\Fight.dll
