@@ -22,11 +22,19 @@
     class Station
     {
         private Train _train;
-        private Status status = Status.Empty;
+        private Status _status = Status.Empty;
         private List<Train> _trains = new List<Train>();
+        private Dictionary<Status, string> _needAction = new Dictionary<Status, string>()
+        {
+            { Status.Empty, ""},
+            { Status.Deported, "Создайте направление"},
+            { Status.SellingTickets, "Продайте билеты"},
+            { Status.PrepareTrain, "Создайте поезд"},
+            { Status.WaitDeport, "Отправьте поезд"}
+        };
 
         private string TempRoute { get; set; }
-        private int TempCountPassengers {get; set;}
+        private int TempCountPassengers { get; set; }
 
         public void Work()
         {
@@ -47,7 +55,7 @@
                 ShowTrains();
 
                 Console.WriteLine();
-                Console.WriteLine($"Текущий рейс:\n{TempRoute}Статус: {status}");
+                Console.WriteLine($"Текущий рейс:\n{TempRoute}Статус: {_status}");
                 Console.WriteLine();
                 Console.WriteLine(CreateWay + " - Создать направление.\n" + Sell + " - продать билеты.");
                 Console.WriteLine(AddTrain + " - создать поезд.\n" + Departure + " - Отправить поезд.\n" + Exit + " - Выход");
@@ -89,7 +97,7 @@
 
         private void CreateRoute()
         {
-            if (status == Status.Empty || status == Status.Deported)
+            if (_status == Status.Empty || _status == Status.Deported)
             {
                 _train = new Train();
                 Console.WriteLine("Введите пункт отправления:");
@@ -102,7 +110,7 @@
 
                 _train.TakeRoute(route);
 
-                status = Status.SellingTickets;
+                _status = Status.SellingTickets;
             }
             else
             {
@@ -117,12 +125,12 @@
             int minNumberPassengers = 500;
             int maxNumberPassengers = 1000;
 
-            if (status == Status.SellingTickets)
+            if (_status == Status.SellingTickets)
             {
                 Random random = new Random();
                 TempCountPassengers = random.Next(minNumberPassengers, maxNumberPassengers);
                 Console.WriteLine($"Продано {TempCountPassengers} билетов.");
-                status = Status.PrepareTrain;
+                _status = Status.PrepareTrain;
             }
             else
             {
@@ -134,7 +142,7 @@
 
         private void CreateTrain()
         {
-            if (status == Status.PrepareTrain)
+            if (_status == Status.PrepareTrain)
             {
                 Console.WriteLine("Введите вместимость вагона:");
                 int countPlacesForCarriage = ReadInt();
@@ -147,7 +155,7 @@
 
                 _train.TakeInfoCarriage(countCarriages, countPlacesForCarriage);
                 Console.WriteLine($"Поезд {_train.Route} создан, количество пассажиров {TempCountPassengers}, вагоны {countCarriages} шт.");
-                status = Status.WaitDeport;
+                _status = Status.WaitDeport;
             }
             else
             {
@@ -159,11 +167,11 @@
 
         private void SendTrain()
         {
-            if (status == Status.WaitDeport)
+            if (_status == Status.WaitDeport)
             {
                 _trains.Add(_train);
                 Console.WriteLine("Поезд отправлен.");
-                status = Status.Deported;
+                _status = Status.Deported;
             }
             else
             {
@@ -194,21 +202,21 @@
 
         private string GetRequiredAction()
         {
-            if (status == Status.Empty || status == Status.Deported)
+            if (_status == Status.Empty || _status == Status.Deported)
             {
-                return "Создайте направление";
+                return _needAction[Status.Deported];
             }
-            else if (status == Status.SellingTickets)
+            else if (_status == Status.SellingTickets)
             {
-                return "Продайте билеты";
+                return _needAction[Status.SellingTickets];
             }
-            else if (status == Status.PrepareTrain)
+            else if (_status == Status.PrepareTrain)
             {
-                return "Создайте поезд";
+                return _needAction[Status.PrepareTrain];
             }
-            else if (status == Status.WaitDeport)
+            else if (_status == Status.WaitDeport)
             {
-                return "Отправьте поезд";
+                return _needAction[Status.WaitDeport];
             }
             else
             {
