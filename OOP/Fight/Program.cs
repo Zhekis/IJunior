@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System.Security.Cryptography;
 using System.Xml.Linq;
 
 namespace Gladiators
@@ -18,47 +19,51 @@ namespace Gladiators
 
         public Battle()
         {
-            Human human = new Human("Human", 100, 30, 10);
-            Robot robot = new Robot("Robot", 150, 40, 5);
+            Human human = new Human("Human", 1000, 30, 80);
+            Robot robot = new Robot("Robot", 1500, 50, 50);
             _fighters.Add(human);
             _fighters.Add(robot);
         }
 
         public void Fight()
         {
-            bool IsChoiсeLeftFighter = false;
-            bool IsChoiсeRightFighter = false;
-
             ShowFighters();
 
             Console.Write("Боец слева.");
-
-            while (IsChoiсeLeftFighter == false)
-            {
-                if (TryGetFighter(out Fighter fighter) == true)
-                {
-                    Fighter fighterLeft = fighter;
-                    Console.Write($"Боец слева.");
-                    fighter.ShowInfo();
-                    IsChoiсeLeftFighter = true;
-                }
-            }
-
+            Fighter fighterLeft = GetFighter();
             Console.WriteLine();
             Console.Write("Боец справа.");
+            Fighter fighterRight = GetFighter();
+            Console.WriteLine("Press button to start fight!");
+            Console.ReadKey();
 
-            while (IsChoiсeRightFighter == false)
+            while (fighterLeft.HealthFighter > 0 && fighterRight.HealthFighter > 0)
+            {
+                fighterLeft.TakeDamage(fighterRight.DamageFighter);
+                fighterLeft.AdditionalSkills();
+                fighterRight.TakeDamage(fighterLeft.DamageFighter);
+                fighterLeft.ShowInfo();
+                fighterRight.ShowInfo();
+            }
+
+        }
+
+        private Fighter GetFighter()
+        {
+            bool isChoiseFighter = false;
+
+            while (isChoiseFighter == false)
             {
                 if (TryGetFighter(out Fighter fighter) == true)
                 {
-                    Fighter fighterRight = fighter;
-                    Console.Write($"Боец справа.");
+                    Console.Write($"Выбран боец: ");
                     fighter.ShowInfo();
-                    IsChoiсeRightFighter = true;
+                    isChoiseFighter = true;
+                    return fighter;
                 }
             }
 
-
+            return null;
         }
 
         private bool TryGetFighter(out Fighter fighter)
@@ -98,6 +103,22 @@ namespace Gladiators
         protected int Armor;
         protected int Damage;
 
+        public int HealthFighter
+        {
+            get
+            {
+                return Health;
+            }
+        }
+
+        public int DamageFighter
+        {
+            get
+            {
+                return Damage;
+            }
+        }
+
         public Fighter(string name, int health, int armor, int damage)
         {
             Name = name;
@@ -111,6 +132,16 @@ namespace Gladiators
             Health -= damage - Armor;
         }
 
+        public void AdditionalSkills(Fighter fighter)
+        {
+            fighter.Skills();
+        }
+
+        public void Skills()
+        {
+
+        }
+
         public void ShowInfo()
         {
             Console.WriteLine($"{Name}-{Health} - {Armor} - {Damage}");
@@ -121,6 +152,10 @@ namespace Gladiators
     {
         public Human(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
+        public void Skills()
+        {
+            Console.WriteLine("Waa");
+        }
         // Когда уровень жизней меньше 30%, наносит меньше урона противнику. И когда меньше 50%, может нанести 1 удар с двойной силой.
     }
 
