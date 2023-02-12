@@ -132,12 +132,7 @@ namespace Gladiators
             Health -= damage - Armor;
         }
 
-        public void AdditionalSkills(Fighter fighter)
-        {
-            fighter.Skills();
-        }
-
-        public void Skills()
+        public virtual void AdditionalSkills()
         {
 
         }
@@ -152,7 +147,7 @@ namespace Gladiators
     {
         public Human(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
-        public void Skills()
+        public override void AdditionalSkills()
         {
             Console.WriteLine("Waa");
         }
