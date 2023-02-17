@@ -136,11 +136,14 @@ namespace Gladiators
             Health -= damage - Armor;
         }
 
-<<<<<<< HEAD
+
         public virtual void UseSkills()
-=======
+        {
+
+        }
+
         public virtual void AdditionalSkills()
->>>>>>> 49a6ac037097d636a4e63933f7f50c3fc16cfd4e
+
         {
 
         }
@@ -157,11 +160,14 @@ namespace Gladiators
 
         public Human(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
-<<<<<<< HEAD
+
         public override void UseSkills()
-=======
+        {
+
+        }
+
         public override void AdditionalSkills()
->>>>>>> 49a6ac037097d636a4e63933f7f50c3fc16cfd4e
+
         {
             int _indexPower = 2;
             int _halfHealth = 800;
@@ -182,7 +188,7 @@ namespace Gladiators
 
     class Robot : Fighter
     {
-        private int 
+        private int _defense;
         public Robot(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
         public override void UseSkills()
