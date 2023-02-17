@@ -21,7 +21,7 @@
     class Station
     {
         private Train _train;
-        private Status _status = Status.Empty;
+        private Status _status;
         private List<Train> _trains = new List<Train>();
         private Dictionary<Status, string> _messagesForAction = new Dictionary<Status, string>()
         {
@@ -200,16 +200,16 @@
 
     class Train
     {
-        public int CountCarriages { get; private set; }
-        public int CountPlacesForCarriage { get; private set; }
-        public string Route { get; private set; }
-
         public Train(string route, int countCarriages, int countPlacesForCarriage)
         {
             Route = route;
             CountCarriages = countCarriages;
             CountPlacesForCarriage = countPlacesForCarriage;
         }
+
+        public int CountCarriages { get; private set; }
+        public int CountPlacesForCarriage { get; private set; }
+        public string Route { get; private set; }
 
         public void ShowInfo()
         {
