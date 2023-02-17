@@ -15,8 +15,7 @@
         Deported,
         SellingTickets,
         PrepareTrain,
-        WaitDeport,
-        fail
+        WaitDeport
     }
 
     class Station
@@ -24,21 +23,21 @@
         private Train _train;
         private Status _status = Status.Empty;
         private List<Train> _trains = new List<Train>();
-        private Dictionary<Status, string> _needAction = new Dictionary<Status, string>()
+        private Dictionary<Status, string> _messagesForAction = new Dictionary<Status, string>()
         {
-            { Status.Empty, ""},
+            { Status.Empty, "Создайте направление"},
             { Status.Deported, "Создайте направление"},
             { Status.SellingTickets, "Продайте билеты"},
             { Status.PrepareTrain, "Создайте поезд"},
             { Status.WaitDeport, "Отправьте поезд"}
         };
 
-        private string TempRoute { get; set; }
-        private int TempCountPassengers { get; set; }
+        public string TempRoute { get; private set; }
+        public int TempCountPassengers { get; private set; }
 
         public void Work()
         {
-            const string CreateWay = "1";
+            const string CreateRoute = "1";
             const string Sell = "2";
             const string AddTrain = "3";
             const string Departure = "4";
@@ -57,14 +56,14 @@
                 Console.WriteLine();
                 Console.WriteLine($"Текущий рейс:\n{TempRoute}Статус: {_status}");
                 Console.WriteLine();
-                Console.WriteLine(CreateWay + " - Создать направление.\n" + Sell + " - продать билеты.");
+                Console.WriteLine(CreateRoute + " - Создать направление.\n" + Sell + " - продать билеты.");
                 Console.WriteLine(AddTrain + " - создать поезд.\n" + Departure + " - Отправить поезд.\n" + Exit + " - Выход");
                 userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
-                    case CreateWay:
-                        CreateRoute();
+                    case CreateRoute:
+                        this.CreateRoute();
                         break;
 
                     case Sell:
@@ -88,9 +87,11 @@
 
         private void ShowTrains()
         {
+            int indexAddition = 1;
+
             for (int i = 0; i < _trains.Count; i++)
             {
-                Console.Write($"{i + 1}. ");
+                Console.Write($"{i + indexAddition}. ");
                 _trains[i].ShowInfo();
             }
         }
@@ -99,7 +100,6 @@
         {
             if (_status == Status.Empty || _status == Status.Deported)
             {
-                _train = new Train();
                 Console.WriteLine("Введите пункт отправления:");
                 string startPoint = Console.ReadLine();
                 Console.WriteLine("Введите пункт прибытия:");
@@ -107,14 +107,11 @@
                 string route = $"Направление '{startPoint} - {endPoint}'";
                 Console.WriteLine($"{route} создано.");
                 TempRoute = route + " ";
-
-                _train.TakeRoute(route);
-
                 _status = Status.SellingTickets;
             }
             else
             {
-                Console.WriteLine(GetRequiredAction());
+                Console.WriteLine(_messagesForAction[_status]);
             }
 
             Console.ReadKey();
@@ -134,7 +131,7 @@
             }
             else
             {
-                Console.WriteLine(GetRequiredAction());
+                Console.WriteLine(_messagesForAction[_status]);
             }
 
             Console.ReadKey();
@@ -153,13 +150,13 @@
                     countCarriages++;
                 }
 
-                _train.TakeInfoCarriage(countCarriages, countPlacesForCarriage);
+                _train = new Train(TempRoute, countCarriages, countPlacesForCarriage);
                 Console.WriteLine($"Поезд {_train.Route} создан, количество пассажиров {TempCountPassengers}, вагоны {countCarriages} шт.");
                 _status = Status.WaitDeport;
             }
             else
             {
-                Console.WriteLine(GetRequiredAction());
+                Console.WriteLine(_messagesForAction[_status]);
             }
 
             Console.ReadKey();
@@ -175,7 +172,7 @@
             }
             else
             {
-                Console.WriteLine(GetRequiredAction());
+                Console.WriteLine(_messagesForAction[_status]);
             }
 
             Console.ReadKey();
@@ -199,30 +196,6 @@
 
             return result;
         }
-
-        private string GetRequiredAction()
-        {
-            if (_status == Status.Empty || _status == Status.Deported)
-            {
-                return _needAction[Status.Deported];
-            }
-            else if (_status == Status.SellingTickets)
-            {
-                return _needAction[Status.SellingTickets];
-            }
-            else if (_status == Status.PrepareTrain)
-            {
-                return _needAction[Status.PrepareTrain];
-            }
-            else if (_status == Status.WaitDeport)
-            {
-                return _needAction[Status.WaitDeport];
-            }
-            else
-            {
-                return "";
-            }
-        }
     }
 
     class Train
@@ -231,13 +204,9 @@
         public int CountPlacesForCarriage { get; private set; }
         public string Route { get; private set; }
 
-        public void TakeRoute(string route)
+        public Train(string route, int countCarriages, int countPlacesForCarriage)
         {
             Route = route;
-        }
-
-        public void TakeInfoCarriage(int countCarriages, int countPlacesForCarriage)
-        {
             CountCarriages = countCarriages;
             CountPlacesForCarriage = countPlacesForCarriage;
         }

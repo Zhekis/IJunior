@@ -1,6 +1,7 @@
 ﻿using System.Numerics;
 using System.Security.Cryptography;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Gladiators
 {
@@ -20,7 +21,7 @@ namespace Gladiators
         public Battle()
         {
             Human human = new Human("Human", 1000, 30, 80);
-            Robot robot = new Robot("Robot", 1500, 50, 50);
+            Robot robot = new Robot("Robot", 1450, 50, 50);
             _fighters.Add(human);
             _fighters.Add(robot);
         }
@@ -32,6 +33,7 @@ namespace Gladiators
             Console.Write("Боец слева.");
             Fighter fighterLeft = GetFighter();
             Console.WriteLine();
+            ShowFighters();
             Console.Write("Боец справа.");
             Fighter fighterRight = GetFighter();
             Console.WriteLine("Press button to start fight!");
@@ -40,8 +42,9 @@ namespace Gladiators
             while (fighterLeft.HealthFighter > 0 && fighterRight.HealthFighter > 0)
             {
                 fighterLeft.TakeDamage(fighterRight.DamageFighter);
-                fighterLeft.AdditionalSkills();
+                fighterLeft.UseSkills();
                 fighterRight.TakeDamage(fighterLeft.DamageFighter);
+                fighterRight.UseSkills();
                 fighterLeft.ShowInfo();
                 fighterRight.ShowInfo();
             }
@@ -76,6 +79,7 @@ namespace Gladiators
             {
                 numberToFind--;
                 fighter = _fighters[numberToFind];
+                _fighters.Remove(_fighters[numberToFind]);
                 return true;
             }
             else
@@ -132,31 +136,60 @@ namespace Gladiators
             Health -= damage - Armor;
         }
 
+<<<<<<< HEAD
+        public virtual void UseSkills()
+=======
         public virtual void AdditionalSkills()
+>>>>>>> 49a6ac037097d636a4e63933f7f50c3fc16cfd4e
         {
 
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"{Name}-{Health} - {Armor} - {Damage}");
+            Console.WriteLine($"{Name}, Здоровье: {Health}, Броня: {Armor}, Урон: {Damage}");
         }
     }
 
     class Human : Fighter
     {
+        int countDoubleAtack = 1;
+
         public Human(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
+<<<<<<< HEAD
+        public override void UseSkills()
+=======
         public override void AdditionalSkills()
+>>>>>>> 49a6ac037097d636a4e63933f7f50c3fc16cfd4e
         {
-            Console.WriteLine("Waa");
+            int _indexPower = 2;
+            int _halfHealth = 800;
+
+            if (Health > _halfHealth && countDoubleAtack > 0)
+            {
+                Damage = Damage * _indexPower;
+                countDoubleAtack--;
+            }
+            else if (countDoubleAtack == 0)
+            {
+                Damage = Damage / _indexPower;
+                countDoubleAtack++;
+            }
         }
         // Когда уровень жизней меньше 30%, наносит меньше урона противнику. И когда меньше 50%, может нанести 1 удар с двойной силой.
     }
 
     class Robot : Fighter
     {
+        private int 
         public Robot(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
+
+        public override void UseSkills()
+        {
+            
+        }
+
         // Дополнительная броня, пропускает только определенный урон.
     }
 
