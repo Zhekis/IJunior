@@ -1,4 +1,6 @@
-﻿namespace ConfigTrains
+﻿using System;
+
+namespace ConfigTrains
 {
     internal class Program
     {
@@ -21,7 +23,7 @@
     class Station
     {
         private Train _train;
-        private Status _status;
+        private Status _status = Status.Empty;
         private List<Train> _trains = new List<Train>();
         private Dictionary<Status, string> _messagesForAction = new Dictionary<Status, string>()
         {
@@ -54,7 +56,8 @@
                 ShowTrains();
 
                 Console.WriteLine();
-                Console.WriteLine($"Текущий рейс:\n{TempRoute}Статус: {_status}");
+                Console.Write($"Текущий рейс:\n{TempRoute}Статус: ");
+                ShowStatus(_status);
                 Console.WriteLine();
                 Console.WriteLine(CreateRoute + " - Создать направление.\n" + Sell + " - продать билеты.");
                 Console.WriteLine(AddTrain + " - создать поезд.\n" + Departure + " - Отправить поезд.\n" + Exit + " - Выход");
@@ -82,6 +85,28 @@
                         isWork = false;
                         break;
                 }
+            }
+        }
+
+        private void ShowStatus(Status status)
+        {
+            switch (status)
+            {
+                case Status.Empty:
+                    Console.WriteLine("");
+                    break;
+                case Status.Deported:
+                    Console.WriteLine("The train has been sent");
+                    break;
+                case Status.SellingTickets:
+                    Console.WriteLine("Ticket sales");
+                    break;
+                case Status.PrepareTrain:
+                    Console.WriteLine("Train preparation");
+                    break;
+                case Status.WaitDeport:
+                    Console.WriteLine("Awaiting departure");
+                    break;
             }
         }
 
