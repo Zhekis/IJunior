@@ -20,10 +20,16 @@ namespace Gladiators
 
         public Battle()
         {
-            Human human = new Human("Human", 1000, 30, 80);
-            Robot robot = new Robot("Robot", 1450, 50, 50);
+            Human human = new Human("Human", 1000, 40, 100);
+            Robot robot = new Robot("Robot", 1500, 50, 60);
+            Animal animal = new Animal("Animal", 1300, 50, 70);
+            Undead undead = new Undead("Undead", 2000, 30, 60);
+            Spirit spirit = new Spirit("Spirit", 1700, 20, 50);
             _fighters.Add(human);
             _fighters.Add(robot);
+            _fighters.Add(animal);
+            _fighters.Add(undead);
+            _fighters.Add(spirit);
         }
 
         public void Fight()
@@ -92,9 +98,11 @@ namespace Gladiators
 
         private void ShowFighters()
         {
+            int indexAddition = 1;
+
             for (int i = 0; i < _fighters.Count; i++)
             {
-                Console.Write($"{i + 1}. ");
+                Console.Write($"{i + indexAddition}. ");
                 _fighters[i].ShowInfo();
             }
         }
@@ -103,11 +111,11 @@ namespace Gladiators
     class Fighter
     {
         protected string Name;
-        protected int Health;
-        protected int Armor;
-        protected int Damage;
+        protected float Health;
+        protected float Armor;
+        protected float Damage;
 
-        public int HealthFighter
+        public float HealthFighter
         {
             get
             {
@@ -115,7 +123,7 @@ namespace Gladiators
             }
         }
 
-        public int DamageFighter
+        public float DamageFighter
         {
             get
             {
@@ -131,19 +139,13 @@ namespace Gladiators
             Damage = damage;
         }
 
-        public void TakeDamage(int damage)
+        public virtual void TakeDamage(float damage)
         {
             Health -= damage - Armor;
         }
 
 
         public virtual void UseSkills()
-        {
-
-        }
-
-        public virtual void AdditionalSkills()
-
         {
 
         }
@@ -156,61 +158,107 @@ namespace Gladiators
 
     class Human : Fighter
     {
-        int countDoubleAtack = 1;
+        bool isDoubleAtack = true;
 
         public Human(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
 
         public override void UseSkills()
         {
+            float _indexPower = 2;
+            float _halfHealth = 600;
 
-        }
-
-        public override void AdditionalSkills()
-
-        {
-            int _indexPower = 2;
-            int _halfHealth = 800;
-
-            if (Health > _halfHealth && countDoubleAtack > 0)
+            if (Health > _halfHealth && isDoubleAtack == true)
             {
                 Damage = Damage * _indexPower;
-                countDoubleAtack--;
+                isDoubleAtack = false;
             }
-            else if (countDoubleAtack == 0)
+            else if (isDoubleAtack == false)
             {
                 Damage = Damage / _indexPower;
-                countDoubleAtack++;
+                isDoubleAtack = true;
             }
         }
-        // Когда уровень жизней меньше 30%, наносит меньше урона противнику. И когда меньше 50%, может нанести 1 удар с двойной силой.
     }
 
     class Robot : Fighter
     {
-        private int _defense;
+        private float _limitDamage = 0.7f;
         public Robot(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
+
+        public override void TakeDamage(float damage)
+        {
+            Health -= (damage  - Armor) * _limitDamage;
+        }
 
         public override void UseSkills()
         {
             
         }
-
-        // Дополнительная броня, пропускает только определенный урон.
     }
 
-    //class Animal : Fighter
-    //{
-    //    // Рычит, увеличивается урон
-    //}
+    class Animal : Fighter
+    {
+        private float _severeDamage = 100;
+        private bool _isHighAtack = false;
+        private float _indexPower = 3;
 
-    //class Undead : Fighter
-    //{
-    //    // Забирает жизни у противника и прибавляет себе
-    //}
+        public Animal(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
-    //class Spirit : Fighter
-    //{
-    //    // Возврат урона 
-    //}
+        public override void TakeDamage(float damage)
+        {
+            base.TakeDamage(damage);
+
+            if(_isHighAtack == true)
+            {
+                Damage = Damage / _indexPower;
+                _isHighAtack = false;
+            }
+            
+            if (damage > _severeDamage) 
+            {
+                Damage = Damage * _indexPower;
+                _isHighAtack = true;
+            }
+        }
+
+        public override void UseSkills()
+        {
+
+        }
+    }
+
+    class Undead : Fighter
+    {
+        public Undead(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
+
+        public override void TakeDamage(float damage)
+        {
+            base.TakeDamage(damage);
+        }
+
+        public override void UseSkills()
+        {
+
+        }
+
+        // Забирает жизни у противника и прибавляет себе
+    }
+
+    class Spirit : Fighter
+    {
+        public Spirit(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
+
+        public override void TakeDamage(float damage)
+        {
+            base.TakeDamage(damage);
+        }
+
+        public override void UseSkills()
+        {
+
+        }
+
+        // Возврат урона 
+    }
 }
