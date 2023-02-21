@@ -1,9 +1,4 @@
-﻿using System.Numerics;
-using System.Security.Cryptography;
-using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace Gladiators
+﻿namespace Gladiators
 {
     internal class Program
     {
@@ -20,11 +15,11 @@ namespace Gladiators
 
         public Battle()
         {
-            Human human = new Human("Human", 1000, 40, 100);
+            Human human = new Human("Human", 1400, 40, 90);
             Robot robot = new Robot("Robot", 1500, 50, 60);
-            Animal animal = new Animal("Animal", 1300, 50, 70);
+            Animal animal = new Animal("Animal", 1300, 40, 80);
             Undead undead = new Undead("Undead", 2000, 30, 60);
-            Spirit spirit = new Spirit("Spirit", 1700, 20, 50);
+            Spirit spirit = new Spirit("Spirit", 1700, 30, 50);
             _fighters.Add(human);
             _fighters.Add(robot);
             _fighters.Add(animal);
@@ -35,14 +30,16 @@ namespace Gladiators
         public void Fight()
         {
             ShowFighters();
-
+            Console.WriteLine();
             Console.Write("Боец слева.");
             Fighter fighterLeft = GetFighter();
             Console.WriteLine();
             ShowFighters();
+            Console.WriteLine();
             Console.Write("Боец справа.");
             Fighter fighterRight = GetFighter();
-            Console.WriteLine("Press button to start fight!");
+            Console.WriteLine();
+            Console.WriteLine($"Press button to start fight {fighterLeft.NameFighter} vs {fighterRight.NameFighter}!");
             Console.ReadKey();
 
             while (fighterLeft.HealthFighter > 0 && fighterRight.HealthFighter > 0)
@@ -53,8 +50,15 @@ namespace Gladiators
                 fighterRight.UseSkills();
                 fighterLeft.ShowInfo();
                 fighterRight.ShowInfo();
-            }
+                Console.WriteLine();
 
+                if (fighterLeft.HealthFighter <= 0 && fighterRight.HealthFighter <= 0)
+                    Console.WriteLine("Ничья");
+                else if (fighterLeft.HealthFighter < 0)
+                    Console.WriteLine($"{fighterLeft.NameFighter} losed");
+                else if (fighterRight.HealthFighter < 0)
+                    Console.WriteLine($"{fighterRight.NameFighter} losed");
+            }
         }
 
         private Fighter GetFighter()
@@ -131,6 +135,14 @@ namespace Gladiators
             }
         }
 
+        public string NameFighter
+        {
+            get
+            {
+                return Name;
+            }
+        }
+
         public Fighter(string name, int health, int armor, int damage)
         {
             Name = name;
@@ -144,39 +156,36 @@ namespace Gladiators
             Health -= damage - Armor;
         }
 
-
         public virtual void UseSkills()
         {
-
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"{Name}, Здоровье: {Health}, Броня: {Armor}, Урон: {Damage}");
+            Console.WriteLine($"{Name}: Здоровье: {Health}, Броня: {Armor}, Урон: {Damage}");
         }
     }
 
     class Human : Fighter
     {
-        bool isDoubleAtack = true;
+        private bool _isDoubleAtack = true;
 
         public Human(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
-
 
         public override void UseSkills()
         {
             float _indexPower = 2;
             float _halfHealth = 600;
 
-            if (Health > _halfHealth && isDoubleAtack == true)
+            if (Health > _halfHealth && _isDoubleAtack == true)
             {
                 Damage = Damage * _indexPower;
-                isDoubleAtack = false;
+                _isDoubleAtack = false;
             }
-            else if (isDoubleAtack == false)
+            else if (_isDoubleAtack == false)
             {
                 Damage = Damage / _indexPower;
-                isDoubleAtack = true;
+                _isDoubleAtack = true;
             }
         }
     }
@@ -190,18 +199,13 @@ namespace Gladiators
         {
             Health -= (damage  - Armor) * _limitDamage;
         }
-
-        public override void UseSkills()
-        {
-            
-        }
     }
 
     class Animal : Fighter
     {
         private float _severeDamage = 100;
-        private bool _isHighAtack = false;
         private float _indexPower = 3;
+        private bool _isHighAtack = false;
 
         public Animal(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
@@ -221,44 +225,35 @@ namespace Gladiators
                 _isHighAtack = true;
             }
         }
-
-        public override void UseSkills()
-        {
-
-        }
     }
 
     class Undead : Fighter
     {
+        private float _returnHealth = 0.5f;
+
         public Undead(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
         public override void TakeDamage(float damage)
         {
             base.TakeDamage(damage);
+            Health += (damage - Armor) * _returnHealth;
         }
-
-        public override void UseSkills()
-        {
-
-        }
-
-        // Забирает жизни у противника и прибавляет себе
     }
 
     class Spirit : Fighter
     {
+        private float _mana = 300;
+        private int _countRegeneration = 2;
         public Spirit(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
-
-        public override void TakeDamage(float damage)
-        {
-            base.TakeDamage(damage);
-        }
 
         public override void UseSkills()
         {
-
+            float halfHealth = 800;
+            if (Health < halfHealth && _countRegeneration > 0)
+            {
+                Health += _mana;
+                _countRegeneration--;
+            }
         }
-
-        // Возврат урона 
     }
 }
