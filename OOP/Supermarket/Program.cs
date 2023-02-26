@@ -108,14 +108,6 @@
             return amount;
         }
 
-        public void ShowGoods()
-        {
-            foreach (var good in _basket)
-            {
-                good.ShowInfo();
-            }
-        }
-
         public bool CheckSolvency()
         {
             _moneyToPay = GetAmountPurchase();
@@ -147,19 +139,13 @@
 
     class Good
     {
-        public string Name { get; private set; }
-
-        public int Price { get; private set; }
-
         public Good(string name, int price)
         {
             Name = name;
             Price = price;
         }
 
-        public void ShowInfo()
-        {
-            Console.WriteLine($"Name: {Name} price: {Price}");
-        }
+        public string Name { get; private set; }
+        public int Price { get; private set; }
     }
 }
