@@ -29,36 +29,50 @@
 
         public void Fight()
         {
+            ChoiceFighters(out Fighter fighterLeft, out Fighter fighterRight);
+            Scramble(fighterLeft, fighterRight);
+            ShowResult(fighterLeft, fighterRight);
+        }
+
+        private void ChoiceFighters(out Fighter fighterLeft, out Fighter fighterRight)
+        {
             ShowFighters();
             Console.WriteLine();
             Console.Write("Боец слева.");
-            Fighter fighterLeft = GetFighter();
+            fighterLeft = GetFighter();
             Console.WriteLine();
             ShowFighters();
             Console.WriteLine();
             Console.Write("Боец справа.");
-            Fighter fighterRight = GetFighter();
+            fighterRight = GetFighter();
             Console.WriteLine();
-            Console.WriteLine($"Press button to start fight {fighterLeft.NameFighter} vs {fighterRight.NameFighter}!");
+        }
+
+        private void Scramble(Fighter fighterLeft, Fighter fighterRight)
+        {
+            Console.WriteLine($"Press button to start fight {fighterLeft.Name} vs {fighterRight.Name}!");
             Console.ReadKey();
 
-            while (fighterLeft.HealthFighter > 0 && fighterRight.HealthFighter > 0)
+            while (fighterLeft.Health > 0 && fighterRight.Health > 0)
             {
-                fighterLeft.TakeDamage(fighterRight.DamageFighter);
+                fighterLeft.TakeDamage(fighterRight.Damage);
                 fighterLeft.UseSkills();
-                fighterRight.TakeDamage(fighterLeft.DamageFighter);
+                fighterRight.TakeDamage(fighterLeft.Damage);
                 fighterRight.UseSkills();
                 fighterLeft.ShowInfo();
                 fighterRight.ShowInfo();
                 Console.WriteLine();
-
-                if (fighterLeft.HealthFighter <= 0 && fighterRight.HealthFighter <= 0)
-                    Console.WriteLine("Ничья");
-                else if (fighterLeft.HealthFighter < 0)
-                    Console.WriteLine($"{fighterLeft.NameFighter} losed");
-                else if (fighterRight.HealthFighter < 0)
-                    Console.WriteLine($"{fighterRight.NameFighter} losed");
             }
+        }
+
+        private void ShowResult(Fighter fighterLeft, Fighter fighterRight)
+        {
+            if (fighterLeft.Health <= 0 && fighterRight.Health <= 0)
+                Console.WriteLine("Ничья");
+            else if (fighterLeft.Health <= 0)
+                Console.WriteLine($"{fighterLeft.Name} losed");
+            else if (fighterRight.Health <= 0)
+                Console.WriteLine($"{fighterRight.Name} losed");
         }
 
         private Fighter GetFighter()
@@ -89,7 +103,7 @@
             {
                 numberToFind--;
                 fighter = _fighters[numberToFind];
-                _fighters.Remove(_fighters[numberToFind]);
+                _fighters.Remove(fighter);
                 return true;
             }
             else
@@ -114,35 +128,6 @@
 
     class Fighter
     {
-        protected string Name;
-        protected float Health;
-        protected float Armor;
-        protected float Damage;
-
-        public float HealthFighter
-        {
-            get
-            {
-                return Health;
-            }
-        }
-
-        public float DamageFighter
-        {
-            get
-            {
-                return Damage;
-            }
-        }
-
-        public string NameFighter
-        {
-            get
-            {
-                return Name;
-            }
-        }
-
         public Fighter(string name, int health, int armor, int damage)
         {
             Name = name;
@@ -150,6 +135,11 @@
             Armor = armor;
             Damage = damage;
         }
+
+        public string Name { get; protected set; }
+        public float Health { get; protected set; }
+        public float Armor { get; protected set; }
+        public float Damage { get; protected set; }
 
         public virtual void TakeDamage(float damage)
         {
@@ -193,6 +183,7 @@
     class Robot : Fighter
     {
         private float _limitDamage = 0.7f;
+
         public Robot(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
         public override void TakeDamage(float damage)
@@ -244,11 +235,13 @@
     {
         private float _mana = 300;
         private int _countRegeneration = 2;
+
         public Spirit(string name, int health, int armor, int damage) : base(name, health, armor, damage) { }
 
         public override void UseSkills()
         {
             float halfHealth = 800;
+
             if (Health < halfHealth && _countRegeneration > 0)
             {
                 Health += _mana;
