@@ -28,7 +28,7 @@
             _goods.Add(new Good("Cake", 250));
             _goods.Add(new Good("Alcohol", 500));
             Random random = new Random(245);
-            CreateNewClient(clientCount,random);
+            CreateNewClients(clientCount,random);
         }
 
         public void Work() 
@@ -38,11 +38,11 @@
                 Console.Clear();
                 Console.WriteLine($"В очереди {_clients.Count} человек");
                 Client client = _clients.Dequeue();
-                Console.WriteLine($"Клиент у кассы. Сумма к оплате {client.GetAmountPurchase()}.");
+                Console.WriteLine($"Клиент у кассы. Сумма к оплате {client.GetTotalPrice()}.");
 
                 while (_purchaseCompleted == false)
                 {
-                    if (client.CheckSolvency())
+                    if (client.IsEnoughMoney())
                     {
                         _money += client.ToPay();
                         Console.WriteLine("Покупка оплачена.");
@@ -51,7 +51,7 @@
                     else
                     {
                         Console.Write("У клиента не хватает денег.");
-                        client.RemoveGood();
+                        client.RemoveRandomGood();
                         Console.WriteLine("Нажмите для продолжения.");
                         Console.ReadKey();
                     }
@@ -63,7 +63,7 @@
             }
         }
 
-        private void CreateNewClient(int count, Random random)
+        private void CreateNewClients(int count, Random random)
         {
             int minMoney = 2000;
             int maxMoney = 2600;
@@ -74,6 +74,7 @@
             for (int i = 0; i < count; i++)
             {
                 goods = new List<Good>();
+
                 for (int j = 0;j < random.Next(minCountGoods, maxCountGoods); j++)
                 {
                     goods.Add(_goods[random.Next(_goods.Count)]);
@@ -96,7 +97,7 @@
             _basket = goods;
         }
 
-        public int GetAmountPurchase()
+        public int GetTotalPrice()
         {
             int amount = 0;
 
@@ -108,18 +109,10 @@
             return amount;
         }
 
-        public bool CheckSolvency()
+        public bool IsEnoughMoney()
         {
-            _moneyToPay = GetAmountPurchase();
-
-            if (_money >= _moneyToPay)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            _moneyToPay = GetTotalPrice();
+            return _money >= _moneyToPay;
         }
 
         public int ToPay()
@@ -128,7 +121,7 @@
             return _moneyToPay;
         }
 
-        public void RemoveGood()
+        public void RemoveRandomGood()
         {
             Random random = new Random();
             Good good = _basket[random.Next(_basket.Count)];
