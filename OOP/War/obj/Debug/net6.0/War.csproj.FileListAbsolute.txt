@@ -1,0 +1,15 @@
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\bin\Debug\net6.0\War.exe
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\bin\Debug\net6.0\War.deps.json
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\bin\Debug\net6.0\War.runtimeconfig.json
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\bin\Debug\net6.0\War.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\bin\Debug\net6.0\War.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\War.csproj.AssemblyReference.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\War.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\War.AssemblyInfoInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\War.AssemblyInfo.cs
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\War.csproj.CoreCompileInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\War.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\refint\War.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\War.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\War.genruntimeconfig.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\War\obj\Debug\net6.0\ref\War.dll

@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fight", "Fight\Fight.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Supermarket", "Supermarket\Supermarket.csproj", "{6D45DED5-1F41-4E7F-BB86-86AEEAC68406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "War", "War\War.csproj", "{E183E345-C011-454B-B7D6-BFF2CFC0B49E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "War", "War\War.csproj", "{E183E345-C011-454B-B7D6-BFF2CFC0B49E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{9F2B4B2C-2FC7-4A99-B4F3-DE07118A08E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{E183E345-C011-454B-B7D6-BFF2CFC0B49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E183E345-C011-454B-B7D6-BFF2CFC0B49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E183E345-C011-454B-B7D6-BFF2CFC0B49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2B4B2C-2FC7-4A99-B4F3-DE07118A08E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2B4B2C-2FC7-4A99-B4F3-DE07118A08E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2B4B2C-2FC7-4A99-B4F3-DE07118A08E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2B4B2C-2FC7-4A99-B4F3-DE07118A08E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
