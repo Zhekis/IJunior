@@ -11,84 +11,106 @@
 
     class War
     {
-        private List<Fighter> _fightersUSA = new();
-        private List<Fighter> _fightersChina = new();
+        private Squad _team1;
+        private Squad _team2;
 
         public War()
         {
             Random random = new Random();
-            CreateNewFighters(10, 10, _fightersUSA, random);
-            CreateNewFighters(10, 10, _fightersChina, random);
+            _team1 = new("USA", 10, 10);
+            _team2 = new("China", 10, 10);
         }
 
         public void Fight()
         {
-            Scramble(_fightersUSA, _fightersChina);
-        }
-
-        private void Scramble(List<Fighter> fightersUSA, List<Fighter> fightersChina)
-        {
             Random random = new Random();
-            ShowFighters();
+            _team1.ShowFighters();
+            _team2.ShowFighters();
             Console.WriteLine();
-            Console.WriteLine($"Press button to start fight USA vs China!");
+            Console.WriteLine($"Press button to start fight");
             Console.ReadKey();
 
-            while (fightersUSA.Count > 0 && fightersChina.Count > 0)
+            while (_team1.CountFighters > 0 && _team2.CountFighters > 0)
             {
-                float averageDamageUSA;
-                float averageGamageChina;
-                averageDamageUSA = GetAverageDamage(fightersUSA);
-                averageGamageChina = GetAverageDamage(fightersChina);
+                if (_team2.CountFighters > 0)
+                    _team1.TakeDamageTeam(_team2.DamageFighters, random);
 
-                TakeDamageTeam(fightersChina, random, averageDamageUSA);
-                TakeDamageTeam(fightersUSA, random, averageGamageChina);
-                Console.WriteLine($"Произошел обмен ударами, USA {fightersUSA.Count} чел., China {fightersChina.Count}");
+                if (_team1.CountFighters > 0)
+                    _team2.TakeDamageTeam(_team1.DamageFighters, random);
+
+                Console.WriteLine($"Произошел обмен ударами, USA {_team1.CountFighters} чел., China {_team2.CountFighters}");
             }
 
-            ShowResult(fightersUSA, fightersChina);
+            ShowResult(_team1, _team2);
         }
 
-        private void ShowResult(List<Fighter> fightersUSA, List<Fighter> fightersChina)
+        private void ShowResult(Squad team1, Squad team2)
         {
-            if (fightersUSA.Count <= 0 && fightersChina.Count <= 0)
+            if (team1.CountFighters <= 0 && team2.CountFighters <= 0)
                 Console.WriteLine("Ничья");
-            else if (fightersUSA.Count <= 0)
-                Console.WriteLine($"USA is losed");
-            else if (fightersChina.Count <= 0)
-                Console.WriteLine($"China is losed");
+            else if (team1.CountFighters <= 0)
+                Console.WriteLine($"Team {team1.Name} is losed");
+            else if (team2.CountFighters <= 0)
+                Console.WriteLine($"Team {team2.Name} is losed");
+        }
+    }
+
+    class Squad
+    {
+        private List<Fighter> _fighters = new();
+
+        public Squad(string name, int countSoldiers, int countShooters)
+        {
+            Random random = new Random();
+            Name = name;
+            CreateNewFighters(countSoldiers, countShooters, _fighters, random);
         }
 
-        private void TakeDamageTeam(List<Fighter> fighters, Random random, float averageDamage)
+        public string Name { get; private set; }
+        public int CountFighters => _fighters.Count;
+        public List<float> DamageFighters => GetDamageFighters();
+
+        public void TakeDamageTeam(List<float> damageFightersOpponent, Random random)
         {
-            for (int i = 0; i < fighters.Count; i++)
+            for (int i = 0; i < _fighters.Count; i++)
             {
-                int randomNumberFighter = random.Next(0, fighters.Count);
+                int randomNumberFighter = random.Next(0, _fighters.Count);
+                int randomNumberDamage = random.Next(0, damageFightersOpponent.Count);
 
-                if (fighters[randomNumberFighter].Health > 0)
+                if (_fighters[randomNumberFighter].Health > 0)
                 {
-                    fighters[randomNumberFighter].TakeDamage(averageDamage);
+                    _fighters[randomNumberFighter].TakeDamage(damageFightersOpponent[randomNumberDamage]);
 
-                    if (fighters[randomNumberFighter].Health <= 0)
+                    if (_fighters[randomNumberFighter].Health <= 0)
                     {
-                        fighters.Remove(fighters[randomNumberFighter]);
+                        _fighters.Remove(_fighters[randomNumberFighter]);
                     }
                 }
             }
         }
 
-        private float GetAverageDamage(List<Fighter> fighters)
+        public void ShowFighters()
         {
-            float totalDamage = 0;
-            float averageDamage;
+            int indexAddition = 1;
+            Console.WriteLine($"{Name}:");
 
-            for (int i = 0; i < fighters.Count; i++)
+            for (int i = 0; i < _fighters.Count; i++)
             {
-                totalDamage += fighters[i].Damage;
+                Console.Write($"{i + indexAddition}. ");
+                _fighters[i].ShowInfo();
+            }
+        }
+
+        private List<float> GetDamageFighters()
+        {
+            List<float> damageFighters = new();
+
+            for (int i = 0; i < _fighters.Count; i++)
+            {
+                damageFighters.Add(_fighters[i].Damage);
             }
 
-            averageDamage = totalDamage / fighters.Count;
-            return averageDamage;
+            return damageFighters;
         }
 
         private void CreateNewFighters(int countSoldiers, int countShooters, List<Fighter> fighters, Random random)
@@ -110,27 +132,6 @@
                 fighters.Add(new Shooter(random.Next(minHealth, maxHealth), random.Next(minArmor, maxArmor), random.Next(minDamage, maxDamage)));
             }
         }
-
-        private void ShowFighters()
-        {
-            int indexAddition = 1;
-            Console.WriteLine("USA");
-
-            for (int i = 0; i < _fightersUSA.Count; i++)
-            {
-                Console.Write($"{i + indexAddition}. ");
-                _fightersUSA[i].ShowInfo();
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("China");
-
-            for (int i = 0; i < _fightersChina.Count; i++)
-            {
-                Console.Write($"{i + indexAddition}. ");
-                _fightersChina[i].ShowInfo();
-            }
-        }
     }
 
     class Fighter
@@ -150,10 +151,6 @@
         {
             if (damage >= Armor)
                 Health -= damage - Armor;
-        }
-
-        public virtual void UseSkills()
-        {
         }
 
         public void ShowInfo()
