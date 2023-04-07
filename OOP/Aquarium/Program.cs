@@ -10,6 +10,7 @@
 
     class Aquarium
     {
+
         public Aquarium()
         {
 
@@ -19,5 +20,10 @@
         {
 
         }
+    }
+
+    class Fish
+    {
+
     }
 }
