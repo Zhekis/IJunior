@@ -72,19 +72,17 @@
 
         public void TakeDamageTeam(List<float> damageFightersOpponent, Random random)
         {
-            for (int i = 0; i < _fighters.Count; i++)
+            for (int i = 0; i < damageFightersOpponent.Count; i++)
             {
                 int randomNumberFighter = random.Next(0, _fighters.Count);
-                int randomNumberDamage = random.Next(0, damageFightersOpponent.Count);
+                _fighters[randomNumberFighter].TakeDamage(damageFightersOpponent[i]);
+            }
 
-                if (_fighters[randomNumberFighter].Health > 0)
+            for (int i = 0; i < _fighters.Count; i++)
+            {
+                if (_fighters[i].Health <= 0)
                 {
-                    _fighters[randomNumberFighter].TakeDamage(damageFightersOpponent[randomNumberDamage]);
-
-                    if (_fighters[randomNumberFighter].Health <= 0)
-                    {
-                        _fighters.Remove(_fighters[randomNumberFighter]);
-                    }
+                    _fighters.Remove(_fighters[i]);
                 }
             }
         }
@@ -162,8 +160,7 @@
         {
             Random random = new Random();
             double scaled = random.NextDouble() * (maximum - minimum) + minimum;
-            float result = (float)scaled;
-            return result;
+            return (float)scaled;
         }
     }
 
