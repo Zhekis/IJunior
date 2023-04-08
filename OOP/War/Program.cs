@@ -9,6 +9,12 @@
         }
     }
 
+    class UserUtils
+    {
+        private static Random _random = new Random();
+        public static int GenerateRandomNumber(int min, int max) { return _random.Next(min, max); }
+    }
+
     class War
     {
         private Squad _team1;
@@ -16,7 +22,6 @@
 
         public War()
         {
-            Random random = new Random();
             _team1 = new("USA", 10, 10);
             _team2 = new("China", 10, 10);
         }
@@ -33,10 +38,10 @@
             while (_team1.CountFighters > 0 && _team2.CountFighters > 0)
             {
                 if (_team2.CountFighters > 0)
-                    _team1.TakeDamageTeam(_team2.DamageFighters, random);
+                    _team1.TakeDamageTeam(_team2.DamageFighters);
 
                 if (_team1.CountFighters > 0)
-                    _team2.TakeDamageTeam(_team1.DamageFighters, random);
+                    _team2.TakeDamageTeam(_team1.DamageFighters);
 
                 Console.WriteLine($"Произошел обмен ударами, USA {_team1.CountFighters} чел., China {_team2.CountFighters}");
             }
@@ -61,20 +66,19 @@
 
         public Squad(string name, int countSoldiers, int countShooters)
         {
-            Random random = new Random();
             Name = name;
-            CreateNewFighters(countSoldiers, countShooters, _fighters, random);
+            CreateNewFighters(countSoldiers, countShooters);
         }
 
         public string Name { get; private set; }
         public int CountFighters => _fighters.Count;
         public List<float> DamageFighters => GetDamageFighters();
 
-        public void TakeDamageTeam(List<float> damageFightersOpponent, Random random)
+        public void TakeDamageTeam(List<float> damageFightersOpponent)
         {
             for (int i = 0; i < damageFightersOpponent.Count; i++)
             {
-                int randomNumberFighter = random.Next(0, _fighters.Count);
+                int randomNumberFighter = UserUtils.GenerateRandomNumber(0, _fighters.Count);
                 _fighters[randomNumberFighter].TakeDamage(damageFightersOpponent[i]);
             }
 
@@ -83,6 +87,7 @@
                 if (_fighters[i].Health <= 0)
                 {
                     _fighters.Remove(_fighters[i]);
+                    i--;
                 }
             }
         }
@@ -111,7 +116,7 @@
             return damageFighters;
         }
 
-        private void CreateNewFighters(int countSoldiers, int countShooters, List<Fighter> fighters, Random random)
+        private void CreateNewFighters(int countSoldiers, int countShooters)
         {
             int minHealth = 800;
             int maxHealth = 1000;
@@ -122,12 +127,12 @@
 
             for (int i = 0; i < countSoldiers; i++)
             {
-                fighters.Add(new Soldier(random.Next(minHealth, maxHealth), random.Next(minArmor, maxArmor), random.Next(minDamage, maxDamage)));
+                _fighters.Add(new Soldier(UserUtils.GenerateRandomNumber(minHealth, maxHealth), UserUtils.GenerateRandomNumber(minArmor, maxArmor), UserUtils.GenerateRandomNumber(minDamage, maxDamage)));
             }
 
             for (int i = 0; i < countShooters; i++)
             {
-                fighters.Add(new Shooter(random.Next(minHealth, maxHealth), random.Next(minArmor, maxArmor), random.Next(minDamage, maxDamage)));
+                _fighters.Add(new Shooter(UserUtils.GenerateRandomNumber(minHealth, maxHealth), UserUtils.GenerateRandomNumber(minArmor, maxArmor), UserUtils.GenerateRandomNumber(minDamage, maxDamage)));
             }
         }
     }
