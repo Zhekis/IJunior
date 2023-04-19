@@ -21,43 +21,40 @@ namespace Aquarium
 
         public void Work()
         {
-            const string Add = "1";
-            const string Remove = "2";
-            const string Exit = "3";
-
+            const string AddFishCommand = "1";
+            const string RemoveFishCommand = "2";
+            const string ExitCommand = "3";
             bool isWork = true;
-            string userInput;
 
             while (isWork)
             {
                 Console.Clear();
-                string existence = GetAnswer();
+                string existence = GetInfoPresenceFishes();
                 Console.WriteLine(existence);
 
                 ShowFishes();
 
                 Console.WriteLine();
-                Console.WriteLine(Add + " - Add fish.\n" + Remove + " - Remove fish.");
-                Console.WriteLine(Exit + " - Exit");
+                Console.WriteLine(AddFishCommand + " - Add fish.\n" + RemoveFishCommand + " - Remove fish.");
+                Console.WriteLine(ExitCommand + " - Exit");
                 Console.WriteLine("Press any button to skip time.");
-                userInput = Console.ReadLine();
+                string userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
-                    case Add:
+                    case AddFishCommand:
                         AddFish();
                         break;
 
-                    case Remove:
+                    case RemoveFishCommand:
                         RemoveFish();
                         break;
 
-                    case Exit:
+                    case ExitCommand:
                         isWork = false;
                         break;
 
                     default:
-                        Console.WriteLine("You skip time!");
                         SkipTime();
                         break;
                 }
@@ -91,9 +88,8 @@ namespace Aquarium
             }
             else
             {
-                int removeIndex;
                 Console.WriteLine("Input number of fish.");
-                removeIndex = ReadInt();
+                int removeIndex = ReadInt();
 
                 if (_aquarium.TryRemoveFish(removeIndex))
                 {
@@ -114,6 +110,7 @@ namespace Aquarium
         private void SkipTime()
         {
             _aquarium.SkipTime();
+            Console.WriteLine("You skip time!");
         }
 
         private int ReadInt()
@@ -135,7 +132,7 @@ namespace Aquarium
             return result;
         }
 
-        private string GetAnswer()
+        private string GetInfoPresenceFishes()
         {
             if (_aquarium.CountFishes > 0)
                 return "There are fish in the aquarium.";
@@ -212,7 +209,7 @@ namespace Aquarium
         public string Name { get; private set; }
         public int AgeInYears { get; private set; }
         public int LifeExpentacyInYears { get; private set; }
-        public bool IsLived => AgeInYears <= LifeExpentacyInYears;
+        public bool IsAlive => AgeInYears <= LifeExpentacyInYears;
 
         public void Grow()
         {
@@ -221,10 +218,10 @@ namespace Aquarium
 
         public void ShowInfo()
         {
-            if (IsLived == false)
+            if (IsAlive == false)
                 Console.ForegroundColor = ConsoleColor.Red;
 
-            Console.WriteLine($"Name: {Name}, Age: {AgeInYears}, Is alive({IsLived})");
+            Console.WriteLine($"Name: {Name}, Age: {AgeInYears}, Is alive({IsAlive})");
             Console.ForegroundColor = ConsoleColor.Gray;
         }
     }

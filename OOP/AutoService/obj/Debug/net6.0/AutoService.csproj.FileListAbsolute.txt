@@ -1,0 +1,15 @@
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\bin\Debug\net6.0\AutoService.exe
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\bin\Debug\net6.0\AutoService.deps.json
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\bin\Debug\net6.0\AutoService.runtimeconfig.json
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\bin\Debug\net6.0\AutoService.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\bin\Debug\net6.0\AutoService.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\AutoService.csproj.AssemblyReference.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\AutoService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\AutoService.AssemblyInfoInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\AutoService.AssemblyInfo.cs
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\AutoService.csproj.CoreCompileInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\AutoService.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\refint\AutoService.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\AutoService.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\AutoService.genruntimeconfig.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\OOP\AutoService\obj\Debug\net6.0\ref\AutoService.dll
