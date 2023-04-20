@@ -9,7 +9,6 @@ namespace AutoService
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello!");
             Service service = new Service();
             service.Work();
         }
@@ -146,23 +145,21 @@ namespace AutoService
 
     class Car
     {
-        private List<Detail> _brokenDetails;
-
         public Car (List<Detail> brokenDetails)
         {
-            _brokenDetails = brokenDetails;
+            BrokenDetails = brokenDetails;
         }
 
-        public List<Detail> BrokenDetails => _brokenDetails;
+        public List<Detail> BrokenDetails { get; private set; }
 
         public void ShowBrokenDetails()
         {
             int indexAddition = 1;
 
-            for (int i = 0; i < _brokenDetails.Count; i++)
+            for (int i = 0; i < BrokenDetails.Count; i++)
             {
                 Console.Write($"{i + indexAddition}. ");
-                Console.WriteLine(_brokenDetails[i].GetInfo());
+                Console.WriteLine(BrokenDetails[i].GetInfo());
             }
         }
     }
