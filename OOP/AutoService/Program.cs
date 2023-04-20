@@ -1,4 +1,9 @@
-﻿namespace AutoService
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Metrics;
+using System.Runtime.ConstrainedExecution;
+
+namespace AutoService
 {
     internal class Program
     {
@@ -6,20 +11,17 @@
         {
             Console.WriteLine("Hello!");
             Service service = new Service();
-            service.Show();
+            service.Work();
         }
     }
 
     class Service
     {
         private int _balanceMoney = 100000;
-        private bool _serviceCompleted = false;
+        private int _fine = 1000;
         private List<Detail> _details;
         private Dictionary<string, int> _countParts = new Dictionary<string, int>();
         private Queue<Car> _cars = new Queue<Car>();
-        //private List<string> _namesDetails = new List<string>() { "Колесный диск", "Шина", "Радиатор", 
-        //    "Катализатор", "Масло", "Воздушный фильтр", "Шарнир колеса", "Прокладка ГБЦ", "Руль", "Рычаг подвески", "Сайлентблоки", "Пружины", "Стойка стабилизатора",
-        //    "Тормозные колодки", "Лобовое стекло", "Подшипник ступицы"};
 
         public Service()
         {
@@ -30,74 +32,140 @@
             new Detail("Сайлентблоки", 5000, 2000), new Detail("Пружины", 7000, 3000), new Detail("Стойка стабилизатора", 1000, 1000), new Detail("Тормозные колодки", 3000, 1000),
             new Detail("Лобовое стекло", 15000, 2000), new Detail("Подшипник ступицы", 7000, 2000),};
             CreateStock(random);
+            CreateCars(30, random);
         }
 
         public void Work()
         {
-            while (_clients.Count > 0)
+            while (_cars.Count > 0)
             {
                 Console.Clear();
-                Console.WriteLine($"В очереди {_clients.Count} человек");
-                Client client = _clients.Dequeue();
-                Console.WriteLine($"Клиент у кассы. Сумма к оплате {client.GetTotalPrice()}.");
-
-                while (_purchaseCompleted == false)
-                {
-                    if (client.IsEnoughMoney())
-                    {
-                        _money += client.ToPay();
-                        Console.WriteLine("Покупка оплачена.");
-                        _purchaseCompleted = true;
-                    }
-                    else
-                    {
-                        Console.Write("У клиента не хватает денег.");
-                        client.RemoveRandomGood();
-                        Console.WriteLine("Нажмите для продолжения.");
-                        Console.ReadKey();
-                    }
-                }
-
-                Console.WriteLine("Нажмите для обслуживания следующего клиента.");
-                _purchaseCompleted = false;
+                Console.WriteLine($"Balance: {_balanceMoney}.В очереди {_cars.Count} авто.");
+                Console.WriteLine();
+                Console.WriteLine("Stock.");
+                ShowStock();
+                Console.WriteLine();
+                Car car = _cars.Dequeue();
+                Console.WriteLine($"Авто на обслуживании. После диагностики детали к замене:");
+                car.ShowBrokenDetails();
+                Console.WriteLine($"Total price: {GetTotalPriceRepairCar(car.BrokenDetails)}");
+                ServiceAndShowResult(car.BrokenDetails);
+                Console.WriteLine();
+                Console.WriteLine("Нажмите для обслуживания следующего авто.");
                 Console.ReadKey();
             }
         }
 
-        public void Show()
+        public void ShowStock()
         {
-            int indexAddition = 1;
-
-            for (int i = 0; i < _details.Count; i++)
-            {
-                Console.Write($"{i + indexAddition}. ");
-                Console.WriteLine(_details[i].GetInfo());
-            }
-
             foreach (var detail in _countParts)
             {
                 Console.WriteLine($"Detail: {detail.Key}  value: {detail.Value}");
             }
         }
 
+        private void CreateCars(int count, Random random)
+        {
+            int maxCountBrokenDetails = 5;
+            int minCountBrokenDetails = 1;
+            List<Detail> brokenDetails;
+
+            for (int i = 0; i < count; i++)
+            {
+                brokenDetails = new List<Detail>();
+
+                for (int j = 0; j < random.Next(minCountBrokenDetails, maxCountBrokenDetails); j++)
+                {
+                    brokenDetails.Add(_details[random.Next(_details.Count)]);
+                }
+
+               _cars.Enqueue(new Car(brokenDetails));
+            }
+        }
+
         private void CreateStock(Random random)
         {
+            int maxCountDetail = 10;
+
             for (int i = 0; i < _details.Count; i++)
             {
-                _countParts.Add(_details[i].Name, random.Next(10, 20));
+                _countParts.Add(_details[i].Name, random.Next(maxCountDetail));
+            }
+        }
+
+        private int GetTotalPriceRepairCar(List<Detail> brokenDetails)
+        {
+            int result = 0;
+
+            for (int i = 0; i < brokenDetails.Count; i++)
+                result = brokenDetails[i].Price + brokenDetails[i].RepairPrice;
+
+            return result;
+        }
+
+        private void ServiceAndShowResult(List<Detail> brokenDetails)
+        {
+            if (IsEnoughDetailsInStock(brokenDetails))
+            {
+                Console.WriteLine("Successfully");
+                ChangePartAvailability(brokenDetails);
+                _balanceMoney += GetTotalPriceRepairCar(brokenDetails);
+            }
+            else
+            {
+                Console.WriteLine("Not successful, no details");
+                _balanceMoney -= _fine;
+            }
+        }
+
+        private bool IsEnoughDetailsInStock(List<Detail> brokenDetails)
+        {
+            int counter = 0;
+            bool result = false;
+
+            for (int i = 0; i < brokenDetails.Count; i++)
+            {
+                if (_countParts[brokenDetails[i].Name] > 0)
+                    counter++;
+            }
+
+            if (counter == brokenDetails.Count)
+                result = true;
+
+            return result;
+        }
+
+        private void ChangePartAvailability(List<Detail> brokenDetails)
+        {
+            for (int i = 0; i < brokenDetails.Count; i++)
+            {
+                _countParts[brokenDetails[i].Name]--;
             }
         }
     }
 
     class Car
     {
+        private List<Detail> _brokenDetails;
 
+        public Car (List<Detail> brokenDetails)
+        {
+            _brokenDetails = brokenDetails;
+        }
+
+        public List<Detail> BrokenDetails => _brokenDetails;
+
+        public void ShowBrokenDetails()
+        {
+            int indexAddition = 1;
+
+            for (int i = 0; i < _brokenDetails.Count; i++)
+            {
+                Console.Write($"{i + indexAddition}. ");
+                Console.WriteLine(_brokenDetails[i].GetInfo());
+            }
+        }
     }
-
-    //class Detail
-    //{
-
-    //}
 
     public struct Detail
     {
@@ -114,7 +182,7 @@
 
         public string GetInfo()
         {
-            return $"Name: {Name}, price: {Price}, {RepairPrice}";
+            return $"{Name}, priceDetail: {Price}, priceReplace: {RepairPrice}";
         }
     }
 }
