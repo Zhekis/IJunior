@@ -17,7 +17,7 @@ namespace AutoService
     class Service
     {
         private int _balanceMoney = 100000;
-        private int _fine = 1000;
+        private int _fine = 5000;
         private List<Detail> _details;
         private Dictionary<string, int> _countParts = new Dictionary<string, int>();
         private Queue<Car> _cars = new Queue<Car>();
@@ -106,13 +106,13 @@ namespace AutoService
         {
             if (IsEnoughDetailsInStock(brokenDetails))
             {
-                Console.WriteLine("Successfully");
+                Console.WriteLine("Repair completed successfully");
                 ChangePartAvailability(brokenDetails);
                 _balanceMoney += GetTotalPriceRepairCar(brokenDetails);
             }
             else
             {
-                Console.WriteLine("Not successful, no details");
+                Console.WriteLine("Repair completed unsuccessfully, not enough details. You have been fined.");
                 _balanceMoney -= _fine;
             }
         }

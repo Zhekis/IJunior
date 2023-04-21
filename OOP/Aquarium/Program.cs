@@ -143,19 +143,18 @@ namespace Aquarium
 
     class Aquarium
     {
-        private int _maxCountFishes;
         private List<Fish> _fishes;
 
         public Aquarium(int maxCountFishes)
         {
-            _maxCountFishes = maxCountFishes;
+            Capacity = maxCountFishes;
             _fishes = new List<Fish>();
             _fishes.Add(new Fish("Dori", 3));
             _fishes.Add(new Fish("Ben", 5));
         }
 
         public int CountFishes => _fishes.Count;
-        public int Capacity => _maxCountFishes;
+        public int Capacity { get; private set; }
 
         public void AddFish(Fish fish)
         {
