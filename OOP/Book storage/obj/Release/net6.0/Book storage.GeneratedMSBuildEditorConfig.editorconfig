@@ -9,6 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Book_storage
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\Book storage\
 =======
@@ -32,6 +33,9 @@ build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\Book sto
 >>>>>>> for pull
 >>>>>>> for pull
 >>>>>>> Stashed changes
+=======
+build_property.ProjectDir = E:\IJunior\OOP\Book storage\
+>>>>>>> Zoo attempt two
 =======
 build_property.ProjectDir = E:\IJunior\OOP\Book storage\
 >>>>>>> Zoo attempt two

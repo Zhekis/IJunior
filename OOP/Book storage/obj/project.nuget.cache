@@ -2,6 +2,7 @@
   "version": 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "qcmaTJjjgauvFdXI77LLYwb0eg3ZCI5h4AKyipxKsxBz6ZYC9+cmRmBtGJuleghdMQeTazW0h3jYxRibxh+PVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\Book storage\\Book storage.csproj",
@@ -15,6 +16,11 @@
   "success": true,
   "projectFilePath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\Book storage\\Book storage.csproj",
 >>>>>>> autoService attempt two
+=======
+  "dgSpecHash": "Qh4/oQ5AlwGASd+j57TFRIow/KEYsPkaGO1l3+vOxEF+tBmtK4iCZUbt98l0vEyeaILVjd1XESKyUTsIDUX6HA==",
+  "success": true,
+  "projectFilePath": "E:\\IJunior\\OOP\\Book storage\\Book storage.csproj",
+>>>>>>> Zoo attempt two
   "expectedPackageFiles": [],
   "logs": []
 }

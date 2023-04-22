@@ -2,6 +2,7 @@
   "version": 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "BwVvONFl3XdCTI+B8ChV/DrpHTlD6bVnNPqjMVCcpe7K7Of2fhdI8e6K4YOCjtmCfj6afvW4mx7xQcBX9x4yjw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\Store\\Store.csproj",
@@ -15,6 +16,11 @@
   "success": true,
   "projectFilePath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\Store\\Store.csproj",
 >>>>>>> autoService attempt two
+=======
+  "dgSpecHash": "55LYk6TKRbHmtmbX7SRgrHx3WHQnxpSiHQEHFOPcOhepP79kK2eSR8/ZjnCJA/s7X9Lv0W19zOTE3fcmck4JmQ==",
+  "success": true,
+  "projectFilePath": "E:\\IJunior\\OOP\\Store\\Store.csproj",
+>>>>>>> Zoo attempt two
   "expectedPackageFiles": [],
   "logs": []
 }

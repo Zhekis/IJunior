@@ -2,6 +2,7 @@
   "version": 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "3z/s+RR2LJdUaYhhQzqdmQqPx1F5ro6b5lars2ZA8tZHV7rCm/jpfYqn4pO8wfC2tDAwDjmiUlAB0Bbi0PSc+A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\ConfigTrains\\ConfigTrains.csproj",
@@ -15,6 +16,11 @@
   "success": true,
   "projectFilePath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\ConfigTrains\\ConfigTrains.csproj",
 >>>>>>> autoService attempt two
+=======
+  "dgSpecHash": "lWz0Lc+1NyWVX0MCWP6LoOnkwidMY+jXDNPok19sxYZ+30aMI4SR1jjoXrlGAMTCcJ6XojlPLch/aBOf09Sl7A==",
+  "success": true,
+  "projectFilePath": "E:\\IJunior\\OOP\\ConfigTrains\\ConfigTrains.csproj",
+>>>>>>> Zoo attempt two
   "expectedPackageFiles": [],
   "logs": []
 }

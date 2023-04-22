@@ -9,7 +9,11 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = test
 <<<<<<< HEAD
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Zhekis\source\repos\Zhekis\IJunior\OOP\test\
 =======
 build_property.ProjectDir = C:\Users\zh\source\repos\Zhekis\IJunior\OOP\test\
+>>>>>>> Zoo attempt two
+=======
+build_property.ProjectDir = E:\IJunior\OOP\test\
 >>>>>>> Zoo attempt two

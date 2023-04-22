@@ -8,12 +8,12 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\zh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Zhekis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\War\\War.csproj",
@@ -35,13 +35,16 @@
       "packagesPath": "C:\\Users\\zh\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\War\\obj\\",
 >>>>>>> autoService attempt two
+=======
+      "projectUniqueName": "E:\\IJunior\\OOP\\War\\War.csproj",
+      "projectName": "War",
+      "projectPath": "E:\\IJunior\\OOP\\War\\War.csproj",
+      "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
+      "outputPath": "E:\\IJunior\\OOP\\War\\obj\\",
+>>>>>>> Zoo attempt two
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\zh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Zhekis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
