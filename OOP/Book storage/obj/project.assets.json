@@ -13,11 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\Book storage\\Book storage.csproj",
       "projectName": "Book storage",
       "projectPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\Book storage\\Book storage.csproj",
       "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\Book storage\\obj\\",
+=======
+      "projectUniqueName": "E:\\IJunior\\OOP\\Book storage\\Book storage.csproj",
+      "projectName": "Book storage",
+      "projectPath": "E:\\IJunior\\OOP\\Book storage\\Book storage.csproj",
+      "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
+      "outputPath": "E:\\IJunior\\OOP\\Book storage\\obj\\",
+>>>>>>> Zoo attempt two
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zhekis\\AppData\\Roaming\\NuGet\\NuGet.Config",

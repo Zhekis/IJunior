@@ -13,11 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\ConfigTrains\\ConfigTrains.csproj",
       "projectName": "ConfigTrains",
       "projectPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\ConfigTrains\\ConfigTrains.csproj",
       "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\ConfigTrains\\obj\\",
+=======
+      "projectUniqueName": "E:\\IJunior\\OOP\\ConfigTrains\\ConfigTrains.csproj",
+      "projectName": "ConfigTrains",
+      "projectPath": "E:\\IJunior\\OOP\\ConfigTrains\\ConfigTrains.csproj",
+      "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
+      "outputPath": "E:\\IJunior\\OOP\\ConfigTrains\\obj\\",
+>>>>>>> Zoo attempt two
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zhekis\\AppData\\Roaming\\NuGet\\NuGet.Config",

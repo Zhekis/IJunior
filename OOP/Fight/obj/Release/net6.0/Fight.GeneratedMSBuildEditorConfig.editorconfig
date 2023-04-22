@@ -8,6 +8,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Fight
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\Fight\
 =======
@@ -31,3 +32,6 @@ build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\Fight\
 >>>>>>> for pull
 >>>>>>> for pull
 >>>>>>> Stashed changes
+=======
+build_property.ProjectDir = E:\IJunior\OOP\Fight\
+>>>>>>> Zoo attempt two

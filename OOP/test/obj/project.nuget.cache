@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "ZzG1zz8ckfTd2fjE0fzgDr2VZLsTRL4Q2nPEdkTlM4q5ggQBaliDXL+OJbKoJFSKsDfSCOvNsMt4L+IWrJOPpw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\test\\test.csproj",
+=======
+  "dgSpecHash": "FGuOKrAFD1Q/vzS91cqnYCK+H4GWjhU2YpIT/EV9+77rL7/UzEn7F9yjNRnbnonWmEQQHOPTS2g+1UtXgACRMw==",
+  "success": true,
+  "projectFilePath": "E:\\IJunior\\OOP\\test\\test.csproj",
+>>>>>>> Zoo attempt two
   "expectedPackageFiles": [],
   "logs": []
 }

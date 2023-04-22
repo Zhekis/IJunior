@@ -9,194 +9,192 @@ namespace Zoo
             ObserverZoo observerZoo = new ObserverZoo();
             observerZoo.Work();
         }
+    }
 
-        class ObserverZoo
+    class ObserverZoo
+    {
+        private Zoo _zoo = new Zoo();
+
+        public void Work()
         {
-            private Zoo _zoo = new Zoo();
-            
-            public void Work()
+            const string Exit = "EXIT";
+            bool isWork = true;
+            string userInput;
+
+            while (isWork)
             {
-                const string Exit = "EXIT";
-                bool isWork = true;
-                string userInput;
+                Console.Clear();
+                Console.WriteLine("Welcome to the Zoo.");
+                _zoo.ShowAviaryes();
+                Console.WriteLine();
+                Console.WriteLine("Press any button to go the aviary.\nExit + \" - enter exit.");
+                userInput = Console.ReadLine().ToUpper();
 
-                while (isWork)
+                switch (userInput)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Welcome to the Zoo.");
-                    _zoo.ShowAviaryes();
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("Press any button to go the aviary. ");
-                    Console.WriteLine(Exit + " - enter exit.");
-                    userInput = Console.ReadLine().ToUpper();
+                    case Exit:
+                        isWork = false;
+                        break;
 
-                    switch (userInput)
-                    {
-                        case Exit:
-                            isWork = false;
-                            break;
-
-                        default:
-                            _zoo.ShowAviary();
-                            break;
-                    }
-
-                    Console.ReadKey();
+                    default:
+                        _zoo.ShowAviary();
+                        break;
                 }
+
+                Console.ReadKey();
+            }
+        }
+    }
+
+    class Zoo
+    {
+        private List<Aviary> _aviaryes;
+
+        public Zoo()
+        {
+            _aviaryes = new List<Aviary>();
+            _aviaryes.Add(new AviaryBirds("Birds"));
+            _aviaryes.Add(new AviaryMonkey("Monkeys"));
+            _aviaryes.Add(new AviaryExotic("Exotic"));
+            _aviaryes.Add(new AviaryBears("Bears"));
+        }
+
+        public void ShowAviaryes()
+        {
+            int number = 1;
+
+            foreach (var aviary in _aviaryes)
+            {
+                Console.WriteLine($"{number}. {aviary.Name}.");
+                number++;
             }
         }
 
-        class Zoo
+        public void ShowAviary()
         {
-            private List<Aviary> _aviaryes;
+            Console.WriteLine("Input number of aviary to see information.");
+            int numberAviary = ReadInt();
 
-            public Zoo()
+            if (numberAviary > 0 && numberAviary <= _aviaryes.Count)
             {
-                _aviaryes = new List<Aviary>();
-                _aviaryes.Add(new Birds("Birds"));
-                _aviaryes.Add(new Monkey("Monkeys"));
-                _aviaryes.Add(new Exotic("Exotic"));
-                _aviaryes.Add(new Bears("Bears"));
+                numberAviary--;
+                _aviaryes[numberAviary].ShowInfo();
             }
-
-            public void ShowAviaryes()
+            else
             {
-                int number = 1;
-
-                foreach (var aviary in _aviaryes)
-                {
-                    Console.WriteLine($"{number}. {aviary.Name}.");
-                    number++;
-                }
+                Console.WriteLine("Number isn't correct.Try again.");
             }
+        }
 
-            public void ShowAviary()
+        private int ReadInt()
+        {
+            bool isNumber = false;
+            int result = 0;
+
+            while (isNumber == false)
             {
-                Console.WriteLine("Input number of aviary to see information.");
-                int numberAviary = ReadInt();
+                string userInput = Console.ReadLine();
+                isNumber = int.TryParse(userInput, out int number);
 
-                if (numberAviary > 0 && numberAviary <= _aviaryes.Count)
-                {
-                    numberAviary--;
-                    _aviaryes[numberAviary].ShowInfo();
-                }
+                if (isNumber == true)
+                    result = number;
                 else
-                {
-                    Console.WriteLine("Number isn't correct.Try again.");
-                }
+                    Console.WriteLine("Введите число.");
             }
 
-            private int ReadInt()
-            {
-                bool isNumber = false;
-                int result = 0;
+            return result;
+        }
+    }
 
-                while (isNumber == false)
-                {
-                    string userInput = Console.ReadLine();
-                    isNumber = int.TryParse(userInput, out int number);
+    class Aviary
+    {
+        protected List<Animal> Animals;
 
-                    if (isNumber == true)
-                        result = number;
-                    else
-                        Console.WriteLine("Введите число.");
-                }
-
-                return result;
-            }
+        public Aviary(string name)
+        {
+            Name = name;
+            Animals = new List<Animal>();
         }
 
-        class Aviary
+        public string Name { get; private set; }
+
+        public void ShowInfo()
         {
-            protected List<Animal> _animals;
-
-            public Aviary(string name)
-            {
-                Name = name;
-                _animals = new List<Animal>();
-            }
-
-            public string Name { get; private set; }
-
-            public void ShowInfo()
-            {
-                Console.WriteLine($"Description aviary: name {Name}, count animals {_animals.Count}.");
-                ShowAnimals();
-            }
-
-            private void ShowAnimals()
-            {
-                int number = 1;
-
-                foreach (var animal in _animals)
-                {
-                    Console.Write($"{number}. ");
-                    animal.Show();
-                    number++;
-                }
-            }
+            Console.WriteLine($"Description aviary: name {Name}, count animals {Animals.Count}.");
+            ShowAnimals();
         }
 
-        class Birds : Aviary
+        private void ShowAnimals()
         {
-            public Birds(string name) : base(name)
+            int number = 1;
+
+            foreach (var animal in Animals)
             {
-                _animals.Add(new Animal("Pheasant", "Male", "Гур гур"));
-                _animals.Add(new Animal("Owl", "Female", "uu uu"));
-                _animals.Add(new Animal("Woodpecker", "Male", "Tk tk tk"));
+                Console.Write($"{number}. ");
+                animal.Show();
+                number++;
             }
         }
+    }
 
-        class Monkey : Aviary
+    class AviaryBirds : Aviary
+    {
+        public AviaryBirds(string name) : base(name)
         {
-            public Monkey(string name) : base(name)
-            {
-                _animals.Add(new Animal("Cebus olivaceus", "Male", "A Aa"));
-                _animals.Add(new Animal("Gorilla beringei", "Female", "uhhh uhhh"));
-                _animals.Add(new Animal("Pan troglodytes", "Female", "Waaa wwwaaa"));
-                _animals.Add(new Animal("Macaca fuscata", "Male", "chik chik"));
-            }
+            Animals.Add(new Animal("Pheasant", "Male", "Гур гур"));
+            Animals.Add(new Animal("Owl", "Female", "uu uu"));
+            Animals.Add(new Animal("Woodpecker", "Male", "Tk tk tk"));
+        }
+    }
+
+    class AviaryMonkey : Aviary
+    {
+        public AviaryMonkey(string name) : base(name)
+        {
+            Animals.Add(new Animal("Cebus olivaceus", "Male", "A Aa"));
+            Animals.Add(new Animal("Gorilla beringei", "Female", "uhhh uhhh"));
+            Animals.Add(new Animal("Pan troglodytes", "Female", "Waaa wwwaaa"));
+            Animals.Add(new Animal("Macaca fuscata", "Male", "chik chik"));
+        }
+    }
+
+    class AviaryExotic : Aviary
+    {
+        public AviaryExotic(string name) : base(name)
+        {
+            Animals.Add(new Animal("Mini pig", "Male", "hryu hryu"));
+            Animals.Add(new Animal("Fretka", "Female", "guk guuk"));
+            Animals.Add(new Animal("Red-eared turtle", "Female", "---"));
+            Animals.Add(new Animal("Chinchilla", "Male", "ii iii ii"));
+        }
+    }
+
+    class AviaryBears : Aviary
+    {
+        public AviaryBears(string name) : base(name)
+        {
+            Animals.Add(new Animal("Brown bear", "Male", "rrrr"));
+            Animals.Add(new Animal("Grizzly", "Female", "raaahhh"));
+            Animals.Add(new Animal("White bear", "Male", "arrrrr"));
+        }
+    }
+
+    class Animal
+    {
+        public Animal(string name, string sex, string sound)
+        {
+            Name = name;
+            Sex = sex;
+            Sound = sound;
         }
 
-        class Exotic : Aviary
+        public string Name { get; private set; }
+        public string Sex { get; private set; }
+        public string Sound { get; private set; }
+
+        public void Show()
         {
-            public Exotic(string name) : base(name)
-            {
-                _animals.Add(new Animal("Mini pig", "Male", "hryu hryu"));
-                _animals.Add(new Animal("Fretka", "Female", "guk guuk"));
-                _animals.Add(new Animal("Red-eared turtle", "Female", "---"));
-                _animals.Add(new Animal("Chinchilla", "Male", "ii iii ii"));
-            }
-        }
-
-        class Bears : Aviary
-        {
-            public Bears(string name) : base(name)
-            {
-                _animals.Add(new Animal("Brown bear", "Male", "rrrr"));
-                _animals.Add(new Animal("Grizzly", "Female", "raaahhh"));
-                _animals.Add(new Animal("White bear", "Male", "arrrrr"));
-            }
-        }
-
-        class Animal
-        {
-            public Animal(string name, string sex, string sound)
-            {
-                Name = name;
-                Sex = sex;
-                Sound = sound;
-            }
-
-            public string Name { get; private set; }
-            public string Sex { get; private set; }
-            public string Sound { get; private set; }
-
-            public void Show()
-            {
-                Console.WriteLine($"{Name}, {Sex}, {Sound}.");
-            }
+            Console.WriteLine($"{Name}, {Sex}, {Sound}.");
         }
     }
 }

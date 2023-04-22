@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\War\\War.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\War\\War.csproj",
         "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\War\\obj\\",
+=======
+    "E:\\IJunior\\OOP\\War\\War.csproj": {}
+  },
+  "projects": {
+    "E:\\IJunior\\OOP\\War\\War.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\IJunior\\OOP\\War\\War.csproj",
+        "projectName": "War",
+        "projectPath": "E:\\IJunior\\OOP\\War\\War.csproj",
+        "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
+        "outputPath": "E:\\IJunior\\OOP\\War\\obj\\",
+>>>>>>> Zoo attempt two
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhekis\\AppData\\Roaming\\NuGet\\NuGet.Config",

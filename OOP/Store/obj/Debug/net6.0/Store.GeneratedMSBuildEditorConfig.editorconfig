@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Store
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Zhekis\source\repos\Zhekis\IJunior\OOP\Store\
+=======
+build_property.ProjectDir = C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Store\
+>>>>>>> Zoo attempt two

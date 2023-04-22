@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\test\\test.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\test\\test.csproj",
         "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\test\\obj\\",
+=======
+    "E:\\IJunior\\OOP\\test\\test.csproj": {}
+  },
+  "projects": {
+    "E:\\IJunior\\OOP\\test\\test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\IJunior\\OOP\\test\\test.csproj",
+        "projectName": "test",
+        "projectPath": "E:\\IJunior\\OOP\\test\\test.csproj",
+        "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
+        "outputPath": "E:\\IJunior\\OOP\\test\\obj\\",
+>>>>>>> Zoo attempt two
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhekis\\AppData\\Roaming\\NuGet\\NuGet.Config",
