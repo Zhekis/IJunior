@@ -10,6 +10,7 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ConfigTrains
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Zhekis\source\repos\Zhekis\IJunior\OOP\ConfigTrains\
 =======
 build_property.ProjectDir = C:\Users\zh\source\repos\Zhekis\IJunior\OOP\ConfigTrains\
@@ -17,3 +18,6 @@ build_property.ProjectDir = C:\Users\zh\source\repos\Zhekis\IJunior\OOP\ConfigTr
 =======
 build_property.ProjectDir = E:\IJunior\OOP\ConfigTrains\
 >>>>>>> Zoo attempt two
+=======
+build_property.ProjectDir = C:\Users\zh\source\repos\Zhekis\IJunior\OOP\ConfigTrains\
+>>>>>>> autoService attempt two

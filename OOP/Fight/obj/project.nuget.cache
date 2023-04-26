@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "utXNeKIW96TD5aYwYwtMzRqKA1hPNmvhDNP4Qtnyq5Wtl0U/8jD/+ZNJAi6BG/daFrTTW+jfqxSL/TSuUYwvoA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\Fight\\Fight.csproj",
@@ -21,6 +22,11 @@
   "success": true,
   "projectFilePath": "E:\\IJunior\\OOP\\Fight\\Fight.csproj",
 >>>>>>> Zoo attempt two
+=======
+  "dgSpecHash": "e6de+/Au35p6HjyQTFVSEc49oOvzP9PuiIdzoq9fHmU3QfsrjGM2zpW8+1ocXBvS4G223kWb8xYfMnr3uC0DEg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\Fight\\Fight.csproj",
+>>>>>>> autoService attempt two
   "expectedPackageFiles": [],
   "logs": []
 }

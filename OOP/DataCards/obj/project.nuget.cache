@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "/zCYuYrPbhRrqN8NV8odQr+cDdDbkC+c+hwc03qMlJGPunzGJOThopk9ReBARz2ZZtREuRGoDIsdzfbfhrRLgQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\DataCards\\DataCards.csproj",
@@ -21,6 +22,11 @@
   "success": true,
   "projectFilePath": "E:\\IJunior\\OOP\\DataCards\\DataCards.csproj",
 >>>>>>> Zoo attempt two
+=======
+  "dgSpecHash": "kqKS7t0l5VzyhvcbWnEIZZPaabvqCz1NsaFGPTE43CqQgA0zRvXGRAGcU8lJgv1Y6LqzksycOtDPEQm4t6owPQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\DataCards\\DataCards.csproj",
+>>>>>>> autoService attempt two
   "expectedPackageFiles": [],
   "logs": []
 }

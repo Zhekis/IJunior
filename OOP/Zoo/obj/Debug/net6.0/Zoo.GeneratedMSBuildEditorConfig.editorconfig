@@ -10,6 +10,7 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Zoo
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Zhekis\source\repos\Zhekis\IJunior\OOP\Zoo\
 =======
 build_property.ProjectDir = C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Zoo\
@@ -17,3 +18,6 @@ build_property.ProjectDir = C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Zoo\
 =======
 build_property.ProjectDir = E:\IJunior\OOP\Zoo\
 >>>>>>> Zoo attempt two
+=======
+build_property.ProjectDir = C:\Users\zh\source\repos\Zhekis\IJunior\OOP\Zoo\
+>>>>>>> autoService attempt two
