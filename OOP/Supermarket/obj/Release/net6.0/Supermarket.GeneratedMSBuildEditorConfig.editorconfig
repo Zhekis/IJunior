@@ -8,4 +8,26 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Supermarket
+<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\Supermarket\
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\Supermarket\
+=======
+build_property.ProjectDir = E:\IJunior\OOP\Supermarket\
+>>>>>>> Zoo attempt two
+=======
+build_property.ProjectDir = E:\IJunior\OOP\Supermarket\
+=======
+build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\Supermarket\
+<<<<<<< HEAD
+>>>>>>> add solution LINQ and project first
+<<<<<<< HEAD
+>>>>>>> add solution LINQ and project first
+=======
+=======
+>>>>>>> 1583
+>>>>>>> for pull
+>>>>>>> for pull
+>>>>>>> Stashed changes

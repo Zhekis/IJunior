@@ -8,4 +8,26 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = War
+<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\War\
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\War\
+=======
+build_property.ProjectDir = E:\IJunior\OOP\War\
+>>>>>>> Zoo attempt two
+=======
+build_property.ProjectDir = E:\IJunior\OOP\War\
+=======
+build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\War\
+<<<<<<< HEAD
+>>>>>>> add solution LINQ and project first
+<<<<<<< HEAD
+>>>>>>> add solution LINQ and project first
+=======
+=======
+>>>>>>> 1583
+>>>>>>> for pull
+>>>>>>> for pull
+>>>>>>> Stashed changes

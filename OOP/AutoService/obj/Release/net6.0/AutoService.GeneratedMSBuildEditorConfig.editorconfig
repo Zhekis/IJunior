@@ -8,4 +8,19 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AutoService
+<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\AutoService\
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\AutoService\
+=======
+build_property.ProjectDir = E:\IJunior\OOP\AutoService\
+>>>>>>> Zoo attempt two
+=======
+build_property.ProjectDir = E:\IJunior\OOP\AutoService\
+=======
+build_property.ProjectDir = C:\Users\zh\Source\Repos\Zhekis\IJunior\OOP\AutoService\
+>>>>>>> add solution LINQ and project first
+>>>>>>> add solution LINQ and project first
+>>>>>>> Stashed changes
