@@ -2,6 +2,7 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\Zoo\\Zoo.csproj": {}
   },
   "projects": {
@@ -15,20 +16,33 @@
         "outputPath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\Zoo\\obj\\",
 =======
     "E:\\IJunior\\OOP\\Zoo\\Zoo.csproj": {}
+=======
+    "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\Zoo\\Zoo.csproj": {}
+>>>>>>> autoService attempt two
   },
   "projects": {
-    "E:\\IJunior\\OOP\\Zoo\\Zoo.csproj": {
+    "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\Zoo\\Zoo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\IJunior\\OOP\\Zoo\\Zoo.csproj",
+        "projectUniqueName": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\Zoo\\Zoo.csproj",
         "projectName": "Zoo",
+<<<<<<< HEAD
         "projectPath": "E:\\IJunior\\OOP\\Zoo\\Zoo.csproj",
         "packagesPath": "C:\\Users\\Zhekis\\.nuget\\packages\\",
         "outputPath": "E:\\IJunior\\OOP\\Zoo\\obj\\",
 >>>>>>> Zoo attempt two
+=======
+        "projectPath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\Zoo\\Zoo.csproj",
+        "packagesPath": "C:\\Users\\zh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\Zoo\\obj\\",
+>>>>>>> autoService attempt two
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Zhekis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,6 +1,7 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "Pcxav95UFzXOilpOIjkMSG+rl5QD+5bmOqXiBQlCTgudh78veg91S0DI54/z/GmBscn/JL6/BKbGZjyJ89O7Bw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhekis\\source\\repos\\Zhekis\\IJunior\\OOP\\AutoService\\AutoService.csproj",
@@ -9,6 +10,11 @@
   "success": true,
   "projectFilePath": "E:\\IJunior\\OOP\\AutoService\\AutoService.csproj",
 >>>>>>> Zoo attempt two
+=======
+  "dgSpecHash": "+BtsjyOrV/roKMJzB+yFAEpwGKrjY6ZTeCAS+aiAiWYFrBlcxdFLJcb/DCzutA3k/YD6drmzKBdduZJ3sfcOuw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zh\\source\\repos\\Zhekis\\IJunior\\OOP\\AutoService\\AutoService.csproj",
+>>>>>>> autoService attempt two
   "expectedPackageFiles": [],
   "logs": []
 }
