@@ -1,0 +1,15 @@
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\bin\Debug\net6.0\SearchCriminal.exe
+C:\Users\Zhekis\Source\Repos\Zhekis\IJunior\LINQ\SearchCriminal\bin\Debug\net6.0\SearchCriminal.deps.json
+C:\Users\Zhekis\Source\Repos\Zhekis\IJunior\LINQ\SearchCriminal\bin\Debug\net6.0\SearchCriminal.runtimeconfig.json
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\bin\Debug\net6.0\SearchCriminal.dll
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\bin\Debug\net6.0\SearchCriminal.pdb
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\SearchCriminal.csproj.AssemblyReference.cache
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\SearchCriminal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\SearchCriminal.AssemblyInfoInputs.cache
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\SearchCriminal.AssemblyInfo.cs
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\SearchCriminal.csproj.CoreCompileInputs.cache
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\SearchCriminal.dll
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\refint\SearchCriminal.dll
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\SearchCriminal.pdb
+C:\Users\Zhekis\Source\Repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\SearchCriminal.genruntimeconfig.cache
+C:\Users\Zhekis\Source\Repos\Zhekis\IJunior\LINQ\SearchCriminal\obj\Debug\net6.0\ref\SearchCriminal.dll

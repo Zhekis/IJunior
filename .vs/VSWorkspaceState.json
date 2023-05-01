@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LINQ",
+    "\\LINQ\\SearchCriminal"
   ],
+  "SelectedNode": "\\LINQ\\SearchCriminal\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
