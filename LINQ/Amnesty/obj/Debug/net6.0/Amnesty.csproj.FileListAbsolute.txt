@@ -1,0 +1,15 @@
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\bin\Debug\net6.0\Amnesty.exe
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\bin\Debug\net6.0\Amnesty.deps.json
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\bin\Debug\net6.0\Amnesty.runtimeconfig.json
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\bin\Debug\net6.0\Amnesty.dll
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\bin\Debug\net6.0\Amnesty.pdb
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\Amnesty.csproj.AssemblyReference.cache
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\Amnesty.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\Amnesty.AssemblyInfoInputs.cache
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\Amnesty.AssemblyInfo.cs
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\Amnesty.csproj.CoreCompileInputs.cache
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\Amnesty.dll
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\refint\Amnesty.dll
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\Amnesty.pdb
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\Amnesty.genruntimeconfig.cache
+C:\Users\Zhekis\source\repos\Zhekis\IJunior\LINQ\Amnesty\obj\Debug\net6.0\ref\Amnesty.dll
