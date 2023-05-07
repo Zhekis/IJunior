@@ -13,11 +13,13 @@
                 criminal.ShowInfo();
             }
 
+            string offenseAmnesty = "Anti-government";
             Console.WriteLine();
-            var filteredCriminals = criminals.Where(crimilal => crimilal.Offense != "Anti-government");
+            var filteredCriminals = criminals.Where(crimilal => crimilal.Offense != offenseAmnesty);
+            criminals = filteredCriminals.ToList();
             Console.WriteLine("After amnesty:");
 
-            foreach (var criminal in filteredCriminals)
+            foreach (var criminal in criminals)
             {
                 criminal.ShowInfo();
             }

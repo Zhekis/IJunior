@@ -23,10 +23,15 @@
             string nationality = Console.ReadLine().ToUpper();
             Console.WriteLine($"Parametrs of search : {height}, {weight}, {nationality}");
 
-            var filteredCriminals = criminals.Where(crimilal => crimilal.Height == height).
-                Where(crimilal => crimilal.Weight == weight).
-                Where(crimilal => crimilal.Nationality.ToUpper() == nationality).
-                Where(crimilal => crimilal.IsIncarcerated == false);
+            //var filteredCriminals = criminals.Where(crimilal => crimilal.Height == height).
+            //    Where(crimilal => crimilal.Weight == weight).
+            //    Where(crimilal => crimilal.Nationality.ToUpper() == nationality).
+            //    Where(crimilal => crimilal.IsIncarcerated == false);
+
+            var filteredCriminals = criminals.Where(crimilal => crimilal.Height == height 
+            && crimilal.Weight == weight 
+            && crimilal.Nationality.ToUpper() == nationality
+            && crimilal.IsIncarcerated == false);
 
             Console.WriteLine("Список найденных преступников:");
 
