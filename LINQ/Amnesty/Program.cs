@@ -1,4 +1,6 @@
-﻿namespace Amnesty
+﻿using System.Collections.Generic;
+
+namespace Amnesty
 {
     internal class Program
     {
@@ -8,10 +10,8 @@
                 new Criminal("BorisJonson", 180, 75, true, "Чукча", "Kill") , new Criminal("AndreiKosov", 180, 70, true, "Еврей", "Anti-government"),
             new Criminal("Vasiliy", 180, 75, true, "Татарин", "Steal")};
 
-            foreach (var criminal in criminals)
-            {
-                criminal.ShowInfo();
-            }
+            Terminal terminal = new Terminal();
+            terminal.ShowCriminals(criminals);
 
             string offenseAmnesty = "Anti-government";
             Console.WriteLine();
@@ -19,6 +19,15 @@
             criminals = filteredCriminals.ToList();
             Console.WriteLine("After amnesty:");
 
+            terminal.ShowCriminals(criminals);
+        }
+
+    }
+
+    class Terminal
+    {
+        public void ShowCriminals(List<Criminal> criminals)
+        {
             foreach (var criminal in criminals)
             {
                 criminal.ShowInfo();
