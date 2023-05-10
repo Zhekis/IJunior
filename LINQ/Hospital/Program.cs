@@ -4,21 +4,99 @@
     {
         static void Main(string[] args)
         {
-            List<Patient> criminals = new List<Patient> { new Patient("RobertPupkin", 50, "") ,
-                new Patient("RobertPupkin", 50, "") , new Patient("RobertPupkin", 50, ""),
-            new Patient("RobertPupkin", 50, "")};
+            List<Patient> patiens = new List<Patient> { 
+            new Patient("RobertPupkin", 50, "ORVI"),
+            new Patient("LarisaDolina", 40, "ORVI"), 
+            new Patient("BorisBritva", 50, "Pneomonia"),
+            new Patient("AndreyMorj", 30, "Diabet"),
+            new Patient("SamPopov", 20, "Pneomonia"),
+            new Patient("GorgWashington", 70, "Insomnia"),
+            new Patient("PetrSidorov", 60, "Covid"),
+            new Patient("VasiliyPervii", 55, "Flu"),
+            new Patient("IvanGraga", 48, "Covid"),
+            new Patient("MelisaKirova", 66, "Flu")};
+
+            Viewing viewing = new Viewing(patiens);
+            viewing.Work();
         }
     }
 
     class Viewing
     {
         private List<Patient> _patiens;
+
         public Viewing(List<Patient> patiens)
         {
             _patiens = patiens;
         }
 
-        
+        public void Work()
+        {
+            const string SortName = "1";
+            const string SortAge = "2";
+            const string FindDisease = "3";
+            const string Exit = "4";
+
+            bool isWork = true;
+            string userInput;
+
+            while (isWork)
+            {
+                Console.Clear();
+                Console.WriteLine("Hospital.");
+                Console.WriteLine(SortName + " - Отсортировать по ФИО.\n" + SortAge + " - Отсортировать по возрасту.");
+                Console.WriteLine(FindDisease + " - поиск по болезни.\n" + Exit + " - Выход");
+                userInput = Console.ReadLine();
+
+                switch (userInput)
+                {
+                    case SortName:
+                        SortPatiensName(_patiens);
+                        break;
+
+                    case SortAge:
+                        SortPatiensAge(_patiens);
+                        break;
+
+                    case FindDisease:
+                        FindPatiensDisease(_patiens);
+                        break;
+
+                    case Exit:
+                        isWork = false;
+                        break;
+                }
+
+                Console.ReadKey();
+            }
+        }
+
+        public void SortPatiensName(List<Patient> patiens)
+        {
+            var sortPatiens = patiens.OrderBy(patien => patien.FullName);
+            ShowPatiens(sortPatiens);
+        }
+
+        public void SortPatiensAge(List<Patient> patiens)
+        {
+            var sortPatiens = patiens.OrderBy(patien => patien.Age);
+            ShowPatiens(sortPatiens);
+        }
+
+        public void FindPatiensDisease(List<Patient> patiens)
+        {
+            string disease = Console.ReadLine().ToUpper();
+            var filteredPatiens = patiens.Where(patien => patien.Disease.ToUpper() == disease);
+            ShowPatiens(filteredPatiens);
+        }
+
+        private void ShowPatiens(IEnumerable<Patient> patients)
+        {
+            foreach (var patient in patients)
+            {
+                patient.ShowInfo();
+            }
+        }
     }
 
     class Patient
@@ -27,7 +105,7 @@
         {
             FullName = fullName;
             Age = age;
-            this.Disease = disease;
+            Disease = disease;
         }
 
         public string FullName { get; private set; }
