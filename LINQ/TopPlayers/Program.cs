@@ -17,14 +17,14 @@ namespace TopPlayers
             new Player("VasiliyPervii", 4, 350),
             new Player("IvanGraga", 6, 400),
             new Player("MelisaKirova", 5, 450)};
-
+            int numberTopPlayers = 3;
             Terminal terminal = new Terminal();
-            var filteredPlayers = players.OrderByDescending(player => player.Level).Take(3);
+            var filteredPlayers = players.OrderByDescending(player => player.Level).Take(numberTopPlayers);
             Console.WriteLine("TOP3 LEVEL:");
             terminal.ShowPlayers(filteredPlayers);
             Console.WriteLine();
             Console.WriteLine("TOP3 POWER:");
-            filteredPlayers = players.OrderByDescending(player => player.Power).Take(3);
+            filteredPlayers = players.OrderByDescending(player => player.Power).Take(numberTopPlayers);
             terminal.ShowPlayers(filteredPlayers);
         }
     }
