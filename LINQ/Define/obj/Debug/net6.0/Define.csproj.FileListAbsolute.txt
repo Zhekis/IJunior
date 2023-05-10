@@ -1,0 +1,15 @@
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\bin\Debug\net6.0\Define.exe
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\bin\Debug\net6.0\Define.deps.json
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\bin\Debug\net6.0\Define.runtimeconfig.json
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\bin\Debug\net6.0\Define.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\bin\Debug\net6.0\Define.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\Define.csproj.AssemblyReference.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\Define.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\Define.AssemblyInfoInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\Define.AssemblyInfo.cs
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\Define.csproj.CoreCompileInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\Define.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\refint\Define.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\Define.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\Define.genruntimeconfig.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\Define\obj\Debug\net6.0\ref\Define.dll
