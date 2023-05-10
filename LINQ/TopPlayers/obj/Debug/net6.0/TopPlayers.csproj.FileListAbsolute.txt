@@ -1,0 +1,15 @@
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\bin\Debug\net6.0\TopPlayers.exe
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\bin\Debug\net6.0\TopPlayers.deps.json
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\bin\Debug\net6.0\TopPlayers.runtimeconfig.json
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\bin\Debug\net6.0\TopPlayers.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\bin\Debug\net6.0\TopPlayers.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\TopPlayers.csproj.AssemblyReference.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\TopPlayers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\TopPlayers.AssemblyInfoInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\TopPlayers.AssemblyInfo.cs
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\TopPlayers.csproj.CoreCompileInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\TopPlayers.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\refint\TopPlayers.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\TopPlayers.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\TopPlayers.genruntimeconfig.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\TopPlayers\obj\Debug\net6.0\ref\TopPlayers.dll
