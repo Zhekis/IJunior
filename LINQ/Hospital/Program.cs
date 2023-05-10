@@ -51,15 +51,15 @@
                 switch (userInput)
                 {
                     case SortName:
-                        SortPatiensName(_patiens);
+                        ShowPatiens(SortPatiensByName(_patiens));
                         break;
 
                     case SortAge:
-                        SortPatiensAge(_patiens);
+                        ShowPatiens(SortPatiensByAge(_patiens));
                         break;
 
                     case FindDisease:
-                        FindPatiensDisease(_patiens);
+                        ShowPatiens(FindPatiensByDisease(_patiens));
                         break;
 
                     case Exit:
@@ -71,23 +71,23 @@
             }
         }
 
-        public void SortPatiensName(List<Patient> patiens)
+        private IEnumerable<Patient> SortPatiensByName(List<Patient> patiens)
         {
             var sortPatiens = patiens.OrderBy(patien => patien.FullName);
-            ShowPatiens(sortPatiens);
+            return sortPatiens;
         }
 
-        public void SortPatiensAge(List<Patient> patiens)
+        private IEnumerable<Patient> SortPatiensByAge(List<Patient> patiens)
         {
             var sortPatiens = patiens.OrderBy(patien => patien.Age);
-            ShowPatiens(sortPatiens);
+            return sortPatiens;
         }
 
-        public void FindPatiensDisease(List<Patient> patiens)
+        private IEnumerable<Patient> FindPatiensByDisease(List<Patient> patiens)
         {
             string disease = Console.ReadLine().ToUpper();
             var filteredPatiens = patiens.Where(patien => patien.Disease.ToUpper() == disease);
-            ShowPatiens(filteredPatiens);
+            return filteredPatiens;
         }
 
         private void ShowPatiens(IEnumerable<Patient> patients)
