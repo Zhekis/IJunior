@@ -17,7 +17,10 @@
             new Soldier("Duren", "Sniper", "Major", 12),
             new Soldier("Alex", "Scout", "Sergeant", 10)};
 
+            var filteredSoldiers = troops1.Where(soldier => soldier.Name.ToUpper().StartsWith("B"));
 
+            troops1 = troops1.Except(filteredSoldiers).ToList();
+            troops2 = troops2.Union(filteredSoldiers).ToList();
         }
     }
 
@@ -35,10 +38,5 @@
         public string Armament { get; private set; }
         public string Rank { get; private set; }
         public int TimeService { get; private set; }
-
-        public void ShowInfo()
-        {
-            Console.WriteLine($"{Name}, {Rank}");
-        }
     }
 }

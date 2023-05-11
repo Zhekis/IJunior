@@ -1,0 +1,15 @@
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\bin\Debug\net6.0\MergeTroops.exe
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\bin\Debug\net6.0\MergeTroops.deps.json
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\bin\Debug\net6.0\MergeTroops.runtimeconfig.json
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\bin\Debug\net6.0\MergeTroops.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\bin\Debug\net6.0\MergeTroops.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\MergeTroops.csproj.AssemblyReference.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\MergeTroops.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\MergeTroops.AssemblyInfoInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\MergeTroops.AssemblyInfo.cs
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\MergeTroops.csproj.CoreCompileInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\MergeTroops.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\refint\MergeTroops.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\MergeTroops.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\MergeTroops.genruntimeconfig.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\MergeTroops\obj\Debug\net6.0\ref\MergeTroops.dll
