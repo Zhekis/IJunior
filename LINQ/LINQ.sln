@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopPlayers", "TopPlayers\To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Define", "Define\Define.csproj", "{FA668B40-8163-4286-9530-F365F0E00FCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmsReport", "ArmsReport\ArmsReport.csproj", "{3B745946-4B0F-46E6-9693-FEBE392F997E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FA668B40-8163-4286-9530-F365F0E00FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA668B40-8163-4286-9530-F365F0E00FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA668B40-8163-4286-9530-F365F0E00FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B745946-4B0F-46E6-9693-FEBE392F997E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B745946-4B0F-46E6-9693-FEBE392F997E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B745946-4B0F-46E6-9693-FEBE392F997E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B745946-4B0F-46E6-9693-FEBE392F997E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

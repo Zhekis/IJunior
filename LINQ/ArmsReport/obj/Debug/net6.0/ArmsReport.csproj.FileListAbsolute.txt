@@ -1,0 +1,15 @@
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\bin\Debug\net6.0\ArmsReport.exe
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\bin\Debug\net6.0\ArmsReport.deps.json
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\bin\Debug\net6.0\ArmsReport.runtimeconfig.json
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\bin\Debug\net6.0\ArmsReport.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\bin\Debug\net6.0\ArmsReport.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ArmsReport.csproj.AssemblyReference.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ArmsReport.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ArmsReport.AssemblyInfoInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ArmsReport.AssemblyInfo.cs
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ArmsReport.csproj.CoreCompileInputs.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ArmsReport.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\refint\ArmsReport.dll
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ArmsReport.pdb
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ArmsReport.genruntimeconfig.cache
+C:\Users\zh\source\repos\Zhekis\IJunior\LINQ\ArmsReport\obj\Debug\net6.0\ref\ArmsReport.dll
