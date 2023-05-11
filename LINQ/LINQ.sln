@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Define", "Define\Define.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmsReport", "ArmsReport\ArmsReport.csproj", "{3B745946-4B0F-46E6-9693-FEBE392F997E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeTroops", "MergeTroops\MergeTroops.csproj", "{D7A04D0E-EED8-4568-9B77-8B57B601F3CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3B745946-4B0F-46E6-9693-FEBE392F997E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B745946-4B0F-46E6-9693-FEBE392F997E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B745946-4B0F-46E6-9693-FEBE392F997E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7A04D0E-EED8-4568-9B77-8B57B601F3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A04D0E-EED8-4568-9B77-8B57B601F3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A04D0E-EED8-4568-9B77-8B57B601F3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A04D0E-EED8-4568-9B77-8B57B601F3CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

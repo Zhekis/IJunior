@@ -1,26 +1,23 @@
-﻿using System;
-
-namespace ArmsReport
+﻿namespace MergeTroops
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            List<Soldier> soldiers = new List<Soldier> {
+            List<Soldier> troops1 = new List<Soldier> {
             new Soldier("Ridik", "Tankman", "Officer", 5),
             new Soldier("Patron", "Driver", "Sergeant", 7),
             new Soldier("Balbes", "Infantry", "Common", 3),
             new Soldier("Duren", "Sniper", "Major", 12),
             new Soldier("Boris", "Scout", "Sergeant", 10)};
 
-            var persons = soldiers.Select(person => new
-            {
-                Name = person.Name,
-                Rank = person.Rank
-            });
+            List<Soldier> troops2 = new List<Soldier> {
+            new Soldier("Ridik", "Tankman", "Officer", 5),
+            new Soldier("Patron", "Driver", "Sergeant", 7),
+            new Soldier("Duren", "Sniper", "Major", 12),
+            new Soldier("Alex", "Scout", "Sergeant", 10)};
 
-            foreach (var person in persons)
-                Console.WriteLine($"{person.Name} - {person.Rank}");
+
         }
     }
 
