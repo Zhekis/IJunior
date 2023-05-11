@@ -17,7 +17,9 @@
             new Soldier("Duren", "Sniper", "Major", 12),
             new Soldier("Alex", "Scout", "Sergeant", 10)};
 
-            var filteredSoldiers = troops1.Where(soldier => soldier.Name.ToUpper().StartsWith("B"));
+            string searchingFirstNameChar = "B";
+
+            var filteredSoldiers = troops1.Where(soldier => soldier.Name.ToUpper().StartsWith(searchingFirstNameChar));
 
             troops1 = troops1.Except(filteredSoldiers).ToList();
             troops2 = troops2.Union(filteredSoldiers).ToList();
